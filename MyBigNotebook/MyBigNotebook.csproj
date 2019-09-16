@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassCrypt.cs" />
     <Compile Include="ClassPlants.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
