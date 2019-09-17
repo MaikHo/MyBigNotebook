@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassCrypt.cs" />
+    <Compile Include="ClassInformation.cs" />
     <Compile Include="ClassNotes.cs" />
     <Compile Include="ClassPlants.cs" />
     <Compile Include="FormMain.cs">

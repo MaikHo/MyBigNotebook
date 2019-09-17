@@ -7,6 +7,7 @@ namespace MyBigNotebook
     /// <summary>
     /// Записи
     /// </summary>
+    [Serializable]
     class ClassNotes:ICrypt
     {
         /// <summary>
@@ -119,10 +120,11 @@ namespace MyBigNotebook
         }
 
     }
-
+   
     /// <summary>
     /// Идеи
     /// </summary>
+    [Serializable]
     class Idea:ICrypt
     {
         /// <summary>
