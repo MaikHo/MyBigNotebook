@@ -1,13 +1,73 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyBigNotebook
 {
-    class ClassInformation
+    /// <summary>
+    /// Информация разнообразная
+    /// </summary>
+    class ClassInformation:ICrypt
     {
+        /// <summary>
+        /// Личные дела
+        /// </summary>
+        public List<Dossier> Dossiers;
+        /// <summary>
+        /// Полезная информация
+        /// </summary>
+        public List<HelpfullInformation> HelpfullsInfo;
+        /// <summary>
+        /// Полезные ссылки
+        /// </summary>
+        public List<HelpfullLink> HelpfullLinks;
+
+        public ClassInformation()
+        {
+            Dossiers = new List<Dossier>();
+            HelpfullLinks = new List<HelpfullLink>();
+            HelpfullsInfo = new List<HelpfullInformation>();
+        }
+
+        /// <summary>
+        /// Дешифрование
+        /// </summary>
+        /// <returns></returns>
+        public bool Decrypt()
+        {
+            try
+            {
+                foreach (Dossier dossier in Dossiers)
+                    dossier.Decrypt();
+                foreach (HelpfullInformation helpfull in HelpfullsInfo)
+                    helpfull.Decrypt();
+                foreach (HelpfullLink helpfullLink in HelpfullLinks)
+                    helpfullLink.Decrypt();
+               
+
+                return true;
+            }
+            catch { return false; }
+        }
+
+        /// <summary>
+        /// Шифрование
+        /// </summary>
+        /// <returns></returns>
+        public bool Encrypt()
+        {
+            try
+            {
+                foreach (Dossier dossier in Dossiers)
+                    dossier.Encrypt();
+                foreach (HelpfullInformation helpfull in HelpfullsInfo)
+                    helpfull.Encrypt();
+                foreach (HelpfullLink helpfullLink in HelpfullLinks)
+                    helpfullLink.Encrypt();
+                return true;
+            }
+            catch { return false; }
+        }
+
     }
 
     /// <summary>
@@ -56,7 +116,7 @@ namespace MyBigNotebook
     }
 
     [Serializable]
-    class Dossier:ICrypt
+    class Dossier : ICrypt
     {
         public string Name;
         public string LastName;
@@ -136,4 +196,70 @@ namespace MyBigNotebook
             catch { return false; }
         }
     }
+
+        /// <summary>
+        /// Полезная информация
+        /// </summary>
+        [Serializable]
+        class HelpfullInformation:Idea
+        {
+            public HelpfullInformation():base()
+            {
+                
+            }
+        }
+
+        /// <summary>
+        /// Полезные ссылки
+        /// </summary>
+        [Serializable]
+        class HelpfullLink:ICrypt
+        {
+            /// <summary>
+            /// Название
+            /// </summary>
+            public string Name;
+            /// <summary>
+            /// Ссылка
+            /// </summary>
+            public string Link;
+            /// <summary>
+            /// Описание
+            /// </summary>
+            public string Description;
+
+            public HelpfullLink()
+            {
+                Name = "";
+                Link = "";
+                Description = "";
+            }
+            public bool Decrypt()
+            {
+                try
+                {
+                    Name = ClassCrypt.Decrypt(Name);
+                    Link = ClassCrypt.Decrypt(Link);
+                    Description = ClassCrypt.Decrypt(Description);
+
+                    return true;
+                }
+                catch { return false; }
+            }
+
+            public bool Encrypt()
+            {
+                try
+                {
+                    Name = ClassCrypt.Encrypt(Name);
+                    Link = ClassCrypt.Encrypt(Link);
+                    Description = ClassCrypt.Encrypt(Description);
+                    return true;
+                }
+                catch { return false; }
+            }
+
+        
+
+        }
 }
