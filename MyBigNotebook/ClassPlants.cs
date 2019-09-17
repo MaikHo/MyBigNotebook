@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MyBigNotebook
 {
@@ -15,21 +13,21 @@ namespace MyBigNotebook
         /// <summary>
         /// Планы на будущее
         /// </summary>
-        List<FuturePlan> FuturePlans;
+        public List<FuturePlan> FuturePlans;
         /// <summary>
         /// Цели
         /// </summary>
-        List<Target> Targets;
+        public List<Target> Targets;
         /// <summary>
         /// Список закупок
         /// </summary>
-        List<ShoppingList> ShoppingLists;
+        public List<ShoppingList> ShoppingLists;
         /// <summary>
         /// Проекты
         /// </summary>
-        List<Project> Projects;
+        public List<Project> Projects;
 
-        ClassPlants()
+        public ClassPlants()
         {
             FuturePlans = new List<FuturePlan>();
             Targets = new List<Target>();
@@ -90,17 +88,17 @@ namespace MyBigNotebook
         /// <summary>
         /// Название плана
         /// </summary>
-        string NamePlan;
+        public string NamePlan;
         /// <summary>
         /// Дата реализации
         /// </summary>
-        DateTime DateRealise;
+        public DateTime DateRealise;
         /// <summary>
         /// Пункты плана
         /// </summary>
-        List<PunktOfPlan> punktOfPlans;
+        public List<PunktOfPlan> punktOfPlans;
 
-        FuturePlan()
+        public FuturePlan()
         {
             NamePlan = "";
             DateRealise = DateTime.Now;
@@ -188,25 +186,25 @@ namespace MyBigNotebook
         /// <summary>
         /// № шага
         /// </summary>
-        int NumberStep;
+        public int NumberStep;
         /// <summary>
         /// Название шага
         /// </summary>
-        string NameStep;
+        public string NameStep;
         /// <summary>
         /// Описание шага
         /// </summary>
-        string DescriptionStep;
+        public string DescriptionStep;
         /// <summary>
         /// продолжительность
         /// </summary>
-        DateTime DurationStep;
+        public DateTime DurationStep;
         /// <summary>
         /// Флаг о завершении
         /// </summary>
-        bool CompleteFlag;
+        public bool CompleteFlag;
 
-        Step()
+        public Step()
         {
             NumberStep = 0;
             NameStep = "";
@@ -245,29 +243,29 @@ namespace MyBigNotebook
         /// <summary>
         /// название
         /// </summary>
-        string NameTarget;
+        public string NameTarget;
         /// <summary>
         /// Дата начала реализации
         /// </summary>
-        DateTime DateStartRealise;
+        public DateTime DateStartRealise;
         /// <summary>
         /// Дата окончания реализации
         /// </summary>
-        DateTime DateEndRealise;
+        public DateTime DateEndRealise;
         /// <summary>
         /// Описание
         /// </summary>
-        string DescriptionTarget;
+        public string DescriptionTarget;
         /// <summary>
         /// Шаги достижения
         /// </summary>
-        List<Step> Steps;
+        public List<Step> Steps;
         /// <summary>
         /// Отметка о достижении
         /// </summary>
-        bool CompleteFlag;
+        public bool CompleteFlag;
 
-        Target()
+        public Target()
         {
             NameTarget = "";
             DateStartRealise = DateTime.Now;
@@ -311,21 +309,21 @@ namespace MyBigNotebook
         /// <summary>
         /// Название
         /// </summary>
-        string NameItem;
+        public string NameItem;
         /// <summary>
         /// Описание
         /// </summary>
-        string Description;
+        public string Description;
         /// <summary>
         ///Цена
         /// </summary>
-        double Cost;
+        public double Cost;
         /// <summary>
         /// Отметка о покупке
         /// </summary>
-        bool CompleteFlag;
+        public bool CompleteFlag;
 
-        ShoppingList()
+        public ShoppingList()
         {
             NameItem = "";
             Description = "";
@@ -363,21 +361,21 @@ namespace MyBigNotebook
         /// <summary>
         /// Название проекта
         /// </summary>
-        string NameProject;
+        public string NameProject;
         /// <summary>
         /// Описание
         /// </summary>
-        string Description;
+        public string Description;
         /// <summary>
         /// Дата начала
         /// </summary>
-        DateTime DateStart;
+        public DateTime DateStart;
         /// <summary>
         /// Шаги реализации
         /// </summary>
-        List<ProjectStep> ProjectSteps;
+        public List<ProjectStep> ProjectSteps;
 
-        Project()
+        public Project()
         {
             NameProject = "";
             Description = "";
@@ -420,17 +418,17 @@ namespace MyBigNotebook
         /// <summary>
         /// наименование
         /// </summary>
-        string NameStep;
+        public string NameStep;
         /// <summary>
         /// Описание
         /// </summary>
-        string Description;
+        public string Description;
         /// <summary>
         /// Отметка о выполнении
         /// </summary>
-        bool CombleteFlag;
+        public bool CombleteFlag;
 
-        ProjectStep()
+        public ProjectStep()
         {
             NameStep = "";
             Description = "";
