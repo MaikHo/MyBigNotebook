@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ClassCalendar.cs" />
     <Compile Include="ClassCrypt.cs" />
+    <Compile Include="ClassDiary.cs" />
     <Compile Include="ClassFinansialAssistant.cs" />
     <Compile Include="ClassInformation.cs" />
     <Compile Include="ClassNotes.cs" />

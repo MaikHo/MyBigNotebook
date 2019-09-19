@@ -83,7 +83,7 @@ namespace MyBigNotebook
         /// Шифрование списка
         /// </summary>
         /// <param name="crypts">Список объектов с интерфейсом ICrypt</param>
-        public static void Encrypt(ref List<ICrypt> crypts)
+        public static void Encrypt(ICrypt[] crypts)
         {
             foreach (ICrypt crypt in crypts)
                 crypt.Encrypt();
@@ -93,7 +93,7 @@ namespace MyBigNotebook
         /// Дешифрование списка
         /// </summary>
         /// <param name="crypts">Список объектов с интерфейсом ICrypt</param>
-        public static void Decrypt(ref List<ICrypt> crypts)
+        public static void Decrypt(ICrypt[] crypts)
         {
             foreach (ICrypt crypt in crypts)
                 crypt.Decrypt();
