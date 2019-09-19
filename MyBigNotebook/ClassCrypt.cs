@@ -2,6 +2,7 @@
 using System.Text;
 using System.IO;
 using System.Security.Cryptography;
+using System.Collections.Generic;
 
 namespace MyBigNotebook
 {
@@ -77,6 +78,28 @@ namespace MyBigNotebook
             MemoryStream ms = new MemoryStream(data);
             return new CryptoStream(ms, ct, CryptoStreamMode.Read);
         }
+
+        /// <summary>
+        /// Шифрование списка
+        /// </summary>
+        /// <param name="crypts">Список объектов с интерфейсом ICrypt</param>
+        public static void Encrypt(ref List<ICrypt> crypts)
+        {
+            foreach (ICrypt crypt in crypts)
+                crypt.Encrypt();
+        }
+
+        /// <summary>
+        /// Дешифрование списка
+        /// </summary>
+        /// <param name="crypts">Список объектов с интерфейсом ICrypt</param>
+        public static void Decrypt(ref List<ICrypt> crypts)
+        {
+            foreach (ICrypt crypt in crypts)
+                crypt.Decrypt();
+        }
+
+
     }
 
     /// <summary>

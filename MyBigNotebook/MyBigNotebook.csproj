@@ -48,10 +48,12 @@
   <ItemGroup>
     <Compile Include="ClassCalendar.cs" />
     <Compile Include="ClassCrypt.cs" />
+    <Compile Include="ClassFinansialAssistant.cs" />
     <Compile Include="ClassInformation.cs" />
     <Compile Include="ClassNotes.cs" />
     <Compile Include="ClassPhoto.cs" />
     <Compile Include="ClassPlants.cs" />
+    <Compile Include="ClassRoutineDay.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
