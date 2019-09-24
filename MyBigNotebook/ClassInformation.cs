@@ -6,7 +6,7 @@ namespace MyBigNotebook
     /// <summary>
     /// Информация разнообразная
     /// </summary>
-    class ClassInformation:ICrypt
+    public class ClassInformation :ICrypt
     {
         /// <summary>
         /// Личные дела
@@ -74,7 +74,7 @@ namespace MyBigNotebook
     /// Контакт
     /// </summary>
     [Serializable]
-    class Kontact:ICrypt
+    public class Kontact :ICrypt
     {
         /// <summary>
         /// Система(телефон, сайт, месседжер)
@@ -116,7 +116,7 @@ namespace MyBigNotebook
     }
 
     [Serializable]
-    class Dossier : ICrypt
+    public class Dossier : ICrypt
     {
         public string Name;
         public string LastName;
@@ -201,7 +201,7 @@ namespace MyBigNotebook
         /// Полезная информация
         /// </summary>
         [Serializable]
-        class HelpfullInformation:Idea
+    public class HelpfullInformation :Idea
         {
             public HelpfullInformation():base()
             {
@@ -213,7 +213,7 @@ namespace MyBigNotebook
         /// Полезные ссылки
         /// </summary>
         [Serializable]
-        class HelpfullLink:ICrypt
+    public class HelpfullLink :ICrypt
         {
             /// <summary>
             /// Название

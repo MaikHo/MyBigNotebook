@@ -7,7 +7,7 @@ namespace MyBigNotebook
     /// Календарь
     /// </summary>
     [Serializable]
-    class ClassCalendar:ICrypt
+    public class ClassCalendar:ICrypt
     {
         /// <summary>
         /// Дни рождения
@@ -73,7 +73,7 @@ namespace MyBigNotebook
     /// День рождения
     /// </summary>
     [Serializable]
-    class BirthDay:ICrypt
+    public class BirthDay :ICrypt
     {
         /// <summary>
         /// ФИО
@@ -114,7 +114,7 @@ namespace MyBigNotebook
     /// памятная дата
     /// </summary>
     [Serializable]
-    class MemorableDate:ICrypt
+    public class MemorableDate :ICrypt
     {
         /// <summary>
         /// Наименование
@@ -167,7 +167,7 @@ namespace MyBigNotebook
     /// напоминания
     /// </summary>
     [Serializable]
-    class Reminder
+    public class Reminder
     {
         /// <summary>
         /// Название

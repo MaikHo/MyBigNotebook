@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace MyBigNotebook
 {
-    class ClassPhoto:ICrypt
+    public class ClassPhoto :ICrypt
     {
         public List<Photograph> Photographs;
 
-        ClassPhoto()
+        public ClassPhoto()
         {
             Photographs = new List<Photograph>();
         }
@@ -50,7 +50,7 @@ namespace MyBigNotebook
     /// Фотография
     /// </summary>
     [Serializable]
-    class Photograph:ICrypt
+    public class Photograph :ICrypt
     {
         /// <summary>
         /// Название

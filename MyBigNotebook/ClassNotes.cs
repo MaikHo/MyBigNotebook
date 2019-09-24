@@ -9,7 +9,7 @@ namespace MyBigNotebook
     /// Записи
     /// </summary>
     [Serializable]
-    class ClassNotes:ICrypt
+    public class ClassNotes :ICrypt
     {
         /// <summary>
         /// Пароли
@@ -76,7 +76,7 @@ namespace MyBigNotebook
     /// Пароль
     /// </summary>
     [Serializable]
-    class Password:ICrypt
+    public class Password :ICrypt
     {
         /// <summary>
         /// Название
@@ -126,7 +126,7 @@ namespace MyBigNotebook
     /// Идеи
     /// </summary>
     [Serializable]
-    class Idea:ICrypt
+    public class Idea :ICrypt
     {
         /// <summary>
         /// название
@@ -178,7 +178,7 @@ namespace MyBigNotebook
     /// Записи
     /// </summary>
     [Serializable]
-    class Record:Idea
+    public class Record :Idea
     {
         public Record():base()
         {

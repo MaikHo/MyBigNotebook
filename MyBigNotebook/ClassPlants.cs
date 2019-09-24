@@ -8,7 +8,7 @@ namespace MyBigNotebook
     /// Раздел планы
     /// </summary>
     [Serializable]
-    class ClassPlants:ICrypt
+    public class ClassPlants :ICrypt
     {
         /// <summary>
         /// Планы на будущее
@@ -83,7 +83,7 @@ namespace MyBigNotebook
     /// Планы на будущее
     /// </summary>
     [Serializable]
-    class FuturePlan:ICrypt
+    public class FuturePlan :ICrypt
     {
         /// <summary>
         /// Название плана
@@ -136,7 +136,7 @@ namespace MyBigNotebook
     /// Пункт Плана
     /// </summary>
     [Serializable]
-    class PunktOfPlan:ICrypt
+    public class PunktOfPlan :ICrypt
     {
         /// <summary>
         /// № пункта
@@ -181,7 +181,7 @@ namespace MyBigNotebook
     /// Шаг достижения цели
     /// </summary>
     [Serializable]
-    class Step:ICrypt
+    public class Step :ICrypt
     {
         /// <summary>
         /// № шага
@@ -238,7 +238,7 @@ namespace MyBigNotebook
     /// Цель
     /// </summary>
     [Serializable]
-    class Target:ICrypt
+    public class Target :ICrypt
     {
         /// <summary>
         /// название
@@ -304,7 +304,7 @@ namespace MyBigNotebook
     /// Список покупок
     /// </summary>
     [Serializable]
-    class ShoppingList:ICrypt
+    public class ShoppingList :ICrypt
     {
         /// <summary>
         /// Название
@@ -356,7 +356,7 @@ namespace MyBigNotebook
     /// Проекты
     /// </summary>
     [Serializable]
-    class Project:ICrypt
+    public class Project :ICrypt
     {
         /// <summary>
         /// Название проекта
@@ -413,7 +413,7 @@ namespace MyBigNotebook
     /// <summary>
     /// пункт реализации проекта
     /// </summary>
-    class ProjectStep:ICrypt
+    public class ProjectStep :ICrypt
     {
         /// <summary>
         /// наименование

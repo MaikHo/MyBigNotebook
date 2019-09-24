@@ -9,7 +9,7 @@ namespace MyBigNotebook
     /// <summary>
     /// Дневник
     /// </summary>
-    class ClassDiary:ICrypt
+    public class ClassDiary:ICrypt
     {
         /// <summary>
         /// Записи в дневнике
@@ -59,7 +59,7 @@ namespace MyBigNotebook
     /// Запись в дневник
     /// </summary>
     [Serializable]
-    class DiaryRec:ICrypt
+    public class DiaryRec:ICrypt
     {
         /// <summary>
         /// Дата

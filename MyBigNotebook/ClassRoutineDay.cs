@@ -6,15 +6,15 @@ namespace MyBigNotebook
     /// <summary>
     /// расписания
     /// </summary>
-    class ClassRoutineDay:ICrypt
+    public class ClassRoutineDay:ICrypt
     {
         /// <summary>
         /// Список расписаний
         /// </summary>
-        List<Shedule> Shedules;
+        public List<Shedule> Shedules;
 
 
-        ClassRoutineDay()
+        public ClassRoutineDay()
         {
             Shedules = new List<Shedule>();
         }
@@ -100,7 +100,7 @@ namespace MyBigNotebook
     /// Распорядок дня
     /// </summary>
     [Serializable]
-    class StepSheduleDay:ICrypt
+    public class StepSheduleDay:ICrypt
     {
         /// <summary>
         /// номер дня недели
@@ -145,7 +145,7 @@ namespace MyBigNotebook
     /// Расписание на период
     /// </summary>
     [Serializable]
-    class Shedule:ICrypt
+    public class Shedule:ICrypt
     {
         /// <summary>
         /// Начало периода

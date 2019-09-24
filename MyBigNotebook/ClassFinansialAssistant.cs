@@ -8,7 +8,7 @@ namespace MyBigNotebook
     /// <summary>
     /// Финансовый помощник
     /// </summary>
-    class ClassFinansialAssistant:ICrypt
+    public class ClassFinansialAssistant:ICrypt
     {
         /// <summary>
         /// Траты
@@ -84,7 +84,7 @@ namespace MyBigNotebook
     /// Расходы
     /// </summary>
     [Serializable]
-    class Expenses:ICrypt
+    public class Expenses :ICrypt
     {
         /// <summary>
         /// Сумма
@@ -149,7 +149,7 @@ namespace MyBigNotebook
     /// Доходы
     /// </summary>
     [Serializable]
-    class Profit:Expenses
+    public class Profit :Expenses
     {
         /// <summary>
         /// Источник
@@ -188,7 +188,7 @@ namespace MyBigNotebook
     /// накопления
     /// </summary>
     [Serializable]
-    class CashSaving:ICrypt
+    public class CashSaving :ICrypt
     {
         /// <summary>
         /// Сумма
@@ -241,7 +241,7 @@ namespace MyBigNotebook
     /// Долги
     /// </summary>
     [Serializable]
-    class Debt:ICrypt
+    public class Debt :ICrypt
     {
         /// <summary>
         /// Кому должен
