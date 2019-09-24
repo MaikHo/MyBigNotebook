@@ -103,13 +103,24 @@ namespace MyBigNotebook
         /// Чтение данных
         /// </summary>
         public void LoadData()
-        {
-            string FileName = "Data.xml";
+        {           
+           //Отчего-то фишка как с сериализацией не прокатила(хотя в потоке все нормально)
+           //так что костыли - наше все
             XmlSerializer formatter = new XmlSerializer(typeof(ClassData));
-            using (FileStream fs = new FileStream(FileName, FileMode.OpenOrCreate))
+            GoogleDriveClass driveClass = new GoogleDriveClass();
+            driveClass.Authorize();
+
+            MemoryStream stream = driveClass.FileRead(driveClass.GetFileId("Data.txt"));
+            FileStream file = new FileStream("TempData.xml", FileMode.OpenOrCreate);
+            stream.Seek(0, SeekOrigin.Begin);
+            stream.CopyTo(file);
+            file.Close();
+
+            using (FileStream fs = new FileStream("TempData.xml", FileMode.OpenOrCreate))
             //using (XmlWriter xmlWriter = new XmlTextWriter(fs, Encoding.UTF8))
             {
-               ClassData classData= (ClassData)formatter.Deserialize(fs);
+           
+            ClassData classData= (ClassData)formatter.Deserialize(fs);                
                 this.calendar = classData.calendar;
                 this.diary = classData.diary;
                 this.finansialAssistant = classData.finansialAssistant;
@@ -117,8 +128,9 @@ namespace MyBigNotebook
                 this.notes = classData.notes;
                 this.photo = classData.photo;
                 this.plants = classData.plants;
-                this.routineDay = classData.routineDay;
+                this.routineDay = classData.routineDay;            
             }
+            File.Delete("TempData.xml");
 
         }
 
@@ -126,15 +138,19 @@ namespace MyBigNotebook
         /// Сохранение данных
         /// </summary>
         public void SaveData()
-        {
-            string FileName = "Data.xml";
+        {          
+            XmlSerializer formatter = new XmlSerializer(typeof(ClassData));
+            MemoryStream stream = new MemoryStream();
+            formatter.Serialize(stream, this);
+            GoogleDriveClass driveClass = new GoogleDriveClass();
+            driveClass.Authorize();
+            driveClass.FileUpdate("Data.txt", stream);
 
-            XmlSerializer formatter = new XmlSerializer(typeof(ClassData));           
-            using (FileStream fs = new FileStream(FileName, FileMode.OpenOrCreate))
+            //using (FileStream fs = new FileStream(FileName, FileMode.OpenOrCreate))
             //using (XmlWriter xmlWriter = new XmlTextWriter(fs, Encoding.UTF8))
-            {
-                formatter.Serialize(fs, this);
-            }
+            //{
+            //    formatter.Serialize(fs, this);
+            //}
         }
 
 

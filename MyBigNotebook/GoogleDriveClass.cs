@@ -10,20 +10,25 @@ using Google.Apis.Drive.v3;
 using Google.Apis.Drive.v3.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
-using System.Windows.Forms;
+
 
 
 
 namespace MyBigNotebook
 {
+    /// <summary>
+    /// Класс для работы с гугл диском
+    /// </summary>
     class GoogleDriveClass
     {
         static string[] Scopes = { DriveService.Scope.DriveFile };  //Массив для работы с файлами
         static string ApplicationName = "MyBigNotebook";      //Наименование программы
         public static UserCredential credential = null;             //Ключи авторизации
-        public static string extension = ".xml";
 
-
+        /// <summary>
+        /// Авторизация
+        /// </summary>
+        /// <returns></returns>
         public bool Authorize()
         {
             using (System.IO.FileStream stream =
@@ -32,7 +37,7 @@ namespace MyBigNotebook
                 try
                 {
                     string credPath = System.Environment.CurrentDirectory.ToString();
-                    credPath = System.IO.Path.Combine(credPath, "drive-bridge.json");
+                    credPath = System.IO.Path.Combine(credPath, "Google");
 
                     credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
                         GoogleClientSecrets.Load(stream).Secrets,
@@ -41,9 +46,8 @@ namespace MyBigNotebook
                         new FileDataStore(credPath, true)).Result;
 
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                catch (Exception)
+                {                   
                     credential = null;
                 }
 
@@ -51,8 +55,14 @@ namespace MyBigNotebook
             return (credential != null);
         }
 
-
-        public bool FileCreate(string name, string value, out string id)
+        /// <summary>
+        /// Создание нового файла
+        /// </summary>
+        /// <param name="name">Имя</param>
+        /// <param name="value">Поток данных для записи</param>
+        /// <param name="id">Ид созданного файла</param>
+        /// <returns></returns>
+        public bool FileCreate(string name, MemoryStream value, out string id)
         {
             bool result = false;
             id = null;
@@ -75,18 +85,24 @@ namespace MyBigNotebook
                 body.MimeType = "text/json";
                 body.ViewersCanCopyContent = true;
 
-                byte[] byteArray = Encoding.Default.GetBytes(value);
-                using (var stream = new System.IO.MemoryStream(byteArray))
-                {
-                    Google.Apis.Drive.v3.FilesResource.CreateMediaUpload request = service.Files.Create(body, stream, body.MimeType);
+                //byte[] byteArray = Encoding.Default.GetBytes(value);
+                //using (var stream = new System.IO.MemoryStream(byteArray))
+                //{
+                    Google.Apis.Drive.v3.FilesResource.CreateMediaUpload request = service.Files.Create(body, value, body.MimeType);
                     if (request.Upload().Exception == null)
                     { id = request.ResponseBody.Id; result = true; }
-                }
+                //}
             }
             return result;
         }
 
-        public bool FileUpdate(string name, string value)
+        /// <summary>
+        /// Обновление файла
+        /// </summary>
+        /// <param name="name">Имя файла</param>
+        /// <param name="value">Записываемый поток</param>
+        /// <returns></returns>
+        public bool FileUpdate(string name, MemoryStream value)
         {
             bool result = false;
             if (credential == null)
@@ -136,6 +152,10 @@ namespace MyBigNotebook
             }
             return result;
         }
+        /// <summary>
+        /// Получение списка файлов на гугл диске
+        /// </summary>
+        /// <returns>Имя файла</returns>
         public IList<Google.Apis.Drive.v3.Data.File> GetFileList()
         {
             IList<Google.Apis.Drive.v3.Data.File> result = null;
@@ -169,6 +189,11 @@ namespace MyBigNotebook
             }
             return result;
         }
+        /// <summary>
+        /// Получение ид файла
+        /// </summary>
+        /// <param name="name">Имя файла</param>
+        /// <returns>Гугл ИД файла</returns>
         public string GetFileId(string name)
         {
             string result = null;
@@ -187,14 +212,18 @@ namespace MyBigNotebook
             }
             return result;
         }
-        public string FileRead(string id)
+        /// <summary>
+        /// Чтение файла из google drive в поток
+        /// </summary>
+        /// <param name="id">ид файла</param>
+        /// <returns>Поток</returns>
+        public MemoryStream FileRead(string id)
         {
             if (String.IsNullOrEmpty(id))
             {
-                return ("Errore. File not found");
+                return null;
             }
-            bool result = false;
-            string value = null;
+            
             if (credential == null)
                 this.Authorize();
             if (credential != null)
@@ -206,25 +235,26 @@ namespace MyBigNotebook
                 }))
                 {
                     Google.Apis.Drive.v3.FilesResource.GetRequest request = service.Files.Get(id);
-                    using (var stream = new MemoryStream())
-                    {
+                    MemoryStream stream = new MemoryStream();
+                    
                         request.MediaDownloader.ProgressChanged += (Google.Apis.Download.IDownloadProgress progress) =>
                         {
-                            if (progress.Status == Google.Apis.Download.DownloadStatus.Completed)
-                                result = true;
+                            if (progress.Status == Google.Apis.Download.DownloadStatus.Completed) { }
+                               
                         };
                         request.Download(stream);
 
-                        if (result)
-                        {
-                            int start = 0;
-                            int count = (int)stream.Length;
-                            value = Encoding.Default.GetString(stream.GetBuffer(), start, count);
-                        }
-                    }
+                        //if (result)
+                        //{
+                        //    //int start = 0;
+                        //    //int count = (int)stream.Length;
+                        //    //value = Encoding.Default.GetString(stream.GetBuffer(), start, count);
+                        //}
+                        return stream;
+                    
                 }
             }
-            return value;
+            return null;
         }
     }
 

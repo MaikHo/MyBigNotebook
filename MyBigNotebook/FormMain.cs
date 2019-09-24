@@ -17,13 +17,9 @@ namespace MyBigNotebook
             InitializeComponent();
 
             ClassData data = new ClassData();
-            data.SaveData();
-            data.LoadData();
-
-            
-            GoogleDriveClass google = new GoogleDriveClass();
-            google.Authorize();
-            bool a = google.FileUpdate("File1", "asdasfgdsfgda");
+           
+            data.LoadData();   
+           
            
         }
     }
