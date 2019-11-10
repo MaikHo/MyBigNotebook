@@ -12,15 +12,32 @@ namespace MyBigNotebook
 {
     public partial class FormMain : Form
     {
+        /// <summary>
+        /// хранилище данных
+        /// </summary>
+        private ClassData data;
         public FormMain()
         {
             InitializeComponent();
 
-            ClassData data = new ClassData();
+            data = new ClassData();           
+            data.LoadData();  
            
-            data.LoadData();   
            
-           
+        }
+
+        private void buttonCalendar_Click(object sender, EventArgs e)
+        {
+            FormCalendar calendar = new FormCalendar(data.calendar);
+            if (calendar.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(data.calendar.BirthDays.Count.ToString());
+            }
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            data.SaveData();
         }
     }
 }

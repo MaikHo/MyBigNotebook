@@ -28,20 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.buttonCalendar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // buttonCalendar
+            // 
+            this.buttonCalendar.Location = new System.Drawing.Point(29, 13);
+            this.buttonCalendar.Name = "buttonCalendar";
+            this.buttonCalendar.Size = new System.Drawing.Size(175, 23);
+            this.buttonCalendar.TabIndex = 0;
+            this.buttonCalendar.Text = "Календарь";
+            this.buttonCalendar.UseVisualStyleBackColor = true;
+            this.buttonCalendar.Click += new System.EventHandler(this.buttonCalendar_Click);
+            // 
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 206);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(234, 341);
+            this.Controls.Add(this.buttonCalendar);
+            this.Name = "FormMain";
+            this.Text = "Главное меню";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buttonCalendar;
     }
 }
 

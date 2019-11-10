@@ -12,15 +12,15 @@ namespace MyBigNotebook
         /// <summary>
         /// Дни рождения
         /// </summary>
-        List<BirthDay> BirthDays;
+        public List<BirthDay> BirthDays;
         /// <summary>
         /// Памятные даты
         /// </summary>
-        List<MemorableDate> MemorableDates;
+        public List<MemorableDate> MemorableDates;
         /// <summary>
         /// Напоминания
         /// </summary>
-        List<Reminder> Reminders;
+        public List<Reminder> Reminders;
 
         public ClassCalendar()
         {
