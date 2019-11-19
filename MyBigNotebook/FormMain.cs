@@ -31,7 +31,7 @@ namespace MyBigNotebook
             FormCalendar calendar = new FormCalendar(data.calendar);
             if (calendar.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(data.calendar.BirthDays.Count.ToString());
+               
             }
         }
 

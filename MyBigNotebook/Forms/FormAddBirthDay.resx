@@ -117,35 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tsbAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ4SURBVFhHxZdXS2RBEIX3H/oqiBhAERUMmHNAxfhgRsxZ
-        wZwx5/BgwoyYc85Za/ka7jA66nXHXfdC48zY033q1KlTNb/kPz+/vnP/w8ODhIWFyfb2ttnHfAvA3d2d
-        +Pj4iLe3t1xdXZkFwmwAj4+PEhsbK+7u7uLq6irj4+M/C2BgYEDs7e0lICBAbG1tZWpq6mcBtLa2SlJS
-        knR1dYm/v//Pp2BmZkaKi4slOztbmpubzYqeL5mtgZaWFhkeHpa2tjYpLy//eQAdHR1SWVkpTU1Niglz
-        H7MZaGxslMHBQUlOTpaSkhJz79dPAWazsLAgXEik+fn5kpubKzExMVJVVSWIMSIiQrKyspQe8vLypL6+
-        Xubn54Xv6j0fMrCxsSFlZWUqOnJ9eHioDnx+fpaXlxdF/ejoqGJgbm5Ofcb/MKfNzU3p7OyUjIwMycnJ
-        kdXV1Q9xmAB4enqShoYGIcccxsHvLS6oqamR9vZ2A4D39p2enkppaakKBvN6+5gA4GKiJ5rPFlUwMTEh
-        qampim69/f39/QqILgDKCqr11vn5uYoceu/v73X3Ez2N623PMGGgt7dXbm9v5fr6+q8tLgUkAC4uLl6R
-        YAIAj4dOACC8g4ODb63j42OlJQCEhoaq18aPCQByixB5AHJ5eSn7+/uytrYmi4uLKt/aojxZxp8tLS0p
-        DR0dHcnNzY0SMM/u7q4qXe1sDYQJAGrbeMDgAA4i37BBBFB6dnYmKJyFHmAM3QB4ZGREAdAu529fX58k
-        JCToi5DSqqurM9R1T0+P6nZeXl7qL8rnQCIxXrC1tbUlcXFxEhgYKMHBwbK8vGyoDjwhMTFRH0Btba04
-        OTkpH4iPjxcXFxfx8PBQUw/TDyBgg5xqQuU1tEMxeQYAe/38/BQoWLOxsVHtW7cMAWBlZSV2dnbi6Oio
-        ph1jABxKdLOzswZx0Zqjo6OVyo0BuLm5CYv9FhYW+gCgtKCgQBcALBAl3p+Zmaku5fL3ADg4OIilpaUC
-        EBkZ+XEVQCe+TaPRY0ADEBQUJCEhIV8GgA7Cw8NVeZtUQXV1tVI0nexfAeju7lapI11aORrKEAAomeGS
-        IfMzDZjDgLW1teqSuCwpQ5yvRjLExz/xbGY8Z2fnD0X4pwA4a2xsTAWIl1Ahe3t7rwGsrKyoizUQvGf4
-        4DJPT09DGVIFXwHg6+ur1M/YxqVQTorT09PVuSYpAA7GQd8mTwBhIRh+dKANVI+ZREVFqSkIQaFs3mNA
-        KSkpUlRUpKYkzsAh8Qick6GG3FdUVLyqBBMrxnZpSExCtGa8Hluli52cnKhodnZ2ZH19XfUHFrmFUvZh
-        0eylf0xPTwvawtAKCwvVXl0j0jZAEUJhkIBGImP8hgmmINr20NCQWtg1YOkjlHFaWppiC11NTk5++qPl
-        y1MxgGAHBtAHdkyEXIAT0gUBDANvW+5ng+lvnjchHdwKvigAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>
