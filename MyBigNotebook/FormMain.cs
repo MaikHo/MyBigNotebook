@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyBigNotebook.Forms;
 
 namespace MyBigNotebook
 {
@@ -38,6 +39,13 @@ namespace MyBigNotebook
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             data.SaveData();
+        }
+
+        private void buttonDiary_Click(object sender, EventArgs e)
+        {
+            FormDiary form = new FormDiary(data.diary);
+            form.ShowDialog();
+
         }
     }
 }

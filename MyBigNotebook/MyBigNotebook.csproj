@@ -108,6 +108,18 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\GoogleDriveClass.cs" />
+    <Compile Include="Forms\FormDiary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDiary.Designer.cs">
+      <DependentUpon>FormDiary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormFinansialAssistant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormFinansialAssistant.Designer.cs">
+      <DependentUpon>FormFinansialAssistant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormAddBirthDay.resx">
@@ -124,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDiary.resx">
+      <DependentUpon>FormDiary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormFinansialAssistant.resx">
+      <DependentUpon>FormFinansialAssistant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
