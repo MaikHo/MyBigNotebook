@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFinansialAssistant));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFinansialAssistant));
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageExpensess = new System.Windows.Forms.TabPage();
-            this.tabPageProfits = new System.Windows.Forms.TabPage();
-            this.tabPageCashSaving = new System.Windows.Forms.TabPage();
-            this.tabPageReports = new System.Windows.Forms.TabPage();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.dgvExpenses = new System.Windows.Forms.DataGridView();
-            this.toolStripButtonAddExpenses = new System.Windows.Forms.ToolStripButton();
             this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSymm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCoin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPeriodic = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAddExpenses = new System.Windows.Forms.ToolStripButton();
+            this.tabPageProfits = new System.Windows.Forms.TabPage();
+            this.tabPageCashSaving = new System.Windows.Forms.TabPage();
+            this.tabPageReports = new System.Windows.Forms.TabPage();
+            this.toolStripButtonDelExpenses = new System.Windows.Forms.ToolStripButton();
             this.tabControlMain.SuspendLayout();
             this.tabPageExpensess.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -76,44 +77,6 @@
             this.tabPageExpensess.Text = "Траты";
             this.tabPageExpensess.UseVisualStyleBackColor = true;
             // 
-            // tabPageProfits
-            // 
-            this.tabPageProfits.Location = new System.Drawing.Point(4, 22);
-            this.tabPageProfits.Name = "tabPageProfits";
-            this.tabPageProfits.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProfits.Size = new System.Drawing.Size(792, 424);
-            this.tabPageProfits.TabIndex = 1;
-            this.tabPageProfits.Text = "Доходы";
-            this.tabPageProfits.UseVisualStyleBackColor = true;
-            // 
-            // tabPageCashSaving
-            // 
-            this.tabPageCashSaving.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCashSaving.Name = "tabPageCashSaving";
-            this.tabPageCashSaving.Size = new System.Drawing.Size(792, 424);
-            this.tabPageCashSaving.TabIndex = 2;
-            this.tabPageCashSaving.Text = "Накопления";
-            this.tabPageCashSaving.UseVisualStyleBackColor = true;
-            // 
-            // tabPageReports
-            // 
-            this.tabPageReports.Location = new System.Drawing.Point(4, 22);
-            this.tabPageReports.Name = "tabPageReports";
-            this.tabPageReports.Size = new System.Drawing.Size(792, 424);
-            this.tabPageReports.TabIndex = 3;
-            this.tabPageReports.Text = "Отчет";
-            this.tabPageReports.UseVisualStyleBackColor = true;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonAddExpenses});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(786, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // dgvExpenses
             // 
             this.dgvExpenses.AllowUserToAddRows = false;
@@ -132,15 +95,7 @@
             this.dgvExpenses.Name = "dgvExpenses";
             this.dgvExpenses.Size = new System.Drawing.Size(786, 393);
             this.dgvExpenses.TabIndex = 1;
-            // 
-            // toolStripButtonAddExpenses
-            // 
-            this.toolStripButtonAddExpenses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddExpenses.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddExpenses.Image")));
-            this.toolStripButtonAddExpenses.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddExpenses.Name = "toolStripButtonAddExpenses";
-            this.toolStripButtonAddExpenses.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAddExpenses.Text = "Добавить запись";
+            this.dgvExpenses.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpenses_CellEndEdit);
             // 
             // ColumnDate
             // 
@@ -182,6 +137,65 @@
             this.ColumnPeriodic.HeaderText = "Периодичность";
             this.ColumnPeriodic.Name = "ColumnPeriodic";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddExpenses,
+            this.toolStripButtonDelExpenses});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(786, 25);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonAddExpenses
+            // 
+            this.toolStripButtonAddExpenses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddExpenses.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddExpenses.Image")));
+            this.toolStripButtonAddExpenses.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddExpenses.Name = "toolStripButtonAddExpenses";
+            this.toolStripButtonAddExpenses.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddExpenses.Text = "Добавить запись";
+            this.toolStripButtonAddExpenses.Click += new System.EventHandler(this.toolStripButtonAddExpenses_Click);
+            // 
+            // tabPageProfits
+            // 
+            this.tabPageProfits.Location = new System.Drawing.Point(4, 22);
+            this.tabPageProfits.Name = "tabPageProfits";
+            this.tabPageProfits.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageProfits.Size = new System.Drawing.Size(792, 424);
+            this.tabPageProfits.TabIndex = 1;
+            this.tabPageProfits.Text = "Доходы";
+            this.tabPageProfits.UseVisualStyleBackColor = true;
+            // 
+            // tabPageCashSaving
+            // 
+            this.tabPageCashSaving.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCashSaving.Name = "tabPageCashSaving";
+            this.tabPageCashSaving.Size = new System.Drawing.Size(792, 424);
+            this.tabPageCashSaving.TabIndex = 2;
+            this.tabPageCashSaving.Text = "Накопления";
+            this.tabPageCashSaving.UseVisualStyleBackColor = true;
+            // 
+            // tabPageReports
+            // 
+            this.tabPageReports.Location = new System.Drawing.Point(4, 22);
+            this.tabPageReports.Name = "tabPageReports";
+            this.tabPageReports.Size = new System.Drawing.Size(792, 424);
+            this.tabPageReports.TabIndex = 3;
+            this.tabPageReports.Text = "Отчет";
+            this.tabPageReports.UseVisualStyleBackColor = true;
+            // 
+            // toolStripButtonDelExpenses
+            // 
+            this.toolStripButtonDelExpenses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelExpenses.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelExpenses.Image")));
+            this.toolStripButtonDelExpenses.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelExpenses.Name = "toolStripButtonDelExpenses";
+            this.toolStripButtonDelExpenses.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDelExpenses.Text = "Удалить запись";
+            this.toolStripButtonDelExpenses.Click += new System.EventHandler(this.toolStripButtonDelExpenses_Click);
+            // 
             // FormFinansialAssistant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,9 +207,9 @@
             this.tabControlMain.ResumeLayout(false);
             this.tabPageExpensess.ResumeLayout(false);
             this.tabPageExpensess.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,5 +230,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSymm;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCoin;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnPeriodic;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDelExpenses;
     }
 }

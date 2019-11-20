@@ -30,10 +30,8 @@ namespace MyBigNotebook
         private void buttonCalendar_Click(object sender, EventArgs e)
         {
             FormCalendar calendar = new FormCalendar(data.calendar);
-            if (calendar.ShowDialog() == DialogResult.OK)
-            {
-               
-            }
+            calendar.Show();
+            
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -44,8 +42,14 @@ namespace MyBigNotebook
         private void buttonDiary_Click(object sender, EventArgs e)
         {
             FormDiary form = new FormDiary(data.diary);
-            form.ShowDialog();
+            form.Show();
 
+        }
+
+        private void buttonFinansial_Click(object sender, EventArgs e)
+        {
+            FormFinansialAssistant form = new FormFinansialAssistant(data.finansialAssistant);
+            form.Show();
         }
     }
 }

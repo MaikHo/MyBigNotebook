@@ -83,6 +83,12 @@
     <Compile Include="Forms\FormAddBirthDay.Designer.cs">
       <DependentUpon>FormAddBirthDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAddFinansial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddFinansial.Designer.cs">
+      <DependentUpon>FormAddFinansial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAddMemorableDate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormAddBirthDay.resx">
       <DependentUpon>FormAddBirthDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddFinansial.resx">
+      <DependentUpon>FormAddFinansial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddMemorableDate.resx">
       <DependentUpon>FormAddMemorableDate.cs</DependentUpon>
