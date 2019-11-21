@@ -135,6 +135,7 @@ namespace MyBigNotebook.Forms
                     debt = new Debt();
                     debt.Creditor = textBoxCreditor.Text;
                     debt.Currency = comboBoxCurrency.Text;
+                    debt.Summ = Convert.ToDouble(textBoxSumm.Text);
                     debt.Debtor = textBoxDebtor.Text;
                     debt.IsReturned = checkBoxIsReturned.Checked;
                     debt.IssueDate = dateTimePickerIssueDate.Value;
