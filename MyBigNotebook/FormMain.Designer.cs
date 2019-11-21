@@ -31,6 +31,7 @@
             this.buttonCalendar = new System.Windows.Forms.Button();
             this.buttonDiary = new System.Windows.Forms.Button();
             this.buttonFinansial = new System.Windows.Forms.Button();
+            this.buttonInformation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCalendar
@@ -63,11 +64,22 @@
             this.buttonFinansial.UseVisualStyleBackColor = true;
             this.buttonFinansial.Click += new System.EventHandler(this.buttonFinansial_Click);
             // 
+            // buttonInformation
+            // 
+            this.buttonInformation.Location = new System.Drawing.Point(29, 102);
+            this.buttonInformation.Name = "buttonInformation";
+            this.buttonInformation.Size = new System.Drawing.Size(175, 23);
+            this.buttonInformation.TabIndex = 3;
+            this.buttonInformation.Text = "Информация";
+            this.buttonInformation.UseVisualStyleBackColor = true;
+            this.buttonInformation.Click += new System.EventHandler(this.buttonInformation_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 341);
+            this.Controls.Add(this.buttonInformation);
             this.Controls.Add(this.buttonFinansial);
             this.Controls.Add(this.buttonDiary);
             this.Controls.Add(this.buttonCalendar);
@@ -83,6 +95,7 @@
         private System.Windows.Forms.Button buttonCalendar;
         private System.Windows.Forms.Button buttonDiary;
         private System.Windows.Forms.Button buttonFinansial;
+        private System.Windows.Forms.Button buttonInformation;
     }
 }
 

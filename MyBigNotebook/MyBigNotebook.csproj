@@ -114,6 +114,12 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\GoogleDriveClass.cs" />
+    <Compile Include="Forms\FormClassInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormClassInformation.Designer.cs">
+      <DependentUpon>FormClassInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDiary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormClassInformation.resx">
+      <DependentUpon>FormClassInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDiary.resx">
       <DependentUpon>FormDiary.cs</DependentUpon>

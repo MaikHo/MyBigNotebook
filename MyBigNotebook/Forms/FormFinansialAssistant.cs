@@ -281,6 +281,73 @@ namespace MyBigNotebook.Forms
         private void buttonReportAll_Click(object sender, EventArgs e)
         {
             dgvReport.Rows.Clear();
+
+            double SummExpenses = 0;
+            var expensess = from i in finansialAssistant.Expensess where i.Date<=dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value select i;            
+            foreach (Expenses expenses in expensess)
+                SummExpenses += expenses.Summ;
+
+            double SummProfit=0;
+            var profits = from i in finansialAssistant.Profits where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value select i;
+            foreach (Profit profit in profits)
+                SummProfit += profit.Summ;
+
+            double SummCashSaving = 0;
+            var cash = from i in finansialAssistant.CashSavings where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value select i;
+            foreach (CashSaving cashSaving in cash)
+                SummCashSaving += cashSaving.Summ;
+
+            dgvReport.Rows.Add(new object[] {"Доход", SummProfit.ToString() });
+            dgvReport.Rows.Add(new object[] {"Траты", SummExpenses.ToString() });
+            dgvReport.Rows.Add(new object[] {"Баланс", (SummProfit - SummExpenses).ToString() });
+            dgvReport.Rows.Add(new object[] {"Изменение накоплений", SummCashSaving.ToString() });
+        }
+
+        private void buttonReportProfit_Click(object sender, EventArgs e)
+        {
+            dgvReport.Rows.Clear();
+            var profits = from i in finansialAssistant.Profits where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value select i;
+            var Categories = from i in finansialAssistant.Profits where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value group i by i.Category;
+            Dictionary<string, double> vs = new Dictionary<string,double>();
+
+            foreach (var category in Categories)
+            {               
+                vs.Add(category.Key,0);
+            }
+            double Summ = 0;
+            foreach (Profit profit in profits)
+            {
+                Summ += profit.Summ;
+                vs[profit.Category] += profit.Summ;
+            }
+            dgvReport.Rows.Add(new object[] { "Сумма", Summ });
+            dgvReport.Rows.Add(new object[] {"", "" });
+            foreach (var a in vs)
+                dgvReport.Rows.Add(new object[] { a.Key, a.Value });
+
+        }
+
+        private void buttonReportExpepses_Click(object sender, EventArgs e)
+        {
+            dgvReport.Rows.Clear();
+            var expensess = from i in finansialAssistant.Expensess where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value select i;
+            var Categories = from i in finansialAssistant.Expensess where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value group i by i.Category;
+            Dictionary<string, double> vs = new Dictionary<string, double>();
+
+            foreach (var category in Categories)
+            {
+                vs.Add(category.Key, 0);
+            }
+            double Summ = 0;
+            foreach (Expenses expenses in expensess)
+            {
+                Summ += expenses.Summ;
+                vs[expenses.Category] += expenses.Summ;
+            }
+            dgvReport.Rows.Add(new object[] { "Сумма", Summ });
+            dgvReport.Rows.Add(new object[] { "", "" });
+            foreach (var a in vs)
+                dgvReport.Rows.Add(new object[] { a.Key, a.Value });
         }
     }
 }

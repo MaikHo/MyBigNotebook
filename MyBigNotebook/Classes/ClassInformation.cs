@@ -118,6 +118,7 @@ namespace MyBigNotebook
     [Serializable]
     public class Dossier : ICrypt
     {
+        public int idDossier;
         public string Name;
         public string LastName;
         public string SurName;
@@ -135,6 +136,7 @@ namespace MyBigNotebook
 
         public Dossier()
         {
+            idDossier = 0;
             Name = "";
             LastName = "";
             SurName = "";

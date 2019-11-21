@@ -51,5 +51,11 @@ namespace MyBigNotebook
             FormFinansialAssistant form = new FormFinansialAssistant(data.finansialAssistant);
             form.Show();
         }
+
+        private void buttonInformation_Click(object sender, EventArgs e)
+        {
+            FormClassInformation form = new FormClassInformation(data.information);
+            form.Show();
+        }
     }
 }

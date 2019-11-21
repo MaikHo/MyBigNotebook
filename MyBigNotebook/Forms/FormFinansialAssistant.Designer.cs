@@ -49,11 +49,6 @@
             this.toolStripButtonAddExpenses = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelExpenses = new System.Windows.Forms.ToolStripButton();
             this.tabPageProfits = new System.Windows.Forms.TabPage();
-            this.tabPageCashSaving = new System.Windows.Forms.TabPage();
-            this.tabPageReports = new System.Windows.Forms.TabPage();
-            this.toolStripProfits = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonAddProfits = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonProfitsDelete = new System.Windows.Forms.ToolStripButton();
             this.dgvProfits = new System.Windows.Forms.DataGridView();
             this.ColumnProfitDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProfitCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,16 +57,19 @@
             this.ColumnProfitCurrency = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProfitSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProfitPeriodic = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tabPageDebts = new System.Windows.Forms.TabPage();
-            this.toolStripCash = new System.Windows.Forms.ToolStrip();
+            this.toolStripProfits = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAddProfits = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonProfitsDelete = new System.Windows.Forms.ToolStripButton();
+            this.tabPageCashSaving = new System.Windows.Forms.TabPage();
             this.dgvCashSaving = new System.Windows.Forms.DataGridView();
             this.ColumnCashDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCashSumm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCashCyrrency = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCashSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripCash = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonCashAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCashDelete = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDebt = new System.Windows.Forms.ToolStrip();
+            this.tabPageDebts = new System.Windows.Forms.TabPage();
             this.dgvDebts = new System.Windows.Forms.DataGridView();
             this.ColumnDebtCreditor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDebtsDebtor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,35 +78,37 @@
             this.ColumnDebtIssueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDebtReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDebtReturned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.toolStripDebt = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonDebtAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDebtDel = new System.Windows.Forms.ToolStripButton();
-            this.panelReportMenu = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePickerReportS = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePickerReportPo = new System.Windows.Forms.DateTimePicker();
-            this.buttonReportAll = new System.Windows.Forms.Button();
-            this.buttonReportProfit = new System.Windows.Forms.Button();
-            this.buttonReportExpepses = new System.Windows.Forms.Button();
+            this.tabPageReports = new System.Windows.Forms.TabPage();
             this.dgvReport = new System.Windows.Forms.DataGridView();
             this.ColumnReportInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnReportSumm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelReportMenu = new System.Windows.Forms.Panel();
+            this.buttonReportExpepses = new System.Windows.Forms.Button();
+            this.buttonReportProfit = new System.Windows.Forms.Button();
+            this.buttonReportAll = new System.Windows.Forms.Button();
+            this.dateTimePickerReportPo = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePickerReportS = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabPageExpensess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).BeginInit();
             this.toolStripExpenses.SuspendLayout();
             this.tabPageProfits.SuspendLayout();
-            this.tabPageCashSaving.SuspendLayout();
-            this.tabPageReports.SuspendLayout();
-            this.toolStripProfits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).BeginInit();
-            this.tabPageDebts.SuspendLayout();
-            this.toolStripCash.SuspendLayout();
+            this.toolStripProfits.SuspendLayout();
+            this.tabPageCashSaving.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCashSaving)).BeginInit();
-            this.toolStripDebt.SuspendLayout();
+            this.toolStripCash.SuspendLayout();
+            this.tabPageDebts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDebts)).BeginInit();
-            this.panelReportMenu.SuspendLayout();
+            this.toolStripDebt.SuspendLayout();
+            this.tabPageReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
+            this.panelReportMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -240,59 +240,6 @@
             this.tabPageProfits.Text = "Доходы";
             this.tabPageProfits.UseVisualStyleBackColor = true;
             // 
-            // tabPageCashSaving
-            // 
-            this.tabPageCashSaving.Controls.Add(this.dgvCashSaving);
-            this.tabPageCashSaving.Controls.Add(this.toolStripCash);
-            this.tabPageCashSaving.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCashSaving.Name = "tabPageCashSaving";
-            this.tabPageCashSaving.Size = new System.Drawing.Size(792, 424);
-            this.tabPageCashSaving.TabIndex = 2;
-            this.tabPageCashSaving.Text = "Накопления";
-            this.tabPageCashSaving.UseVisualStyleBackColor = true;
-            // 
-            // tabPageReports
-            // 
-            this.tabPageReports.Controls.Add(this.dgvReport);
-            this.tabPageReports.Controls.Add(this.panelReportMenu);
-            this.tabPageReports.Location = new System.Drawing.Point(4, 22);
-            this.tabPageReports.Name = "tabPageReports";
-            this.tabPageReports.Size = new System.Drawing.Size(792, 424);
-            this.tabPageReports.TabIndex = 3;
-            this.tabPageReports.Text = "Отчет";
-            this.tabPageReports.UseVisualStyleBackColor = true;
-            // 
-            // toolStripProfits
-            // 
-            this.toolStripProfits.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonAddProfits,
-            this.toolStripButtonProfitsDelete});
-            this.toolStripProfits.Location = new System.Drawing.Point(3, 3);
-            this.toolStripProfits.Name = "toolStripProfits";
-            this.toolStripProfits.Size = new System.Drawing.Size(786, 25);
-            this.toolStripProfits.TabIndex = 0;
-            this.toolStripProfits.Text = "toolStrip2";
-            // 
-            // toolStripButtonAddProfits
-            // 
-            this.toolStripButtonAddProfits.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddProfits.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddProfits.Image")));
-            this.toolStripButtonAddProfits.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddProfits.Name = "toolStripButtonAddProfits";
-            this.toolStripButtonAddProfits.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAddProfits.Text = "Добавить";
-            this.toolStripButtonAddProfits.Click += new System.EventHandler(this.toolStripButtonAddProfits_Click);
-            // 
-            // toolStripButtonProfitsDelete
-            // 
-            this.toolStripButtonProfitsDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonProfitsDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonProfitsDelete.Image")));
-            this.toolStripButtonProfitsDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonProfitsDelete.Name = "toolStripButtonProfitsDelete";
-            this.toolStripButtonProfitsDelete.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonProfitsDelete.Text = "Удалить";
-            this.toolStripButtonProfitsDelete.Click += new System.EventHandler(this.toolStripButtonProfitsDelete_Click);
-            // 
             // dgvProfits
             // 
             this.dgvProfits.AllowUserToAddRows = false;
@@ -359,28 +306,47 @@
             this.ColumnProfitPeriodic.HeaderText = "Периодичность";
             this.ColumnProfitPeriodic.Name = "ColumnProfitPeriodic";
             // 
-            // tabPageDebts
+            // toolStripProfits
             // 
-            this.tabPageDebts.Controls.Add(this.dgvDebts);
-            this.tabPageDebts.Controls.Add(this.toolStripDebt);
-            this.tabPageDebts.Location = new System.Drawing.Point(4, 22);
-            this.tabPageDebts.Name = "tabPageDebts";
-            this.tabPageDebts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDebts.Size = new System.Drawing.Size(792, 424);
-            this.tabPageDebts.TabIndex = 4;
-            this.tabPageDebts.Text = "Долги";
-            this.tabPageDebts.UseVisualStyleBackColor = true;
+            this.toolStripProfits.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddProfits,
+            this.toolStripButtonProfitsDelete});
+            this.toolStripProfits.Location = new System.Drawing.Point(3, 3);
+            this.toolStripProfits.Name = "toolStripProfits";
+            this.toolStripProfits.Size = new System.Drawing.Size(786, 25);
+            this.toolStripProfits.TabIndex = 0;
+            this.toolStripProfits.Text = "toolStrip2";
             // 
-            // toolStripCash
+            // toolStripButtonAddProfits
             // 
-            this.toolStripCash.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonCashAdd,
-            this.toolStripButtonCashDelete});
-            this.toolStripCash.Location = new System.Drawing.Point(0, 0);
-            this.toolStripCash.Name = "toolStripCash";
-            this.toolStripCash.Size = new System.Drawing.Size(792, 25);
-            this.toolStripCash.TabIndex = 0;
-            this.toolStripCash.Text = "toolStrip1";
+            this.toolStripButtonAddProfits.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAddProfits.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddProfits.Image")));
+            this.toolStripButtonAddProfits.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddProfits.Name = "toolStripButtonAddProfits";
+            this.toolStripButtonAddProfits.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddProfits.Text = "Добавить";
+            this.toolStripButtonAddProfits.Click += new System.EventHandler(this.toolStripButtonAddProfits_Click);
+            // 
+            // toolStripButtonProfitsDelete
+            // 
+            this.toolStripButtonProfitsDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonProfitsDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonProfitsDelete.Image")));
+            this.toolStripButtonProfitsDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonProfitsDelete.Name = "toolStripButtonProfitsDelete";
+            this.toolStripButtonProfitsDelete.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonProfitsDelete.Text = "Удалить";
+            this.toolStripButtonProfitsDelete.Click += new System.EventHandler(this.toolStripButtonProfitsDelete_Click);
+            // 
+            // tabPageCashSaving
+            // 
+            this.tabPageCashSaving.Controls.Add(this.dgvCashSaving);
+            this.tabPageCashSaving.Controls.Add(this.toolStripCash);
+            this.tabPageCashSaving.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCashSaving.Name = "tabPageCashSaving";
+            this.tabPageCashSaving.Size = new System.Drawing.Size(792, 424);
+            this.tabPageCashSaving.TabIndex = 2;
+            this.tabPageCashSaving.Text = "Накопления";
+            this.tabPageCashSaving.UseVisualStyleBackColor = true;
             // 
             // dgvCashSaving
             // 
@@ -424,6 +390,17 @@
             this.ColumnCashSource.MinimumWidth = 90;
             this.ColumnCashSource.Name = "ColumnCashSource";
             // 
+            // toolStripCash
+            // 
+            this.toolStripCash.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonCashAdd,
+            this.toolStripButtonCashDelete});
+            this.toolStripCash.Location = new System.Drawing.Point(0, 0);
+            this.toolStripCash.Name = "toolStripCash";
+            this.toolStripCash.Size = new System.Drawing.Size(792, 25);
+            this.toolStripCash.TabIndex = 0;
+            this.toolStripCash.Text = "toolStrip1";
+            // 
             // toolStripButtonCashAdd
             // 
             this.toolStripButtonCashAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -444,16 +421,17 @@
             this.toolStripButtonCashDelete.Text = "Удалить";
             this.toolStripButtonCashDelete.Click += new System.EventHandler(this.toolStripButtonCashDelete_Click);
             // 
-            // toolStripDebt
+            // tabPageDebts
             // 
-            this.toolStripDebt.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonDebtAdd,
-            this.toolStripButtonDebtDel});
-            this.toolStripDebt.Location = new System.Drawing.Point(3, 3);
-            this.toolStripDebt.Name = "toolStripDebt";
-            this.toolStripDebt.Size = new System.Drawing.Size(786, 25);
-            this.toolStripDebt.TabIndex = 0;
-            this.toolStripDebt.Text = "toolStrip2";
+            this.tabPageDebts.Controls.Add(this.dgvDebts);
+            this.tabPageDebts.Controls.Add(this.toolStripDebt);
+            this.tabPageDebts.Location = new System.Drawing.Point(4, 22);
+            this.tabPageDebts.Name = "tabPageDebts";
+            this.tabPageDebts.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDebts.Size = new System.Drawing.Size(792, 424);
+            this.tabPageDebts.TabIndex = 4;
+            this.tabPageDebts.Text = "Долги";
+            this.tabPageDebts.UseVisualStyleBackColor = true;
             // 
             // dgvDebts
             // 
@@ -524,6 +502,17 @@
             this.ColumnDebtReturned.HeaderText = "Отдан ли";
             this.ColumnDebtReturned.Name = "ColumnDebtReturned";
             // 
+            // toolStripDebt
+            // 
+            this.toolStripDebt.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonDebtAdd,
+            this.toolStripButtonDebtDel});
+            this.toolStripDebt.Location = new System.Drawing.Point(3, 3);
+            this.toolStripDebt.Name = "toolStripDebt";
+            this.toolStripDebt.Size = new System.Drawing.Size(786, 25);
+            this.toolStripDebt.TabIndex = 0;
+            this.toolStripDebt.Text = "toolStrip2";
+            // 
             // toolStripButtonDebtAdd
             // 
             this.toolStripButtonDebtAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -544,81 +533,16 @@
             this.toolStripButtonDebtDel.Text = "Удалить запись";
             this.toolStripButtonDebtDel.Click += new System.EventHandler(this.toolStripButtonDebtDel_Click);
             // 
-            // panelReportMenu
+            // tabPageReports
             // 
-            this.panelReportMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelReportMenu.Controls.Add(this.buttonReportExpepses);
-            this.panelReportMenu.Controls.Add(this.buttonReportProfit);
-            this.panelReportMenu.Controls.Add(this.buttonReportAll);
-            this.panelReportMenu.Controls.Add(this.dateTimePickerReportPo);
-            this.panelReportMenu.Controls.Add(this.label2);
-            this.panelReportMenu.Controls.Add(this.dateTimePickerReportS);
-            this.panelReportMenu.Controls.Add(this.label1);
-            this.panelReportMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelReportMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelReportMenu.Name = "panelReportMenu";
-            this.panelReportMenu.Size = new System.Drawing.Size(792, 37);
-            this.panelReportMenu.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Период с";
-            // 
-            // dateTimePickerReportS
-            // 
-            this.dateTimePickerReportS.Location = new System.Drawing.Point(67, 6);
-            this.dateTimePickerReportS.Name = "dateTimePickerReportS";
-            this.dateTimePickerReportS.Size = new System.Drawing.Size(140, 20);
-            this.dateTimePickerReportS.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(213, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "по";
-            // 
-            // dateTimePickerReportPo
-            // 
-            this.dateTimePickerReportPo.Location = new System.Drawing.Point(238, 6);
-            this.dateTimePickerReportPo.Name = "dateTimePickerReportPo";
-            this.dateTimePickerReportPo.Size = new System.Drawing.Size(137, 20);
-            this.dateTimePickerReportPo.TabIndex = 3;
-            // 
-            // buttonReportAll
-            // 
-            this.buttonReportAll.Location = new System.Drawing.Point(391, 5);
-            this.buttonReportAll.Name = "buttonReportAll";
-            this.buttonReportAll.Size = new System.Drawing.Size(75, 23);
-            this.buttonReportAll.TabIndex = 4;
-            this.buttonReportAll.Text = "Общий";
-            this.buttonReportAll.UseVisualStyleBackColor = true;
-            this.buttonReportAll.Click += new System.EventHandler(this.buttonReportAll_Click);
-            // 
-            // buttonReportProfit
-            // 
-            this.buttonReportProfit.Location = new System.Drawing.Point(472, 5);
-            this.buttonReportProfit.Name = "buttonReportProfit";
-            this.buttonReportProfit.Size = new System.Drawing.Size(75, 23);
-            this.buttonReportProfit.TabIndex = 5;
-            this.buttonReportProfit.Text = "Доходы";
-            this.buttonReportProfit.UseVisualStyleBackColor = true;
-            // 
-            // buttonReportExpepses
-            // 
-            this.buttonReportExpepses.Location = new System.Drawing.Point(553, 5);
-            this.buttonReportExpepses.Name = "buttonReportExpepses";
-            this.buttonReportExpepses.Size = new System.Drawing.Size(75, 23);
-            this.buttonReportExpepses.TabIndex = 6;
-            this.buttonReportExpepses.Text = "Расходы";
-            this.buttonReportExpepses.UseVisualStyleBackColor = true;
+            this.tabPageReports.Controls.Add(this.dgvReport);
+            this.tabPageReports.Controls.Add(this.panelReportMenu);
+            this.tabPageReports.Location = new System.Drawing.Point(4, 22);
+            this.tabPageReports.Name = "tabPageReports";
+            this.tabPageReports.Size = new System.Drawing.Size(792, 424);
+            this.tabPageReports.TabIndex = 3;
+            this.tabPageReports.Text = "Отчет";
+            this.tabPageReports.UseVisualStyleBackColor = true;
             // 
             // dgvReport
             // 
@@ -654,6 +578,84 @@
             this.ColumnReportSumm.Name = "ColumnReportSumm";
             this.ColumnReportSumm.ReadOnly = true;
             // 
+            // panelReportMenu
+            // 
+            this.panelReportMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelReportMenu.Controls.Add(this.buttonReportExpepses);
+            this.panelReportMenu.Controls.Add(this.buttonReportProfit);
+            this.panelReportMenu.Controls.Add(this.buttonReportAll);
+            this.panelReportMenu.Controls.Add(this.dateTimePickerReportPo);
+            this.panelReportMenu.Controls.Add(this.label2);
+            this.panelReportMenu.Controls.Add(this.dateTimePickerReportS);
+            this.panelReportMenu.Controls.Add(this.label1);
+            this.panelReportMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelReportMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelReportMenu.Name = "panelReportMenu";
+            this.panelReportMenu.Size = new System.Drawing.Size(792, 37);
+            this.panelReportMenu.TabIndex = 0;
+            // 
+            // buttonReportExpepses
+            // 
+            this.buttonReportExpepses.Location = new System.Drawing.Point(553, 5);
+            this.buttonReportExpepses.Name = "buttonReportExpepses";
+            this.buttonReportExpepses.Size = new System.Drawing.Size(75, 23);
+            this.buttonReportExpepses.TabIndex = 6;
+            this.buttonReportExpepses.Text = "Расходы";
+            this.buttonReportExpepses.UseVisualStyleBackColor = true;
+            this.buttonReportExpepses.Click += new System.EventHandler(this.buttonReportExpepses_Click);
+            // 
+            // buttonReportProfit
+            // 
+            this.buttonReportProfit.Location = new System.Drawing.Point(472, 5);
+            this.buttonReportProfit.Name = "buttonReportProfit";
+            this.buttonReportProfit.Size = new System.Drawing.Size(75, 23);
+            this.buttonReportProfit.TabIndex = 5;
+            this.buttonReportProfit.Text = "Доходы";
+            this.buttonReportProfit.UseVisualStyleBackColor = true;
+            this.buttonReportProfit.Click += new System.EventHandler(this.buttonReportProfit_Click);
+            // 
+            // buttonReportAll
+            // 
+            this.buttonReportAll.Location = new System.Drawing.Point(391, 5);
+            this.buttonReportAll.Name = "buttonReportAll";
+            this.buttonReportAll.Size = new System.Drawing.Size(75, 23);
+            this.buttonReportAll.TabIndex = 4;
+            this.buttonReportAll.Text = "Общий";
+            this.buttonReportAll.UseVisualStyleBackColor = true;
+            this.buttonReportAll.Click += new System.EventHandler(this.buttonReportAll_Click);
+            // 
+            // dateTimePickerReportPo
+            // 
+            this.dateTimePickerReportPo.Location = new System.Drawing.Point(238, 6);
+            this.dateTimePickerReportPo.Name = "dateTimePickerReportPo";
+            this.dateTimePickerReportPo.Size = new System.Drawing.Size(137, 20);
+            this.dateTimePickerReportPo.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(213, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "по";
+            // 
+            // dateTimePickerReportS
+            // 
+            this.dateTimePickerReportS.Location = new System.Drawing.Point(67, 6);
+            this.dateTimePickerReportS.Name = "dateTimePickerReportS";
+            this.dateTimePickerReportS.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePickerReportS.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Период с";
+            // 
             // FormFinansialAssistant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -670,23 +672,23 @@
             this.toolStripExpenses.PerformLayout();
             this.tabPageProfits.ResumeLayout(false);
             this.tabPageProfits.PerformLayout();
-            this.tabPageCashSaving.ResumeLayout(false);
-            this.tabPageCashSaving.PerformLayout();
-            this.tabPageReports.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).EndInit();
             this.toolStripProfits.ResumeLayout(false);
             this.toolStripProfits.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).EndInit();
-            this.tabPageDebts.ResumeLayout(false);
-            this.tabPageDebts.PerformLayout();
+            this.tabPageCashSaving.ResumeLayout(false);
+            this.tabPageCashSaving.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCashSaving)).EndInit();
             this.toolStripCash.ResumeLayout(false);
             this.toolStripCash.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCashSaving)).EndInit();
+            this.tabPageDebts.ResumeLayout(false);
+            this.tabPageDebts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDebts)).EndInit();
             this.toolStripDebt.ResumeLayout(false);
             this.toolStripDebt.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDebts)).EndInit();
+            this.tabPageReports.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.panelReportMenu.ResumeLayout(false);
             this.panelReportMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.ResumeLayout(false);
 
         }
