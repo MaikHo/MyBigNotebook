@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ClassCalendar.cs" />
+    <Compile Include="Classes\ClassConvekter.cs" />
     <Compile Include="Classes\ClassCrypt.cs" />
     <Compile Include="Classes\ClassData.cs" />
     <Compile Include="Classes\ClassDiary.cs" />
@@ -114,11 +115,11 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\GoogleDriveClass.cs" />
-    <Compile Include="Forms\FormClassInformation.cs">
+    <Compile Include="Forms\FormInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormClassInformation.Designer.cs">
-      <DependentUpon>FormClassInformation.cs</DependentUpon>
+    <Compile Include="Forms\FormInformation.Designer.cs">
+      <DependentUpon>FormInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormDiary.cs">
       <SubType>Form</SubType>
@@ -152,8 +153,8 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormClassInformation.resx">
-      <DependentUpon>FormClassInformation.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormInformation.resx">
+      <DependentUpon>FormInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDiary.resx">
       <DependentUpon>FormDiary.cs</DependentUpon>

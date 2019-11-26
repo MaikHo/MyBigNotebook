@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace MyBigNotebook
 {
@@ -152,6 +154,8 @@ namespace MyBigNotebook
             //    formatter.Serialize(fs, this);
             //}
         }
+
+       
 
 
     }

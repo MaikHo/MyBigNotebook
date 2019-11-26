@@ -54,7 +54,7 @@ namespace MyBigNotebook
 
         private void buttonInformation_Click(object sender, EventArgs e)
         {
-            FormClassInformation form = new FormClassInformation(data.information);
+            FormInformation form = new FormInformation(data.information);
             form.Show();
         }
     }

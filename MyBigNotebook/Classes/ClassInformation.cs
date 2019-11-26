@@ -68,6 +68,18 @@ namespace MyBigNotebook
             catch { return false; }
         }
 
+        /// <summary>
+        /// Получение нового ид личного дела
+        /// </summary>
+        /// <returns></returns>
+        public int GetNewDossierID()
+        {
+            int max = 0;
+            foreach (Dossier dossier in Dossiers)
+                if (max < dossier.idDossier) max = dossier.idDossier;
+            return max+1;
+        }
+
     }
 
     /// <summary>
@@ -89,6 +101,12 @@ namespace MyBigNotebook
         {
             System = "";
             Number = "";
+        }
+
+        public Kontact(string system, string number)
+        {
+            System = system;
+            Number = number;
         }
 
         public bool Decrypt()
@@ -118,20 +136,65 @@ namespace MyBigNotebook
     [Serializable]
     public class Dossier : ICrypt
     {
+        /// <summary>
+        /// ИД
+        /// </summary>
         public int idDossier;
+        /// <summary>
+        /// Имя
+        /// </summary>
         public string Name;
+        /// <summary>
+        /// Фамилия
+        /// </summary>
         public string LastName;
+        /// <summary>
+        /// Отчество
+        /// </summary>
         public string SurName;
+        /// <summary>
+        /// Дата рождения
+        /// </summary>
         public DateTime BirthDay;
+        /// <summary>
+        /// Интересы
+        /// </summary>
         public string Interests;
+        /// <summary>
+        /// Описание
+        /// </summary>
         public string Description;
+        /// <summary>
+        /// Фотографии
+        /// </summary>
         public List<string> Photos;
+        /// <summary>
+        /// Контакты
+        /// </summary>
         public List<Kontact> Kontacts;
+        /// <summary>
+        /// Дополнительная информация
+        /// </summary>
         public string AdditionalInformation;
+        /// <summary>
+        /// Семейное положение
+        /// </summary>
         public string FamilyStatus;
+        /// <summary>
+        /// Уровень образования
+        /// </summary>
         public string EducationLevel;
+        /// <summary>
+        /// специальность по образованию
+        /// </summary>
         public string EducatonLocationAndSpec;
+        /// <summary>
+        /// место работы
+        /// </summary>
         public string WorkPlace;
+        /// <summary>
+        /// должность
+        /// </summary>
         public string WorkPosition;
 
         public Dossier()
@@ -140,7 +203,7 @@ namespace MyBigNotebook
             Name = "";
             LastName = "";
             SurName = "";
-            BirthDay = DateTime.MinValue;
+            BirthDay = DateTime.Now;
             Interests = "";
             Description = "";
             Photos = new List<string>();
