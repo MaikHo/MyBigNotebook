@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDiary));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
             this.panelAdd = new System.Windows.Forms.Panel();
+            this.buttonNoAdd = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvDate = new System.Windows.Forms.DataGridView();
             this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbText = new System.Windows.Forms.TextBox();
-            this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
-            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonNoAdd = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.panelAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -59,6 +59,16 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButtonAdd
+            // 
+            this.toolStripButtonAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
+            this.toolStripButtonAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAdd.Name = "toolStripButtonAdd";
+            this.toolStripButtonAdd.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAdd.Text = "Добавить новый день";
+            this.toolStripButtonAdd.Click += new System.EventHandler(this.toolStripButtonAdd_Click);
+            // 
             // panelAdd
             // 
             this.panelAdd.Controls.Add(this.buttonNoAdd);
@@ -71,6 +81,42 @@
             this.panelAdd.Size = new System.Drawing.Size(800, 36);
             this.panelAdd.TabIndex = 1;
             this.panelAdd.Visible = false;
+            // 
+            // buttonNoAdd
+            // 
+            this.buttonNoAdd.Location = new System.Drawing.Point(485, 5);
+            this.buttonNoAdd.Name = "buttonNoAdd";
+            this.buttonNoAdd.Size = new System.Drawing.Size(131, 23);
+            this.buttonNoAdd.TabIndex = 3;
+            this.buttonNoAdd.Text = "Отмена";
+            this.buttonNoAdd.UseVisualStyleBackColor = true;
+            this.buttonNoAdd.Click += new System.EventHandler(this.buttonNoAdd_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(320, 5);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(159, 23);
+            this.buttonAdd.TabIndex = 2;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Выберите дату";
+            // 
+            // dateTimePickerDate
+            // 
+            this.dateTimePickerDate.Location = new System.Drawing.Point(90, 8);
+            this.dateTimePickerDate.Name = "dateTimePickerDate";
+            this.dateTimePickerDate.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerDate.TabIndex = 0;
             // 
             // splitContainer1
             // 
@@ -124,52 +170,6 @@
             this.tbText.Size = new System.Drawing.Size(596, 389);
             this.tbText.TabIndex = 0;
             // 
-            // toolStripButtonAdd
-            // 
-            this.toolStripButtonAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAdd.Image")));
-            this.toolStripButtonAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAdd.Name = "toolStripButtonAdd";
-            this.toolStripButtonAdd.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAdd.Text = "Добавить новый день";
-            this.toolStripButtonAdd.Click += new System.EventHandler(this.toolStripButtonAdd_Click);
-            // 
-            // dateTimePickerDate
-            // 
-            this.dateTimePickerDate.Location = new System.Drawing.Point(90, 8);
-            this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerDate.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Выберите дату";
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(320, 5);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(159, 23);
-            this.buttonAdd.TabIndex = 2;
-            this.buttonAdd.Text = "Добавить";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonNoAdd
-            // 
-            this.buttonNoAdd.Location = new System.Drawing.Point(485, 5);
-            this.buttonNoAdd.Name = "buttonNoAdd";
-            this.buttonNoAdd.Size = new System.Drawing.Size(131, 23);
-            this.buttonNoAdd.TabIndex = 3;
-            this.buttonNoAdd.Text = "Отмена";
-            this.buttonNoAdd.UseVisualStyleBackColor = true;
-            this.buttonNoAdd.Click += new System.EventHandler(this.buttonNoAdd_Click);
-            // 
             // FormDiary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,8 +178,9 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDiary";
-            this.Text = "FormDiary";
+            this.Text = "Дневник";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDiary_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

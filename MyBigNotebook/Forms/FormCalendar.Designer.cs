@@ -88,7 +88,7 @@
             // tsbAddBirthDay
             // 
             this.tsbAddBirthDay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbAddBirthDay.Image = ((System.Drawing.Image)(resources.GetObject("tsbAddBirthDay.Image")));
+            this.tsbAddBirthDay.Image = global::MyBigNotebook.Properties.Resources.baseline_cake_black_36dp;
             this.tsbAddBirthDay.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAddBirthDay.Name = "tsbAddBirthDay";
             this.tsbAddBirthDay.Size = new System.Drawing.Size(23, 22);
@@ -98,7 +98,7 @@
             // tbAddMemorable
             // 
             this.tbAddMemorable.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbAddMemorable.Image = ((System.Drawing.Image)(resources.GetObject("tbAddMemorable.Image")));
+            this.tbAddMemorable.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
             this.tbAddMemorable.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbAddMemorable.Name = "tbAddMemorable";
             this.tbAddMemorable.Size = new System.Drawing.Size(23, 22);
@@ -108,7 +108,7 @@
             // tbAddReminder
             // 
             this.tbAddReminder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbAddReminder.Image = ((System.Drawing.Image)(resources.GetObject("tbAddReminder.Image")));
+            this.tbAddReminder.Image = global::MyBigNotebook.Properties.Resources.baseline_add_alert_black_36dp;
             this.tbAddReminder.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbAddReminder.Name = "tbAddReminder";
             this.tbAddReminder.Size = new System.Drawing.Size(23, 22);
@@ -122,8 +122,9 @@
             this.ClientSize = new System.Drawing.Size(668, 374);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.monthCalendarMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCalendar";
-            this.Text = "FormCalendar";
+            this.Text = "Календарь";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCalendar_FormClosed);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();

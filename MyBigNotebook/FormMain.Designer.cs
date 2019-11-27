@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.buttonCalendar = new System.Windows.Forms.Button();
             this.buttonDiary = new System.Windows.Forms.Button();
             this.buttonFinansial = new System.Windows.Forms.Button();
             this.buttonInformation = new System.Windows.Forms.Button();
+            this.buttonNotes = new System.Windows.Forms.Button();
+            this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // buttonCalendar
@@ -74,15 +78,36 @@
             this.buttonInformation.UseVisualStyleBackColor = true;
             this.buttonInformation.Click += new System.EventHandler(this.buttonInformation_Click);
             // 
+            // buttonNotes
+            // 
+            this.buttonNotes.Location = new System.Drawing.Point(29, 132);
+            this.buttonNotes.Name = "buttonNotes";
+            this.buttonNotes.Size = new System.Drawing.Size(175, 23);
+            this.buttonNotes.TabIndex = 4;
+            this.buttonNotes.Text = "Заметки";
+            this.buttonNotes.UseVisualStyleBackColor = true;
+            this.buttonNotes.Click += new System.EventHandler(this.buttonNotes_Click);
+            // 
+            // notifyIconMain
+            // 
+            this.notifyIconMain.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconMain.Icon")));
+            this.notifyIconMain.Text = "Записная книжка";
+            this.notifyIconMain.Visible = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 341);
+            this.Controls.Add(this.buttonNotes);
             this.Controls.Add(this.buttonInformation);
             this.Controls.Add(this.buttonFinansial);
             this.Controls.Add(this.buttonDiary);
             this.Controls.Add(this.buttonCalendar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.Text = "Главное меню";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
@@ -96,6 +121,8 @@
         private System.Windows.Forms.Button buttonDiary;
         private System.Windows.Forms.Button buttonFinansial;
         private System.Windows.Forms.Button buttonInformation;
+        private System.Windows.Forms.Button buttonNotes;
+        private System.Windows.Forms.NotifyIcon notifyIconMain;
     }
 }
 

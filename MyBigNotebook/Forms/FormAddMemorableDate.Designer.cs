@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddMemorableDate));
             this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
@@ -129,8 +130,9 @@
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.dateTimePickerDate);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddMemorableDate";
-            this.Text = "FormAddMemorableDate";
+            this.Text = "Добавить памятную дату";
             this.ResumeLayout(false);
             this.PerformLayout();
 

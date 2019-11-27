@@ -80,17 +80,36 @@
             this.toolStripButtonAddDossier = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDeleteDossier = new System.Windows.Forms.ToolStripButton();
             this.tabPageLinks = new System.Windows.Forms.TabPage();
-            this.tabPageInfo = new System.Windows.Forms.TabPage();
-            this.openFileDialogPhoto = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripLinksMain = new System.Windows.Forms.ToolStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.listBoxLinks = new System.Windows.Forms.ListBox();
-            this.rtbLinkDescription = new System.Windows.Forms.RichTextBox();
-            this.linkLabelmain = new System.Windows.Forms.LinkLabel();
-            this.textBoxLink = new System.Windows.Forms.TextBox();
+            this.dgvLinks = new System.Windows.Forms.DataGridView();
+            this.ColumnLinksName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonEditLink = new System.Windows.Forms.Button();
+            this.linkLabelmain = new System.Windows.Forms.LinkLabel();
+            this.rtbLinkDescription = new System.Windows.Forms.RichTextBox();
+            this.textBoxLink = new System.Windows.Forms.TextBox();
+            this.toolStripLinksMain = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonLinkAdd = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabelLinkAdd = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripTextBoxLinkAddName = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButtonLinksCancelAdd = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparatorLink2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonLinkDelete = new System.Windows.Forms.ToolStripButton();
+            this.tabPageInfo = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.dgvInfoList = new System.Windows.Forms.DataGridView();
+            this.ColumnInfoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rtbInfo = new System.Windows.Forms.RichTextBox();
+            this.groupBoxInfoKeyWorld = new System.Windows.Forms.GroupBox();
+            this.tbInfoKeys = new System.Windows.Forms.TextBox();
+            this.toolStripInfo = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonInfoAdd = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabelInfoAdd = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripTextBoxInfoName = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButtonInfoAddClose = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparatorInfo1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonInfoDelete = new System.Windows.Forms.ToolStripButton();
+            this.openFileDialogPhoto = new System.Windows.Forms.OpenFileDialog();
             this.tabControlMain.SuspendLayout();
             this.tabPageDossier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerDossier)).BeginInit();
@@ -109,11 +128,21 @@
             this.toolStripDossierPhoto.SuspendLayout();
             this.toolStripDossierMain.SuspendLayout();
             this.tabPageLinks.SuspendLayout();
-            this.toolStripLinksMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLinks)).BeginInit();
+            this.toolStripLinksMain.SuspendLayout();
+            this.tabPageInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoList)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBoxInfoKeyWorld.SuspendLayout();
+            this.toolStripInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -179,7 +208,7 @@
             this.splitContainerDossier.Panel2.Controls.Add(this.label1);
             this.splitContainerDossier.Panel2.Controls.Add(this.panelDossierPhoto);
             this.splitContainerDossier.Size = new System.Drawing.Size(912, 505);
-            this.splitContainerDossier.SplitterDistance = 165;
+            this.splitContainerDossier.SplitterDistance = 172;
             this.splitContainerDossier.TabIndex = 1;
             // 
             // dgvDossierList
@@ -194,9 +223,10 @@
             this.ColumnDossierName});
             this.dgvDossierList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDossierList.Location = new System.Drawing.Point(0, 0);
+            this.dgvDossierList.MultiSelect = false;
             this.dgvDossierList.Name = "dgvDossierList";
             this.dgvDossierList.RowHeadersVisible = false;
-            this.dgvDossierList.Size = new System.Drawing.Size(165, 505);
+            this.dgvDossierList.Size = new System.Drawing.Size(172, 505);
             this.dgvDossierList.TabIndex = 0;
             this.dgvDossierList.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvDossierList_CellStateChanged);
             // 
@@ -522,7 +552,7 @@
             // toolStripButtonLeft
             // 
             this.toolStripButtonLeft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonLeft.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLeft.Image")));
+            this.toolStripButtonLeft.Image = global::MyBigNotebook.Properties.Resources.baseline_arrow_left_black_36dp;
             this.toolStripButtonLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonLeft.Name = "toolStripButtonLeft";
             this.toolStripButtonLeft.Size = new System.Drawing.Size(23, 22);
@@ -532,7 +562,7 @@
             // toolStripButtonRingt
             // 
             this.toolStripButtonRingt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonRingt.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRingt.Image")));
+            this.toolStripButtonRingt.Image = global::MyBigNotebook.Properties.Resources.baseline_arrow_right_black_36dp;
             this.toolStripButtonRingt.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRingt.Name = "toolStripButtonRingt";
             this.toolStripButtonRingt.Size = new System.Drawing.Size(23, 22);
@@ -547,7 +577,7 @@
             // toolStripButtonAddPhoto
             // 
             this.toolStripButtonAddPhoto.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddPhoto.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddPhoto.Image")));
+            this.toolStripButtonAddPhoto.Image = global::MyBigNotebook.Properties.Resources.baseline_add_photo_alternate_black_36dp;
             this.toolStripButtonAddPhoto.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonAddPhoto.Name = "toolStripButtonAddPhoto";
             this.toolStripButtonAddPhoto.Size = new System.Drawing.Size(23, 22);
@@ -557,7 +587,7 @@
             // toolStripButtonDelPhoto
             // 
             this.toolStripButtonDelPhoto.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDelPhoto.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelPhoto.Image")));
+            this.toolStripButtonDelPhoto.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
             this.toolStripButtonDelPhoto.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelPhoto.Name = "toolStripButtonDelPhoto";
             this.toolStripButtonDelPhoto.Size = new System.Drawing.Size(23, 22);
@@ -578,7 +608,7 @@
             // toolStripButtonAddDossier
             // 
             this.toolStripButtonAddDossier.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddDossier.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddDossier.Image")));
+            this.toolStripButtonAddDossier.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
             this.toolStripButtonAddDossier.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonAddDossier.Name = "toolStripButtonAddDossier";
             this.toolStripButtonAddDossier.Size = new System.Drawing.Size(23, 22);
@@ -588,7 +618,7 @@
             // toolStripButtonDeleteDossier
             // 
             this.toolStripButtonDeleteDossier.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDeleteDossier.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDeleteDossier.Image")));
+            this.toolStripButtonDeleteDossier.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
             this.toolStripButtonDeleteDossier.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDeleteDossier.Name = "toolStripButtonDeleteDossier";
             this.toolStripButtonDeleteDossier.Size = new System.Drawing.Size(23, 22);
@@ -607,26 +637,6 @@
             this.tabPageLinks.Text = "Ссылки";
             this.tabPageLinks.UseVisualStyleBackColor = true;
             // 
-            // tabPageInfo
-            // 
-            this.tabPageInfo.Location = new System.Drawing.Point(4, 22);
-            this.tabPageInfo.Name = "tabPageInfo";
-            this.tabPageInfo.Size = new System.Drawing.Size(918, 536);
-            this.tabPageInfo.TabIndex = 2;
-            this.tabPageInfo.Text = "Информация";
-            this.tabPageInfo.UseVisualStyleBackColor = true;
-            // 
-            // toolStripLinksMain
-            // 
-            this.toolStripLinksMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonLinkAdd,
-            this.toolStripButtonLinkDelete});
-            this.toolStripLinksMain.Location = new System.Drawing.Point(3, 3);
-            this.toolStripLinksMain.Name = "toolStripLinksMain";
-            this.toolStripLinksMain.Size = new System.Drawing.Size(912, 25);
-            this.toolStripLinksMain.TabIndex = 0;
-            this.toolStripLinksMain.Text = "toolStrip1";
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -635,7 +645,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.listBoxLinks);
+            this.splitContainer1.Panel1.Controls.Add(this.dgvLinks);
             // 
             // splitContainer1.Panel2
             // 
@@ -644,27 +654,42 @@
             this.splitContainer1.Panel2.Controls.Add(this.rtbLinkDescription);
             this.splitContainer1.Panel2.Controls.Add(this.textBoxLink);
             this.splitContainer1.Size = new System.Drawing.Size(912, 505);
-            this.splitContainer1.SplitterDistance = 327;
+            this.splitContainer1.SplitterDistance = 175;
             this.splitContainer1.TabIndex = 1;
             // 
-            // listBoxLinks
+            // dgvLinks
             // 
-            this.listBoxLinks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxLinks.FormattingEnabled = true;
-            this.listBoxLinks.Location = new System.Drawing.Point(0, 0);
-            this.listBoxLinks.Name = "listBoxLinks";
-            this.listBoxLinks.Size = new System.Drawing.Size(327, 505);
-            this.listBoxLinks.Sorted = true;
-            this.listBoxLinks.TabIndex = 0;
-            this.listBoxLinks.SelectedValueChanged += new System.EventHandler(this.listBoxLinks_SelectedValueChanged);
+            this.dgvLinks.AllowUserToAddRows = false;
+            this.dgvLinks.AllowUserToDeleteRows = false;
+            this.dgvLinks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLinks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnLinksName});
+            this.dgvLinks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLinks.Location = new System.Drawing.Point(0, 0);
+            this.dgvLinks.MultiSelect = false;
+            this.dgvLinks.Name = "dgvLinks";
+            this.dgvLinks.ReadOnly = true;
+            this.dgvLinks.RowHeadersVisible = false;
+            this.dgvLinks.Size = new System.Drawing.Size(175, 505);
+            this.dgvLinks.TabIndex = 0;
+            this.dgvLinks.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvLinks_CellStateChanged);
             // 
-            // rtbLinkDescription
+            // ColumnLinksName
             // 
-            this.rtbLinkDescription.Location = new System.Drawing.Point(3, 83);
-            this.rtbLinkDescription.Name = "rtbLinkDescription";
-            this.rtbLinkDescription.Size = new System.Drawing.Size(573, 417);
-            this.rtbLinkDescription.TabIndex = 0;
-            this.rtbLinkDescription.Text = "";
+            this.ColumnLinksName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnLinksName.HeaderText = "Название";
+            this.ColumnLinksName.Name = "ColumnLinksName";
+            this.ColumnLinksName.ReadOnly = true;
+            // 
+            // buttonEditLink
+            // 
+            this.buttonEditLink.Location = new System.Drawing.Point(21, 45);
+            this.buttonEditLink.Name = "buttonEditLink";
+            this.buttonEditLink.Size = new System.Drawing.Size(114, 21);
+            this.buttonEditLink.TabIndex = 3;
+            this.buttonEditLink.Text = "Редактировать";
+            this.buttonEditLink.UseVisualStyleBackColor = true;
+            this.buttonEditLink.Click += new System.EventHandler(this.buttonEditLink_Click);
             // 
             // linkLabelmain
             // 
@@ -677,45 +702,250 @@
             this.linkLabelmain.TabStop = true;
             this.linkLabelmain.Text = "default link";
             this.linkLabelmain.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelmain_LinkClicked);
-            
+            // 
+            // rtbLinkDescription
+            // 
+            this.rtbLinkDescription.Location = new System.Drawing.Point(3, 83);
+            this.rtbLinkDescription.Name = "rtbLinkDescription";
+            this.rtbLinkDescription.Size = new System.Drawing.Size(573, 417);
+            this.rtbLinkDescription.TabIndex = 0;
+            this.rtbLinkDescription.Text = "";
             // 
             // textBoxLink
             // 
             this.textBoxLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLink.Location = new System.Drawing.Point(21, 16);
             this.textBoxLink.Name = "textBoxLink";
-            this.textBoxLink.Size = new System.Drawing.Size(145, 23);
+            this.textBoxLink.Size = new System.Drawing.Size(463, 23);
             this.textBoxLink.TabIndex = 2;
             this.textBoxLink.Visible = false;
+            this.textBoxLink.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxLink_KeyDown);
             // 
-            // buttonEditLink
+            // toolStripLinksMain
             // 
-            this.buttonEditLink.Location = new System.Drawing.Point(21, 46);
-            this.buttonEditLink.Name = "buttonEditLink";
-            this.buttonEditLink.Size = new System.Drawing.Size(145, 23);
-            this.buttonEditLink.TabIndex = 3;
-            this.buttonEditLink.Text = "Редактировать";
-            this.buttonEditLink.UseVisualStyleBackColor = true;
-            this.buttonEditLink.Click += new System.EventHandler(this.buttonEditLink_Click);
+            this.toolStripLinksMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonLinkAdd,
+            this.toolStripLabelLinkAdd,
+            this.toolStripTextBoxLinkAddName,
+            this.toolStripButtonLinksCancelAdd,
+            this.toolStripSeparatorLink2,
+            this.toolStripButtonLinkDelete});
+            this.toolStripLinksMain.Location = new System.Drawing.Point(3, 3);
+            this.toolStripLinksMain.Name = "toolStripLinksMain";
+            this.toolStripLinksMain.Size = new System.Drawing.Size(912, 25);
+            this.toolStripLinksMain.TabIndex = 0;
+            this.toolStripLinksMain.Text = "toolStrip1";
             // 
             // toolStripButtonLinkAdd
             // 
             this.toolStripButtonLinkAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonLinkAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLinkAdd.Image")));
+            this.toolStripButtonLinkAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
             this.toolStripButtonLinkAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonLinkAdd.Name = "toolStripButtonLinkAdd";
             this.toolStripButtonLinkAdd.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonLinkAdd.Text = "Добавить";
             this.toolStripButtonLinkAdd.Click += new System.EventHandler(this.toolStripButtonLinkAdd_Click);
             // 
+            // toolStripLabelLinkAdd
+            // 
+            this.toolStripLabelLinkAdd.Name = "toolStripLabelLinkAdd";
+            this.toolStripLabelLinkAdd.Size = new System.Drawing.Size(112, 22);
+            this.toolStripLabelLinkAdd.Text = "Имя новой ссылки";
+            this.toolStripLabelLinkAdd.Visible = false;
+            // 
+            // toolStripTextBoxLinkAddName
+            // 
+            this.toolStripTextBoxLinkAddName.Name = "toolStripTextBoxLinkAddName";
+            this.toolStripTextBoxLinkAddName.Size = new System.Drawing.Size(100, 25);
+            this.toolStripTextBoxLinkAddName.Visible = false;
+            this.toolStripTextBoxLinkAddName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripTextBoxLinkAddName_KeyDown);
+            // 
+            // toolStripButtonLinksCancelAdd
+            // 
+            this.toolStripButtonLinksCancelAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonLinksCancelAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_clear_black_36dp;
+            this.toolStripButtonLinksCancelAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLinksCancelAdd.Name = "toolStripButtonLinksCancelAdd";
+            this.toolStripButtonLinksCancelAdd.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonLinksCancelAdd.Text = "Отмена";
+            this.toolStripButtonLinksCancelAdd.Visible = false;
+            this.toolStripButtonLinksCancelAdd.Click += new System.EventHandler(this.toolStripButtonLinksCancelAdd_Click);
+            // 
+            // toolStripSeparatorLink2
+            // 
+            this.toolStripSeparatorLink2.Name = "toolStripSeparatorLink2";
+            this.toolStripSeparatorLink2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparatorLink2.Visible = false;
+            // 
             // toolStripButtonLinkDelete
             // 
             this.toolStripButtonLinkDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonLinkDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLinkDelete.Image")));
+            this.toolStripButtonLinkDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
             this.toolStripButtonLinkDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonLinkDelete.Name = "toolStripButtonLinkDelete";
             this.toolStripButtonLinkDelete.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonLinkDelete.Text = "Удалить";
+            this.toolStripButtonLinkDelete.Click += new System.EventHandler(this.toolStripButtonLinkDelete_Click);
+            // 
+            // tabPageInfo
+            // 
+            this.tabPageInfo.Controls.Add(this.splitContainer2);
+            this.tabPageInfo.Controls.Add(this.toolStripInfo);
+            this.tabPageInfo.Location = new System.Drawing.Point(4, 22);
+            this.tabPageInfo.Name = "tabPageInfo";
+            this.tabPageInfo.Size = new System.Drawing.Size(918, 536);
+            this.tabPageInfo.TabIndex = 2;
+            this.tabPageInfo.Text = "Информация";
+            this.tabPageInfo.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 25);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.dgvInfoList);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer2.Panel2.Controls.Add(this.groupBoxInfoKeyWorld);
+            this.splitContainer2.Size = new System.Drawing.Size(918, 511);
+            this.splitContainer2.SplitterDistance = 176;
+            this.splitContainer2.TabIndex = 1;
+            // 
+            // dgvInfoList
+            // 
+            this.dgvInfoList.AllowUserToAddRows = false;
+            this.dgvInfoList.AllowUserToDeleteRows = false;
+            this.dgvInfoList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInfoList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnInfoName});
+            this.dgvInfoList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvInfoList.Location = new System.Drawing.Point(0, 0);
+            this.dgvInfoList.MultiSelect = false;
+            this.dgvInfoList.Name = "dgvInfoList";
+            this.dgvInfoList.ReadOnly = true;
+            this.dgvInfoList.RowHeadersVisible = false;
+            this.dgvInfoList.Size = new System.Drawing.Size(176, 511);
+            this.dgvInfoList.TabIndex = 0;
+            this.dgvInfoList.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvInfoList_CellStateChanged);
+            // 
+            // ColumnInfoName
+            // 
+            this.ColumnInfoName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnInfoName.HeaderText = "Наименование";
+            this.ColumnInfoName.Name = "ColumnInfoName";
+            this.ColumnInfoName.ReadOnly = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rtbInfo);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(738, 425);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Текст";
+            // 
+            // rtbInfo
+            // 
+            this.rtbInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbInfo.Location = new System.Drawing.Point(3, 16);
+            this.rtbInfo.Name = "rtbInfo";
+            this.rtbInfo.Size = new System.Drawing.Size(732, 406);
+            this.rtbInfo.TabIndex = 0;
+            this.rtbInfo.Text = "";
+            // 
+            // groupBoxInfoKeyWorld
+            // 
+            this.groupBoxInfoKeyWorld.Controls.Add(this.tbInfoKeys);
+            this.groupBoxInfoKeyWorld.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBoxInfoKeyWorld.Location = new System.Drawing.Point(0, 425);
+            this.groupBoxInfoKeyWorld.Name = "groupBoxInfoKeyWorld";
+            this.groupBoxInfoKeyWorld.Size = new System.Drawing.Size(738, 86);
+            this.groupBoxInfoKeyWorld.TabIndex = 1;
+            this.groupBoxInfoKeyWorld.TabStop = false;
+            this.groupBoxInfoKeyWorld.Text = "Ключевые слова, через запятую";
+            // 
+            // tbInfoKeys
+            // 
+            this.tbInfoKeys.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbInfoKeys.Location = new System.Drawing.Point(3, 16);
+            this.tbInfoKeys.Multiline = true;
+            this.tbInfoKeys.Name = "tbInfoKeys";
+            this.tbInfoKeys.Size = new System.Drawing.Size(732, 67);
+            this.tbInfoKeys.TabIndex = 0;
+            // 
+            // toolStripInfo
+            // 
+            this.toolStripInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonInfoAdd,
+            this.toolStripLabelInfoAdd,
+            this.toolStripTextBoxInfoName,
+            this.toolStripButtonInfoAddClose,
+            this.toolStripSeparatorInfo1,
+            this.toolStripButtonInfoDelete});
+            this.toolStripInfo.Location = new System.Drawing.Point(0, 0);
+            this.toolStripInfo.Name = "toolStripInfo";
+            this.toolStripInfo.Size = new System.Drawing.Size(918, 25);
+            this.toolStripInfo.TabIndex = 0;
+            this.toolStripInfo.Text = "toolStrip1";
+            // 
+            // toolStripButtonInfoAdd
+            // 
+            this.toolStripButtonInfoAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonInfoAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
+            this.toolStripButtonInfoAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonInfoAdd.Name = "toolStripButtonInfoAdd";
+            this.toolStripButtonInfoAdd.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonInfoAdd.Text = "Добавить";
+            this.toolStripButtonInfoAdd.Click += new System.EventHandler(this.toolStripButtonInfoAdd_Click);
+            // 
+            // toolStripLabelInfoAdd
+            // 
+            this.toolStripLabelInfoAdd.Name = "toolStripLabelInfoAdd";
+            this.toolStripLabelInfoAdd.Size = new System.Drawing.Size(103, 22);
+            this.toolStripLabelInfoAdd.Text = "Введите название";
+            this.toolStripLabelInfoAdd.Visible = false;
+            // 
+            // toolStripTextBoxInfoName
+            // 
+            this.toolStripTextBoxInfoName.Name = "toolStripTextBoxInfoName";
+            this.toolStripTextBoxInfoName.Size = new System.Drawing.Size(100, 25);
+            this.toolStripTextBoxInfoName.Visible = false;
+            this.toolStripTextBoxInfoName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripTextBoxInfoName_KeyDown);
+            // 
+            // toolStripButtonInfoAddClose
+            // 
+            this.toolStripButtonInfoAddClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonInfoAddClose.Image = global::MyBigNotebook.Properties.Resources.baseline_clear_black_36dp;
+            this.toolStripButtonInfoAddClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonInfoAddClose.Name = "toolStripButtonInfoAddClose";
+            this.toolStripButtonInfoAddClose.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonInfoAddClose.Text = "Отмена";
+            this.toolStripButtonInfoAddClose.Visible = false;
+            this.toolStripButtonInfoAddClose.Click += new System.EventHandler(this.toolStripButtonInfoAddClose_Click);
+            // 
+            // toolStripSeparatorInfo1
+            // 
+            this.toolStripSeparatorInfo1.Name = "toolStripSeparatorInfo1";
+            this.toolStripSeparatorInfo1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparatorInfo1.Visible = false;
+            // 
+            // toolStripButtonInfoDelete
+            // 
+            this.toolStripButtonInfoDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonInfoDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
+            this.toolStripButtonInfoDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonInfoDelete.Name = "toolStripButtonInfoDelete";
+            this.toolStripButtonInfoDelete.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonInfoDelete.Text = "toolStripButton1";
+            this.toolStripButtonInfoDelete.Click += new System.EventHandler(this.toolStripButtonInfoDelete_Click);
             // 
             // FormInformation
             // 
@@ -723,8 +953,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 562);
             this.Controls.Add(this.tabControlMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormInformation";
-            this.Text = "FormClassInformation";
+            this.Text = "Различная полезная информация";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormInformation_FormClosing);
             this.tabControlMain.ResumeLayout(false);
             this.tabPageDossier.ResumeLayout(false);
@@ -751,13 +982,26 @@
             this.toolStripDossierMain.PerformLayout();
             this.tabPageLinks.ResumeLayout(false);
             this.tabPageLinks.PerformLayout();
-            this.toolStripLinksMain.ResumeLayout(false);
-            this.toolStripLinksMain.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLinks)).EndInit();
+            this.toolStripLinksMain.ResumeLayout(false);
+            this.toolStripLinksMain.PerformLayout();
+            this.tabPageInfo.ResumeLayout(false);
+            this.tabPageInfo.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoList)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBoxInfoKeyWorld.ResumeLayout(false);
+            this.groupBoxInfoKeyWorld.PerformLayout();
+            this.toolStripInfo.ResumeLayout(false);
+            this.toolStripInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -817,13 +1061,32 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonDelPhoto;
         private System.Windows.Forms.OpenFileDialog openFileDialogPhoto;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ListBox listBoxLinks;
-        private System.Windows.Forms.Button buttonEditLink;
         private System.Windows.Forms.LinkLabel linkLabelmain;
         private System.Windows.Forms.RichTextBox rtbLinkDescription;
         private System.Windows.Forms.TextBox textBoxLink;
         private System.Windows.Forms.ToolStrip toolStripLinksMain;
         private System.Windows.Forms.ToolStripButton toolStripButtonLinkAdd;
         private System.Windows.Forms.ToolStripButton toolStripButtonLinkDelete;
+        private System.Windows.Forms.Button buttonEditLink;
+        private System.Windows.Forms.DataGridView dgvLinks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLinksName;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelLinkAdd;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxLinkAddName;
+        private System.Windows.Forms.ToolStripButton toolStripButtonLinksCancelAdd;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparatorLink2;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.ToolStrip toolStripInfo;
+        private System.Windows.Forms.DataGridView dgvInfoList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInfoName;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RichTextBox rtbInfo;
+        private System.Windows.Forms.GroupBox groupBoxInfoKeyWorld;
+        private System.Windows.Forms.TextBox tbInfoKeys;
+        private System.Windows.Forms.ToolStripButton toolStripButtonInfoAdd;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelInfoAdd;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxInfoName;
+        private System.Windows.Forms.ToolStripButton toolStripButtonInfoAddClose;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparatorInfo1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonInfoDelete;
     }
 }

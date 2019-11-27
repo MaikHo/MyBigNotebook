@@ -22,7 +22,8 @@ namespace MyBigNotebook
             InitializeComponent();
 
             data = new ClassData();           
-            data.LoadData();  
+            data.LoadData();
+            notifyIconMain.Visible = true;
            
            
         }
@@ -55,6 +56,12 @@ namespace MyBigNotebook
         private void buttonInformation_Click(object sender, EventArgs e)
         {
             FormInformation form = new FormInformation(data.information);
+            form.Show();
+        }
+
+        private void buttonNotes_Click(object sender, EventArgs e)
+        {
+            FormNotes form = new FormNotes(data.notes);
             form.Show();
         }
     }

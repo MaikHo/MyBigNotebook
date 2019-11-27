@@ -28,46 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddFinansial));
             this.panelDate = new System.Windows.Forms.Panel();
+            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelCategory = new System.Windows.Forms.Panel();
+            this.textBoxCategory = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelName = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.panelSumm = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxSumm = new System.Windows.Forms.TextBox();
             this.panelCurrency = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxCurrency = new System.Windows.Forms.ComboBox();
             this.panelIsPeriodic = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.checkBoxIsPeriodic = new System.Windows.Forms.CheckBox();
             this.panelSource = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxSource = new System.Windows.Forms.TextBox();
             this.panelStorage = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxStorage = new System.Windows.Forms.TextBox();
             this.panelCreditor = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxCreditor = new System.Windows.Forms.TextBox();
             this.panelDebtor = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxDebtor = new System.Windows.Forms.TextBox();
             this.panelIsReturned = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.checkBoxIsReturned = new System.Windows.Forms.CheckBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.panelIssueDate = new System.Windows.Forms.Panel();
-            this.panelReturnDate = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxCategory = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBoxSumm = new System.Windows.Forms.TextBox();
-            this.comboBoxCurrency = new System.Windows.Forms.ComboBox();
-            this.checkBoxIsPeriodic = new System.Windows.Forms.CheckBox();
-            this.textBoxSource = new System.Windows.Forms.TextBox();
-            this.textBoxStorage = new System.Windows.Forms.TextBox();
-            this.textBoxCreditor = new System.Windows.Forms.TextBox();
-            this.textBoxDebtor = new System.Windows.Forms.TextBox();
-            this.checkBoxIsReturned = new System.Windows.Forms.CheckBox();
-            this.dateTimePickerIssueDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.dateTimePickerIssueDate = new System.Windows.Forms.DateTimePicker();
+            this.panelReturnDate = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
             this.panelDate.SuspendLayout();
             this.panelCategory.SuspendLayout();
             this.panelName.SuspendLayout();
@@ -93,6 +94,22 @@
             this.panelDate.Size = new System.Drawing.Size(449, 30);
             this.panelDate.TabIndex = 0;
             // 
+            // dateTimePickerDate
+            // 
+            this.dateTimePickerDate.Location = new System.Drawing.Point(171, 4);
+            this.dateTimePickerDate.Name = "dateTimePickerDate";
+            this.dateTimePickerDate.Size = new System.Drawing.Size(264, 20);
+            this.dateTimePickerDate.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(132, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Дата";
+            // 
             // panelCategory
             // 
             this.panelCategory.Controls.Add(this.textBoxCategory);
@@ -102,6 +119,22 @@
             this.panelCategory.Name = "panelCategory";
             this.panelCategory.Size = new System.Drawing.Size(449, 30);
             this.panelCategory.TabIndex = 1;
+            // 
+            // textBoxCategory
+            // 
+            this.textBoxCategory.Location = new System.Drawing.Point(171, 3);
+            this.textBoxCategory.Name = "textBoxCategory";
+            this.textBoxCategory.Size = new System.Drawing.Size(264, 20);
+            this.textBoxCategory.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(105, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Категория";
             // 
             // panelName
             // 
@@ -113,6 +146,22 @@
             this.panelName.Size = new System.Drawing.Size(449, 30);
             this.panelName.TabIndex = 2;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(108, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Название";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(171, 3);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(264, 20);
+            this.textBoxName.TabIndex = 0;
+            // 
             // panelSumm
             // 
             this.panelSumm.Controls.Add(this.label4);
@@ -122,6 +171,22 @@
             this.panelSumm.Name = "panelSumm";
             this.panelSumm.Size = new System.Drawing.Size(449, 30);
             this.panelSumm.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(124, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Сумма";
+            // 
+            // textBoxSumm
+            // 
+            this.textBoxSumm.Location = new System.Drawing.Point(171, 5);
+            this.textBoxSumm.Name = "textBoxSumm";
+            this.textBoxSumm.Size = new System.Drawing.Size(264, 20);
+            this.textBoxSumm.TabIndex = 0;
             // 
             // panelCurrency
             // 
@@ -133,6 +198,28 @@
             this.panelCurrency.Size = new System.Drawing.Size(449, 30);
             this.panelCurrency.TabIndex = 4;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(120, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Валюта";
+            // 
+            // comboBoxCurrency
+            // 
+            this.comboBoxCurrency.FormattingEnabled = true;
+            this.comboBoxCurrency.Items.AddRange(new object[] {
+            "бел. руб",
+            "$",
+            "euro",
+            "рос. рубль"});
+            this.comboBoxCurrency.Location = new System.Drawing.Point(171, 3);
+            this.comboBoxCurrency.Name = "comboBoxCurrency";
+            this.comboBoxCurrency.Size = new System.Drawing.Size(264, 21);
+            this.comboBoxCurrency.TabIndex = 0;
+            // 
             // panelIsPeriodic
             // 
             this.panelIsPeriodic.Controls.Add(this.label6);
@@ -142,6 +229,24 @@
             this.panelIsPeriodic.Name = "panelIsPeriodic";
             this.panelIsPeriodic.Size = new System.Drawing.Size(449, 30);
             this.panelIsPeriodic.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(80, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Периодичность";
+            // 
+            // checkBoxIsPeriodic
+            // 
+            this.checkBoxIsPeriodic.AutoSize = true;
+            this.checkBoxIsPeriodic.Location = new System.Drawing.Point(171, 6);
+            this.checkBoxIsPeriodic.Name = "checkBoxIsPeriodic";
+            this.checkBoxIsPeriodic.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxIsPeriodic.TabIndex = 0;
+            this.checkBoxIsPeriodic.UseVisualStyleBackColor = true;
             // 
             // panelSource
             // 
@@ -153,6 +258,22 @@
             this.panelSource.Size = new System.Drawing.Size(449, 30);
             this.panelSource.TabIndex = 6;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(110, 6);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Источник";
+            // 
+            // textBoxSource
+            // 
+            this.textBoxSource.Location = new System.Drawing.Point(171, 3);
+            this.textBoxSource.Name = "textBoxSource";
+            this.textBoxSource.Size = new System.Drawing.Size(264, 20);
+            this.textBoxSource.TabIndex = 0;
+            // 
             // panelStorage
             // 
             this.panelStorage.Controls.Add(this.label8);
@@ -162,6 +283,22 @@
             this.panelStorage.Name = "panelStorage";
             this.panelStorage.Size = new System.Drawing.Size(449, 30);
             this.panelStorage.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(76, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Место хранения";
+            // 
+            // textBoxStorage
+            // 
+            this.textBoxStorage.Location = new System.Drawing.Point(171, 3);
+            this.textBoxStorage.Name = "textBoxStorage";
+            this.textBoxStorage.Size = new System.Drawing.Size(264, 20);
+            this.textBoxStorage.TabIndex = 0;
             // 
             // panelCreditor
             // 
@@ -173,6 +310,22 @@
             this.panelCreditor.Size = new System.Drawing.Size(449, 30);
             this.panelCreditor.TabIndex = 8;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(99, 6);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Кто должен";
+            // 
+            // textBoxCreditor
+            // 
+            this.textBoxCreditor.Location = new System.Drawing.Point(171, 3);
+            this.textBoxCreditor.Name = "textBoxCreditor";
+            this.textBoxCreditor.Size = new System.Drawing.Size(264, 20);
+            this.textBoxCreditor.TabIndex = 0;
+            // 
             // panelDebtor
             // 
             this.panelDebtor.Controls.Add(this.label10);
@@ -183,6 +336,22 @@
             this.panelDebtor.Size = new System.Drawing.Size(449, 30);
             this.panelDebtor.TabIndex = 9;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(91, 8);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Кому должен";
+            // 
+            // textBoxDebtor
+            // 
+            this.textBoxDebtor.Location = new System.Drawing.Point(171, 5);
+            this.textBoxDebtor.Name = "textBoxDebtor";
+            this.textBoxDebtor.Size = new System.Drawing.Size(264, 20);
+            this.textBoxDebtor.TabIndex = 0;
+            // 
             // panelIsReturned
             // 
             this.panelIsReturned.Controls.Add(this.label11);
@@ -192,6 +361,24 @@
             this.panelIsReturned.Name = "panelIsReturned";
             this.panelIsReturned.Size = new System.Drawing.Size(449, 30);
             this.panelIsReturned.TabIndex = 10;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(112, 7);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Отдан ли";
+            // 
+            // checkBoxIsReturned
+            // 
+            this.checkBoxIsReturned.AutoSize = true;
+            this.checkBoxIsReturned.Location = new System.Drawing.Point(171, 6);
+            this.checkBoxIsReturned.Name = "checkBoxIsReturned";
+            this.checkBoxIsReturned.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxIsReturned.TabIndex = 0;
+            this.checkBoxIsReturned.UseVisualStyleBackColor = true;
             // 
             // buttonAdd
             // 
@@ -214,6 +401,22 @@
             this.panelIssueDate.Size = new System.Drawing.Size(449, 30);
             this.panelIssueDate.TabIndex = 12;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(91, 8);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Дата выдачи";
+            // 
+            // dateTimePickerIssueDate
+            // 
+            this.dateTimePickerIssueDate.Location = new System.Drawing.Point(171, 5);
+            this.dateTimePickerIssueDate.Name = "dateTimePickerIssueDate";
+            this.dateTimePickerIssueDate.Size = new System.Drawing.Size(264, 20);
+            this.dateTimePickerIssueDate.TabIndex = 0;
+            // 
             // panelReturnDate
             // 
             this.panelReturnDate.Controls.Add(this.label13);
@@ -224,215 +427,6 @@
             this.panelReturnDate.Size = new System.Drawing.Size(449, 30);
             this.panelReturnDate.TabIndex = 13;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(132, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Дата";
-            // 
-            // dateTimePickerDate
-            // 
-            this.dateTimePickerDate.Location = new System.Drawing.Point(171, 4);
-            this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(264, 20);
-            this.dateTimePickerDate.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(105, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Категория";
-            // 
-            // textBoxCategory
-            // 
-            this.textBoxCategory.Location = new System.Drawing.Point(171, 3);
-            this.textBoxCategory.Name = "textBoxCategory";
-            this.textBoxCategory.Size = new System.Drawing.Size(264, 20);
-            this.textBoxCategory.TabIndex = 1;
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Location = new System.Drawing.Point(171, 3);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(264, 20);
-            this.textBoxName.TabIndex = 0;
-            // 
-            // textBoxSumm
-            // 
-            this.textBoxSumm.Location = new System.Drawing.Point(171, 5);
-            this.textBoxSumm.Name = "textBoxSumm";
-            this.textBoxSumm.Size = new System.Drawing.Size(264, 20);
-            this.textBoxSumm.TabIndex = 0;
-            // 
-            // comboBoxCurrency
-            // 
-            this.comboBoxCurrency.FormattingEnabled = true;
-            this.comboBoxCurrency.Items.AddRange(new object[] {
-            "бел. руб",
-            "$",
-            "euro",
-            "рос. рубль"});
-            this.comboBoxCurrency.Location = new System.Drawing.Point(171, 3);
-            this.comboBoxCurrency.Name = "comboBoxCurrency";
-            this.comboBoxCurrency.Size = new System.Drawing.Size(264, 21);
-            this.comboBoxCurrency.TabIndex = 0;
-            // 
-            // checkBoxIsPeriodic
-            // 
-            this.checkBoxIsPeriodic.AutoSize = true;
-            this.checkBoxIsPeriodic.Location = new System.Drawing.Point(171, 6);
-            this.checkBoxIsPeriodic.Name = "checkBoxIsPeriodic";
-            this.checkBoxIsPeriodic.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxIsPeriodic.TabIndex = 0;
-            this.checkBoxIsPeriodic.UseVisualStyleBackColor = true;
-            // 
-            // textBoxSource
-            // 
-            this.textBoxSource.Location = new System.Drawing.Point(171, 3);
-            this.textBoxSource.Name = "textBoxSource";
-            this.textBoxSource.Size = new System.Drawing.Size(264, 20);
-            this.textBoxSource.TabIndex = 0;
-            // 
-            // textBoxStorage
-            // 
-            this.textBoxStorage.Location = new System.Drawing.Point(171, 3);
-            this.textBoxStorage.Name = "textBoxStorage";
-            this.textBoxStorage.Size = new System.Drawing.Size(264, 20);
-            this.textBoxStorage.TabIndex = 0;
-            // 
-            // textBoxCreditor
-            // 
-            this.textBoxCreditor.Location = new System.Drawing.Point(171, 3);
-            this.textBoxCreditor.Name = "textBoxCreditor";
-            this.textBoxCreditor.Size = new System.Drawing.Size(264, 20);
-            this.textBoxCreditor.TabIndex = 0;
-            // 
-            // textBoxDebtor
-            // 
-            this.textBoxDebtor.Location = new System.Drawing.Point(171, 5);
-            this.textBoxDebtor.Name = "textBoxDebtor";
-            this.textBoxDebtor.Size = new System.Drawing.Size(264, 20);
-            this.textBoxDebtor.TabIndex = 0;
-            // 
-            // checkBoxIsReturned
-            // 
-            this.checkBoxIsReturned.AutoSize = true;
-            this.checkBoxIsReturned.Location = new System.Drawing.Point(171, 6);
-            this.checkBoxIsReturned.Name = "checkBoxIsReturned";
-            this.checkBoxIsReturned.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxIsReturned.TabIndex = 0;
-            this.checkBoxIsReturned.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePickerIssueDate
-            // 
-            this.dateTimePickerIssueDate.Location = new System.Drawing.Point(171, 5);
-            this.dateTimePickerIssueDate.Name = "dateTimePickerIssueDate";
-            this.dateTimePickerIssueDate.Size = new System.Drawing.Size(264, 20);
-            this.dateTimePickerIssueDate.TabIndex = 0;
-            // 
-            // dateTimePickerReturnDate
-            // 
-            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(171, 3);
-            this.dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
-            this.dateTimePickerReturnDate.Size = new System.Drawing.Size(264, 20);
-            this.dateTimePickerReturnDate.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(108, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Название";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(124, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Сумма";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(120, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Валюта";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(80, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Периодичность";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(110, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Источник";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(76, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Место хранения";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(99, 6);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Кто должен";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(91, 8);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 13);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Кому должен";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(112, 7);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Отдан ли";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(91, 8);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 13);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Дата выдачи";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -441,6 +435,13 @@
             this.label13.Size = new System.Drawing.Size(83, 13);
             this.label13.TabIndex = 1;
             this.label13.Text = "Дата возврата";
+            // 
+            // dateTimePickerReturnDate
+            // 
+            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(171, 3);
+            this.dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
+            this.dateTimePickerReturnDate.Size = new System.Drawing.Size(264, 20);
+            this.dateTimePickerReturnDate.TabIndex = 0;
             // 
             // FormAddFinansial
             // 
@@ -463,9 +464,9 @@
             this.Controls.Add(this.panelName);
             this.Controls.Add(this.panelCategory);
             this.Controls.Add(this.panelDate);
-            this.MinimumSize = new System.Drawing.Size(460, 0);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(460, 38);
             this.Name = "FormAddFinansial";
-            this.Text = "FormAddFinansial";
             this.panelDate.ResumeLayout(false);
             this.panelDate.PerformLayout();
             this.panelCategory.ResumeLayout(false);

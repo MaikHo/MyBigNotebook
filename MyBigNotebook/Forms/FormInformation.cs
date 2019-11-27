@@ -23,6 +23,7 @@ namespace MyBigNotebook.Forms
             classInformation = information;
             LoadDossierListToForm();
             LoadHelpfullLinksToForm();
+            LoadHelpfullInformationToForm();
         }
 
         private void LoadDossierListToForm()
@@ -70,26 +71,30 @@ namespace MyBigNotebook.Forms
                 }
                 else
                 {
-                    foreach (Dossier rec in classInformation.Dossiers)
-                        if (rec.idDossier.ToString() == dgvDossierList.Rows[e.Cell.RowIndex].Cells[0].Value.ToString())
-                        {
-                            rec.Name = tbName.Text;
-                            rec.LastName = tbLastName.Text;
-                            rec.SurName = tbSurName.Text;
-                            rec.BirthDay = dtpBirthDay.Value;
-                            rec.Interests = tbInterests.Text;
-                            rec.Description = tbDescription.Text;
-                            rec.AdditionalInformation = tbAdditionalInformation.Text;
-                            rec.FamilyStatus = tbFamilyStatus.Text;
-                            rec.EducationLevel = tbEduLevel.Text;
-                            rec.EducatonLocationAndSpec = tbSpec.Text;
-                            rec.WorkPlace = tbWorkPlace.Text;
-                            rec.WorkPosition = tbWorkPost.Text;
+                    try
+                    {
+                        foreach (Dossier rec in classInformation.Dossiers)
+                            if (rec.idDossier.ToString() == dgvDossierList.Rows[e.Cell.RowIndex].Cells[0].Value.ToString())
+                            {
+                                rec.Name = tbName.Text;
+                                rec.LastName = tbLastName.Text;
+                                rec.SurName = tbSurName.Text;
+                                rec.BirthDay = dtpBirthDay.Value;
+                                rec.Interests = tbInterests.Text;
+                                rec.Description = tbDescription.Text;
+                                rec.AdditionalInformation = tbAdditionalInformation.Text;
+                                rec.FamilyStatus = tbFamilyStatus.Text;
+                                rec.EducationLevel = tbEduLevel.Text;
+                                rec.EducatonLocationAndSpec = tbSpec.Text;
+                                rec.WorkPlace = tbWorkPlace.Text;
+                                rec.WorkPosition = tbWorkPost.Text;
 
-                            rec.Kontacts.Clear();
-                            foreach (DataGridViewRow row in dgvDossierContakts.Rows)
-                                rec.Kontacts.Add(new Kontact(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString()));
-                        }
+                                rec.Kontacts.Clear();
+                                foreach (DataGridViewRow row in dgvDossierContakts.Rows)
+                                    rec.Kontacts.Add(new Kontact(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString()));
+                            }
+                    }
+                    catch { }
                 }
             }
         }
@@ -131,6 +136,10 @@ namespace MyBigNotebook.Forms
         private void FormInformation_FormClosing(object sender, FormClosingEventArgs e)
         {
             foreach (DataGridViewCell cell in dgvDossierList.SelectedCells)
+                cell.Selected = false;
+            foreach (DataGridViewCell cell in dgvInfoList.SelectedCells)
+                cell.Selected = false;
+            foreach (DataGridViewCell cell in dgvLinks.SelectedCells)
                 cell.Selected = false;
         }
 
@@ -187,28 +196,22 @@ namespace MyBigNotebook.Forms
 
         private void LoadHelpfullLinksToForm()
         {
+            dgvLinks.Rows.Clear();
             foreach (HelpfullLink link in classInformation.HelpfullLinks)
-                listBoxLinks.Items.Add(link.Name);
+            {
+                dgvLinks.Rows.Add(new object[] { link.Name });
+            }
         }
 
-        private void listBoxLinks_SelectedValueChanged(object sender, EventArgs e)
-        {
-            foreach (HelpfullLink link in classInformation.HelpfullLinks)
-                if (link.Name == listBoxLinks.SelectedItem.ToString())
-                {
-                    rtbLinkDescription.Text = link.Description;
-                    linkLabelmain.Text = link.Link;
-                }
-        }
+       
 
         private void toolStripButtonLinkAdd_Click(object sender, EventArgs e)
         {
-            HelpfullLink link = new HelpfullLink();
-            link.Link = "https://pikabu.ru/";
-            link.Name = "Пикабу";
-            link.Description = "Что-то с чем-то";
-            classInformation.HelpfullLinks.Add(link);
-            LoadHelpfullLinksToForm();
+            toolStripButtonLinksCancelAdd.Visible = true;
+            toolStripButtonLinkAdd.Visible = false;
+            toolStripSeparatorLink2.Visible = true;
+            toolStripLabelLinkAdd.Visible = true;
+            toolStripTextBoxLinkAddName.Visible = true;
         }
 
       
@@ -227,6 +230,169 @@ namespace MyBigNotebook.Forms
             var si = new ProcessStartInfo(url);
             Process.Start(si);
             linkLabelmain.LinkVisited = true;
+        }
+
+        private void dgvLinks_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            if (e.StateChanged == DataGridViewElementStates.Selected)
+            {
+                if(e.Cell.Selected)
+                {
+                    foreach (HelpfullLink link in classInformation.HelpfullLinks)
+                        if (link.Name == e.Cell.Value.ToString())
+                        {
+                            linkLabelmain.Text = link.Link;
+                            rtbLinkDescription.Text = link.Description;
+                        }
+                }
+                else
+                {
+                    try
+                    {
+                        if (!linkLabelmain.Visible)
+                        {
+                            linkLabelmain.Text = textBoxLink.Text;
+                            linkLabelmain.Visible = true;
+                            textBoxLink.Visible = false;
+                        }
+                        HelpfullLink link = classInformation.HelpfullLinks.Where(t => t.Name == e.Cell.Value.ToString()).First();
+                        link.Link = linkLabelmain.Text;
+                        link.Description = rtbLinkDescription.Text;
+                    }
+                    catch { }
+                }
+
+            }
+        }
+
+        private void toolStripButtonLinkDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Вы точно хотите удалить ссылку {dgvLinks.SelectedCells[0].Value.ToString()}?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                HelpfullLink link = classInformation.HelpfullLinks.Where(t => t.Name == dgvLinks.SelectedCells[0].Value.ToString()).First();
+                classInformation.HelpfullLinks.Remove(link);
+                LoadHelpfullLinksToForm();
+            }
+        }
+
+        private void toolStripTextBoxLinkAddName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData ==Keys.Enter)
+            {
+                toolStripButtonLinkAdd.Visible = true;
+                toolStripButtonLinksCancelAdd.Visible = false;               
+                toolStripSeparatorLink2.Visible = false;
+                toolStripLabelLinkAdd.Visible = false;
+                toolStripTextBoxLinkAddName.Visible = false;
+
+                HelpfullLink link = new HelpfullLink();
+                link.Name = toolStripTextBoxLinkAddName.Text;
+                classInformation.HelpfullLinks.Add(link);
+                LoadHelpfullLinksToForm();
+                toolStripTextBoxLinkAddName.Text = "";
+            }
+        }
+
+        private void textBoxLink_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData==Keys.Enter)
+            {
+                linkLabelmain.Text = textBoxLink.Text;
+                linkLabelmain.Visible = true;
+                textBoxLink.Visible = false;
+            }
+        }
+
+        private void LoadHelpfullInformationToForm()
+        {
+            dgvInfoList.Rows.Clear();
+            foreach (HelpfullInformation information in classInformation.HelpfullsInfo)
+                dgvInfoList.Rows.Add(new object[] { information.Name });
+        }
+
+        private void toolStripButtonInfoAdd_Click(object sender, EventArgs e)
+        {
+            toolStripButtonInfoAdd.Visible = false;
+            toolStripLabelInfoAdd.Visible = true;
+            toolStripTextBoxInfoName.Visible = true;
+            toolStripSeparatorInfo1.Visible = true;
+            toolStripButtonInfoAddClose.Visible = true;
+        }
+
+        private void toolStripButtonLinksCancelAdd_Click(object sender, EventArgs e)
+        {
+            toolStripButtonLinkAdd.Visible = true;
+            toolStripButtonLinksCancelAdd.Visible = false;
+            toolStripSeparatorLink2.Visible = false;
+            toolStripLabelLinkAdd.Visible = false;
+            toolStripTextBoxLinkAddName.Visible = false;
+        }
+
+        private void toolStripTextBoxInfoName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+            {
+                HelpfullInformation helpfull = new HelpfullInformation();
+                helpfull.Name = toolStripTextBoxInfoName.Text;
+                toolStripTextBoxInfoName.Text = "";
+                classInformation.HelpfullsInfo.Add(helpfull);
+                LoadHelpfullInformationToForm();
+
+                toolStripButtonInfoAdd.Visible = true;
+                toolStripButtonInfoAddClose.Visible = false;
+                toolStripSeparatorInfo1.Visible = false;
+                toolStripLabelInfoAdd.Visible = false;
+                toolStripTextBoxInfoName.Visible = false;
+            }
+        }
+
+        private void toolStripButtonInfoDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Вы точно хотите удалить пакет информации {dgvInfoList.SelectedCells[0].Value.ToString()}?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                HelpfullInformation information = classInformation.HelpfullsInfo.Where(t => t.Name == dgvInfoList.SelectedCells[0].Value.ToString()).First();
+                classInformation.HelpfullsInfo.Remove(information);
+                LoadHelpfullInformationToForm();
+            }
+        }
+
+        private void dgvInfoList_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs eCell)
+        {
+            if (eCell.StateChanged == DataGridViewElementStates.Selected)
+                if(eCell.Cell.Selected)
+                {                   
+                    HelpfullInformation information = classInformation.HelpfullsInfo.Where(t => t.Name == eCell.Cell.Value.ToString()).First();
+                    rtbInfo.Text = information.Text;
+                    tbInfoKeys.Text = "";
+                    foreach (string s in information.keyWords)
+                        tbInfoKeys.Text += s + ", ";
+                }
+                else
+                {
+                    try
+                    {
+                        HelpfullInformation information = classInformation.HelpfullsInfo.Where(t => t.Name == eCell.Cell.Value.ToString()).First();
+                        information.Text = rtbInfo.Text;
+                        information.keyWords.Clear();
+                        string[] str = tbInfoKeys.Text.Split(new char[] { ',', '\n' });
+                        foreach (string s in str)
+                            information.keyWords.Add(s.Trim());
+                        int count = information.keyWords.Where(e => e == "").Count();
+                        for (int i = 0; i < count; i++)
+                            information.keyWords.Remove("");
+                    }
+                    catch { }
+
+                }
+        }
+
+        private void toolStripButtonInfoAddClose_Click(object sender, EventArgs e)
+        {
+            toolStripButtonInfoAdd.Visible = true;
+            toolStripButtonInfoAddClose.Visible = false;
+            toolStripSeparatorInfo1.Visible = false;
+            toolStripLabelInfoAdd.Visible = false;
+            toolStripTextBoxInfoName.Visible = false;
         }
     }
 }

@@ -26,6 +26,7 @@ namespace MyBigNotebook.Forms
             switch (AddClasses)
             {
                 case "Expenses":
+                    this.Text = "Добавить позицию по расходам";
                     panelDate.Visible = true;
                     panelCategory.Visible = true;
                     panelName.Visible = true;
@@ -42,6 +43,7 @@ namespace MyBigNotebook.Forms
                     break;
 
                 case "Profits":
+                    this.Text = "Добавить позицию по доходам";
                     panelDate.Visible = true;
                     panelCategory.Visible = true;
                     panelName.Visible = true;
@@ -58,6 +60,7 @@ namespace MyBigNotebook.Forms
                     break;
 
                 case "CashSaving":
+                    this.Text = "Добавить позицию по накоплениям";
                     panelDate.Visible = true;
                     panelCategory.Visible = false;
                     panelName.Visible = false;
@@ -74,6 +77,7 @@ namespace MyBigNotebook.Forms
                     break;
 
                 case "Debts":
+                    this.Text = "Добавить позицию по долгам";
                     panelDate.Visible = false;
                     panelCategory.Visible = false;
                     panelName.Visible = false;

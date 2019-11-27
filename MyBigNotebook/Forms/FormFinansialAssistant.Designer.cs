@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFinansialAssistant));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageExpensess = new System.Windows.Forms.TabPage();
             this.dgvExpenses = new System.Windows.Forms.DataGridView();
@@ -159,9 +159,9 @@
             // 
             // ColumnDate
             // 
-            dataGridViewCellStyle8.Format = "d";
-            dataGridViewCellStyle8.NullValue = null;
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnDate.HeaderText = "Дата";
             this.ColumnDate.Name = "ColumnDate";
             this.ColumnDate.ReadOnly = true;
@@ -181,9 +181,9 @@
             // 
             // ColumnSymm
             // 
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.ColumnSymm.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ColumnSymm.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnSymm.HeaderText = "Сумма";
             this.ColumnSymm.Name = "ColumnSymm";
             // 
@@ -211,7 +211,7 @@
             // toolStripButtonAddExpenses
             // 
             this.toolStripButtonAddExpenses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddExpenses.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddExpenses.Image")));
+            this.toolStripButtonAddExpenses.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
             this.toolStripButtonAddExpenses.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonAddExpenses.Name = "toolStripButtonAddExpenses";
             this.toolStripButtonAddExpenses.Size = new System.Drawing.Size(23, 22);
@@ -221,7 +221,7 @@
             // toolStripButtonDelExpenses
             // 
             this.toolStripButtonDelExpenses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDelExpenses.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelExpenses.Image")));
+            this.toolStripButtonDelExpenses.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
             this.toolStripButtonDelExpenses.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelExpenses.Name = "toolStripButtonDelExpenses";
             this.toolStripButtonDelExpenses.Size = new System.Drawing.Size(23, 22);
@@ -289,9 +289,9 @@
             // 
             // ColumnProfitCurrency
             // 
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.ColumnProfitCurrency.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.ColumnProfitCurrency.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnProfitCurrency.HeaderText = "Валюта";
             this.ColumnProfitCurrency.Name = "ColumnProfitCurrency";
             // 
@@ -320,7 +320,7 @@
             // toolStripButtonAddProfits
             // 
             this.toolStripButtonAddProfits.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAddProfits.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddProfits.Image")));
+            this.toolStripButtonAddProfits.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
             this.toolStripButtonAddProfits.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonAddProfits.Name = "toolStripButtonAddProfits";
             this.toolStripButtonAddProfits.Size = new System.Drawing.Size(23, 22);
@@ -330,7 +330,7 @@
             // toolStripButtonProfitsDelete
             // 
             this.toolStripButtonProfitsDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonProfitsDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonProfitsDelete.Image")));
+            this.toolStripButtonProfitsDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
             this.toolStripButtonProfitsDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonProfitsDelete.Name = "toolStripButtonProfitsDelete";
             this.toolStripButtonProfitsDelete.Size = new System.Drawing.Size(23, 22);
@@ -404,7 +404,7 @@
             // toolStripButtonCashAdd
             // 
             this.toolStripButtonCashAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonCashAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCashAdd.Image")));
+            this.toolStripButtonCashAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
             this.toolStripButtonCashAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonCashAdd.Name = "toolStripButtonCashAdd";
             this.toolStripButtonCashAdd.Size = new System.Drawing.Size(23, 22);
@@ -414,7 +414,7 @@
             // toolStripButtonCashDelete
             // 
             this.toolStripButtonCashDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonCashDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCashDelete.Image")));
+            this.toolStripButtonCashDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
             this.toolStripButtonCashDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonCashDelete.Name = "toolStripButtonCashDelete";
             this.toolStripButtonCashDelete.Size = new System.Drawing.Size(23, 22);
@@ -468,9 +468,9 @@
             // ColumnDebtSumm
             // 
             this.ColumnDebtSumm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.Format = "N2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.ColumnDebtSumm.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ColumnDebtSumm.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnDebtSumm.HeaderText = "Сумма";
             this.ColumnDebtSumm.MinimumWidth = 50;
             this.ColumnDebtSumm.Name = "ColumnDebtSumm";
@@ -482,18 +482,18 @@
             // 
             // ColumnDebtIssueDate
             // 
-            dataGridViewCellStyle12.Format = "G";
-            dataGridViewCellStyle12.NullValue = null;
-            this.ColumnDebtIssueDate.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Format = "G";
+            dataGridViewCellStyle5.NullValue = null;
+            this.ColumnDebtIssueDate.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnDebtIssueDate.HeaderText = "Дата выдачи";
             this.ColumnDebtIssueDate.Name = "ColumnDebtIssueDate";
             this.ColumnDebtIssueDate.ReadOnly = true;
             // 
             // ColumnDebtReturnDate
             // 
-            dataGridViewCellStyle13.Format = "G";
-            dataGridViewCellStyle13.NullValue = null;
-            this.ColumnDebtReturnDate.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Format = "G";
+            dataGridViewCellStyle6.NullValue = null;
+            this.ColumnDebtReturnDate.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnDebtReturnDate.HeaderText = "Дата возврата";
             this.ColumnDebtReturnDate.Name = "ColumnDebtReturnDate";
             // 
@@ -516,7 +516,7 @@
             // toolStripButtonDebtAdd
             // 
             this.toolStripButtonDebtAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDebtAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDebtAdd.Image")));
+            this.toolStripButtonDebtAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
             this.toolStripButtonDebtAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDebtAdd.Name = "toolStripButtonDebtAdd";
             this.toolStripButtonDebtAdd.Size = new System.Drawing.Size(23, 22);
@@ -526,7 +526,7 @@
             // toolStripButtonDebtDel
             // 
             this.toolStripButtonDebtDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDebtDel.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDebtDel.Image")));
+            this.toolStripButtonDebtDel.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
             this.toolStripButtonDebtDel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDebtDel.Name = "toolStripButtonDebtDel";
             this.toolStripButtonDebtDel.Size = new System.Drawing.Size(23, 22);
@@ -570,9 +570,9 @@
             // ColumnReportSumm
             // 
             this.ColumnReportSumm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle14.Format = "N2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.ColumnReportSumm.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.ColumnReportSumm.DefaultCellStyle = dataGridViewCellStyle7;
             this.ColumnReportSumm.HeaderText = "Сумма";
             this.ColumnReportSumm.MinimumWidth = 100;
             this.ColumnReportSumm.Name = "ColumnReportSumm";
@@ -662,8 +662,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControlMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormFinansialAssistant";
-            this.Text = "FormFinansialAssistant";
+            this.Text = "Финансовый помошник";
             this.tabControlMain.ResumeLayout(false);
             this.tabPageExpensess.ResumeLayout(false);
             this.tabPageExpensess.PerformLayout();
