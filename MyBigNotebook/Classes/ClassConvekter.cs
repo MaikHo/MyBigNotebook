@@ -35,5 +35,36 @@ namespace MyBigNotebook.Classes
             }
             return bm2;
         }
+
+        /// <summary>
+        /// Получение строки ключевых слов
+        /// </summary>
+        /// <param name="vs">Список ключевых слов</param>
+        /// <returns>Строка ключевых слов, разделенных запятыми</returns>
+        static public string getKeyString(List<string> vs)
+        {
+            string Text = "";
+            foreach (string s in vs)
+                Text += s + ", ";
+            return Text;
+        }
+
+        /// <summary>
+        /// Получения списка ключевых слов из строки
+        /// </summary>
+        /// <param name="Keys">Строка ключевых слов, разделенных запятыми</param>
+        /// <returns>Список ключевых фраз</returns>
+        static public List<string> getKeysList(string Keys)
+        {
+
+            string[] str = Keys.Split(new char[] { ',', '\n' });
+            List<string> keyWords = new List<string>();
+            foreach (string s in str)
+               keyWords.Add(s.Trim());
+            int count = keyWords.Where(e => e == "").Count();
+            for (int i = 0; i < count; i++)
+                keyWords.Remove("");
+            return keyWords;
+        }
     }
 }

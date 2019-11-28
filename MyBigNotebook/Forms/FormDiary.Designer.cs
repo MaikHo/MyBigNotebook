@@ -39,7 +39,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvDate = new System.Windows.Forms.DataGridView();
             this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbText = new System.Windows.Forms.TextBox();
+            this.tbText = new System.Windows.Forms.RichTextBox();
             this.toolStrip1.SuspendLayout();
             this.panelAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -165,10 +165,10 @@
             // 
             this.tbText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbText.Location = new System.Drawing.Point(0, 0);
-            this.tbText.Multiline = true;
             this.tbText.Name = "tbText";
             this.tbText.Size = new System.Drawing.Size(596, 389);
             this.tbText.TabIndex = 0;
+            this.tbText.Text = "";
             // 
             // FormDiary
             // 
@@ -188,7 +188,6 @@
             this.panelAdd.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDate)).EndInit();
@@ -205,10 +204,10 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
-        private System.Windows.Forms.TextBox tbText;
         private System.Windows.Forms.Button buttonNoAdd;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePickerDate;
+        private System.Windows.Forms.RichTextBox tbText;
     }
 }

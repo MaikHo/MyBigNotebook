@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCalendar));
             this.monthCalendarMain = new System.Windows.Forms.MonthCalendar();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.textBoxDayInfo = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbAddBirthDay = new System.Windows.Forms.ToolStripButton();
             this.tbAddMemorable = new System.Windows.Forms.ToolStripButton();
             this.tbAddReminder = new System.Windows.Forms.ToolStripButton();
+            this.textBoxDayInfo = new System.Windows.Forms.RichTextBox();
             this.panelInfo.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,15 +63,6 @@
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(668, 212);
             this.panelInfo.TabIndex = 2;
-            // 
-            // textBoxDayInfo
-            // 
-            this.textBoxDayInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDayInfo.Location = new System.Drawing.Point(0, 25);
-            this.textBoxDayInfo.Multiline = true;
-            this.textBoxDayInfo.Name = "textBoxDayInfo";
-            this.textBoxDayInfo.Size = new System.Drawing.Size(668, 187);
-            this.textBoxDayInfo.TabIndex = 1;
             // 
             // toolStrip1
             // 
@@ -115,6 +106,15 @@
             this.tbAddReminder.Text = "Добавить напоминание";
             this.tbAddReminder.Click += new System.EventHandler(this.tbAddReminder_Click);
             // 
+            // textBoxDayInfo
+            // 
+            this.textBoxDayInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDayInfo.Location = new System.Drawing.Point(0, 25);
+            this.textBoxDayInfo.Name = "textBoxDayInfo";
+            this.textBoxDayInfo.Size = new System.Drawing.Size(668, 187);
+            this.textBoxDayInfo.TabIndex = 1;
+            this.textBoxDayInfo.Text = "";
+            // 
             // FormCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,8 +140,8 @@
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsbAddBirthDay;
-        private System.Windows.Forms.TextBox textBoxDayInfo;
         private System.Windows.Forms.ToolStripButton tbAddMemorable;
         private System.Windows.Forms.ToolStripButton tbAddReminder;
+        private System.Windows.Forms.RichTextBox textBoxDayInfo;
     }
 }

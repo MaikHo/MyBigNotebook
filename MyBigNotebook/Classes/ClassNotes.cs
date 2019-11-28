@@ -90,11 +90,23 @@ namespace MyBigNotebook
         /// Ссылка
         /// </summary>
         public string Link;
+        /// <summary>
+        /// Логин
+        /// </summary>
+        public string Login;
         public Password()
         {
             Name = "";
             Pass = "";
             Link = "";
+            Login = "";
+        }
+        public Password(string name)
+        {
+            Name = name;
+            Pass = "";
+            Link = "";
+            Login = "";
         }
         public bool Decrypt()
         {
@@ -103,6 +115,7 @@ namespace MyBigNotebook
                 Name = ClassCrypt.Decrypt(Name);
                 Pass = ClassCrypt.Decrypt(Pass);
                 Link = ClassCrypt.Decrypt(Link);
+                Login = ClassCrypt.Decrypt(Login);
                 return true;
             }
             catch { return false; }
@@ -115,6 +128,7 @@ namespace MyBigNotebook
                 Name = ClassCrypt.Encrypt(Name);
                 Pass = ClassCrypt.Encrypt(Pass);
                 Link = ClassCrypt.Encrypt(Link);
+                Login = ClassCrypt.Encrypt(Login);
                 return true;
             }
             catch { return false; }
@@ -144,6 +158,13 @@ namespace MyBigNotebook
       public  Idea()
         {
             Name = "";
+            Text = "";
+            keyWords = new List<string>();
+        }
+
+        public Idea(string name)
+        {
+            Name = name;
             Text = "";
             keyWords = new List<string>();
         }
@@ -184,6 +205,8 @@ namespace MyBigNotebook
         {
             
         }
+        public Record(string name):base(name)
+        { }
     }
 
 

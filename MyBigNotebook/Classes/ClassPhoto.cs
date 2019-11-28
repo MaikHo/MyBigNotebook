@@ -82,6 +82,14 @@ namespace MyBigNotebook
             KeyWords = new List<string>();
         }
 
+        public Photograph(string name)
+        {
+            Name = name;
+            Description = "";
+            Category = "";
+            Photo = "";
+            KeyWords = new List<string>();
+        }
         public bool Decrypt()
         {
             try
