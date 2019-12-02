@@ -36,6 +36,7 @@
             this.buttonInformation = new System.Windows.Forms.Button();
             this.buttonNotes = new System.Windows.Forms.Button();
             this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
+            this.buttonPhoto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCalendar
@@ -94,11 +95,22 @@
             this.notifyIconMain.Text = "Записная книжка";
             this.notifyIconMain.Visible = true;
             // 
+            // buttonPhoto
+            // 
+            this.buttonPhoto.Location = new System.Drawing.Point(29, 162);
+            this.buttonPhoto.Name = "buttonPhoto";
+            this.buttonPhoto.Size = new System.Drawing.Size(175, 23);
+            this.buttonPhoto.TabIndex = 5;
+            this.buttonPhoto.Text = "Фотогалерея";
+            this.buttonPhoto.UseVisualStyleBackColor = true;
+            this.buttonPhoto.Click += new System.EventHandler(this.buttonPhoto_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 341);
+            this.Controls.Add(this.buttonPhoto);
             this.Controls.Add(this.buttonNotes);
             this.Controls.Add(this.buttonInformation);
             this.Controls.Add(this.buttonFinansial);
@@ -123,6 +135,7 @@
         private System.Windows.Forms.Button buttonInformation;
         private System.Windows.Forms.Button buttonNotes;
         private System.Windows.Forms.NotifyIcon notifyIconMain;
+        private System.Windows.Forms.Button buttonPhoto;
     }
 }
 

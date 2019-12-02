@@ -531,7 +531,7 @@
             this.pictureBoxDossierPhoto.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxDossierPhoto.Name = "pictureBoxDossierPhoto";
             this.pictureBoxDossierPhoto.Size = new System.Drawing.Size(224, 258);
-            this.pictureBoxDossierPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDossierPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxDossierPhoto.TabIndex = 0;
             this.pictureBoxDossierPhoto.TabStop = false;
             // 

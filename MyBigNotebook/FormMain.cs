@@ -64,5 +64,11 @@ namespace MyBigNotebook
             FormNotes form = new FormNotes(data.notes);
             form.Show();
         }
+
+        private void buttonPhoto_Click(object sender, EventArgs e)
+        {
+            FormPhotos form = new FormPhotos(data.photo);
+            form.Show();
+        }
     }
 }
