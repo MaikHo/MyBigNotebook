@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPhotos));
             this.tsPhoto = new System.Windows.Forms.ToolStrip();
-            this.tspAdd = new System.Windows.Forms.ToolStripButton();
-            this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeViewPhoto = new System.Windows.Forms.TreeView();
             this.gbDescription = new System.Windows.Forms.GroupBox();
@@ -39,6 +37,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbKeyWorlds = new System.Windows.Forms.TextBox();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
+            this.tspAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.tsPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -59,26 +59,6 @@
             this.tsPhoto.Size = new System.Drawing.Size(800, 25);
             this.tsPhoto.TabIndex = 0;
             this.tsPhoto.Text = "toolStrip1";
-            // 
-            // tspAdd
-            // 
-            this.tspAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tspAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
-            this.tspAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspAdd.Name = "tspAdd";
-            this.tspAdd.Size = new System.Drawing.Size(23, 22);
-            this.tspAdd.Text = "Добавить";
-            this.tspAdd.Click += new System.EventHandler(this.tspAdd_Click);
-            // 
-            // tsbDelete
-            // 
-            this.tsbDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
-            this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDelete.Name = "tsbDelete";
-            this.tsbDelete.Size = new System.Drawing.Size(23, 22);
-            this.tsbDelete.Text = "Удалить";
-            this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
             // splitContainer1
             // 
@@ -160,6 +140,27 @@
             this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPhoto.TabIndex = 1;
             this.pictureBoxPhoto.TabStop = false;
+            this.pictureBoxPhoto.DoubleClick += new System.EventHandler(this.pictureBoxPhoto_DoubleClick);
+            // 
+            // tspAdd
+            // 
+            this.tspAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tspAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
+            this.tspAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspAdd.Name = "tspAdd";
+            this.tspAdd.Size = new System.Drawing.Size(23, 22);
+            this.tspAdd.Text = "Добавить";
+            this.tspAdd.Click += new System.EventHandler(this.tspAdd_Click);
+            // 
+            // tsbDelete
+            // 
+            this.tsbDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
+            this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDelete.Name = "tsbDelete";
+            this.tsbDelete.Size = new System.Drawing.Size(23, 22);
+            this.tsbDelete.Text = "Удалить";
+            this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
             // FormPhotos
             // 

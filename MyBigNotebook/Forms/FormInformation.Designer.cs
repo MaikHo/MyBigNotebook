@@ -534,6 +534,7 @@
             this.pictureBoxDossierPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxDossierPhoto.TabIndex = 0;
             this.pictureBoxDossierPhoto.TabStop = false;
+            this.pictureBoxDossierPhoto.DoubleClick += new System.EventHandler(this.pictureBoxDossierPhoto_DoubleClick);
             // 
             // toolStripDossierPhoto
             // 

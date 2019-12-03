@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace MyBigNotebook
@@ -130,6 +131,12 @@ namespace MyBigNotebook
             }
             catch { return false; }
         }
+
+        public int getNewIDPunkk()
+        {
+            int a = punktOfPlans.Max(p => p.IDPunks);
+            return a + 1;
+        }
     }
 
     /// <summary>
@@ -138,21 +145,23 @@ namespace MyBigNotebook
     [Serializable]
     public class PunktOfPlan :ICrypt
     {
+        public int IDPunks;
         /// <summary>
         /// № пункта
         /// </summary>
-        int NumberPunkt;
+        public int NumberPunkt;
         /// <summary>
         /// Название пункта
         /// </summary>
-        string NamePunkt;
+        public string NamePunkt;
         /// <summary>
         /// Флаг выполнения
         /// </summary>
-        bool CompleteFlag;
+        public bool CompleteFlag;
 
         PunktOfPlan()
         {
+            IDPunks = 0;
             NumberPunkt = 0;
             NamePunkt = "";
             CompleteFlag = false;

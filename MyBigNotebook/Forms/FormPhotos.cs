@@ -104,5 +104,11 @@ namespace MyBigNotebook.Forms
             if(currentPhotograph!=null)
                 currentPhotograph.KeyWords = ClassConvert.getKeysList(tbKeyWorlds.Text);
         }
+
+        private void pictureBoxPhoto_DoubleClick(object sender, EventArgs e)
+        {
+            FormViewPhoto form = new FormViewPhoto(pictureBoxPhoto.Image);
+            form.Show();
+        }
     }
 }

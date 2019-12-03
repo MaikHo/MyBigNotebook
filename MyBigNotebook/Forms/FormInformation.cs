@@ -394,5 +394,11 @@ namespace MyBigNotebook.Forms
             toolStripLabelInfoAdd.Visible = false;
             toolStripTextBoxInfoName.Visible = false;
         }
+
+        private void pictureBoxDossierPhoto_DoubleClick(object sender, EventArgs e)
+        {
+            FormViewPhoto formView = new FormViewPhoto(pictureBoxDossierPhoto.Image);
+            formView.Show();
+        }
     }
 }
