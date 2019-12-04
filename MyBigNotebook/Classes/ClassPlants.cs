@@ -107,6 +107,14 @@ namespace MyBigNotebook
             
         }
 
+        public FuturePlan(string name)
+        {
+            NamePlan = name;
+            DateRealise = DateTime.Now;
+            punktOfPlans = new List<PunktOfPlan>();
+
+        }
+
         public bool Decrypt()
         {
             try
@@ -132,9 +140,9 @@ namespace MyBigNotebook
             catch { return false; }
         }
 
-        public int getNewIDPunkk()
+        public int getNewNumberPunkk()
         {
-            int a = punktOfPlans.Max(p => p.IDPunks);
+            int a = punktOfPlans.Max(p => p.NumberPunkt);
             return a + 1;
         }
     }
@@ -145,7 +153,7 @@ namespace MyBigNotebook
     [Serializable]
     public class PunktOfPlan :ICrypt
     {
-        public int IDPunks;
+       
         /// <summary>
         /// № пункта
         /// </summary>
@@ -159,13 +167,21 @@ namespace MyBigNotebook
         /// </summary>
         public bool CompleteFlag;
 
-        PunktOfPlan()
-        {
-            IDPunks = 0;
+        public PunktOfPlan()
+        {          
             NumberPunkt = 0;
             NamePunkt = "";
             CompleteFlag = false;
         }
+
+        public PunktOfPlan(int number, string name, bool complete)
+        {
+            NumberPunkt = number;
+            NamePunkt = name;
+            CompleteFlag = complete;
+        }
+
+
         public bool Encrypt()
         {
             try

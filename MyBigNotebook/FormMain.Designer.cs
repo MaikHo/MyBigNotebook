@@ -37,6 +37,7 @@
             this.buttonNotes = new System.Windows.Forms.Button();
             this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.buttonPhoto = new System.Windows.Forms.Button();
+            this.buttonPlants = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCalendar
@@ -105,11 +106,22 @@
             this.buttonPhoto.UseVisualStyleBackColor = true;
             this.buttonPhoto.Click += new System.EventHandler(this.buttonPhoto_Click);
             // 
+            // buttonPlants
+            // 
+            this.buttonPlants.Location = new System.Drawing.Point(29, 192);
+            this.buttonPlants.Name = "buttonPlants";
+            this.buttonPlants.Size = new System.Drawing.Size(175, 23);
+            this.buttonPlants.TabIndex = 6;
+            this.buttonPlants.Text = "Планы";
+            this.buttonPlants.UseVisualStyleBackColor = true;
+            this.buttonPlants.Click += new System.EventHandler(this.buttonPlants_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 341);
+            this.Controls.Add(this.buttonPlants);
             this.Controls.Add(this.buttonPhoto);
             this.Controls.Add(this.buttonNotes);
             this.Controls.Add(this.buttonInformation);
@@ -136,6 +148,7 @@
         private System.Windows.Forms.Button buttonNotes;
         private System.Windows.Forms.NotifyIcon notifyIconMain;
         private System.Windows.Forms.Button buttonPhoto;
+        private System.Windows.Forms.Button buttonPlants;
     }
 }
 
