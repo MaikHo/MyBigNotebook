@@ -219,11 +219,7 @@ namespace MyBigNotebook
         /// <summary>
         /// Описание шага
         /// </summary>
-        public string DescriptionStep;
-        /// <summary>
-        /// продолжительность
-        /// </summary>
-        public DateTime DurationStep;
+        public string DescriptionStep;        
         /// <summary>
         /// Флаг о завершении
         /// </summary>
@@ -233,9 +229,16 @@ namespace MyBigNotebook
         {
             NumberStep = 0;
             NameStep = "";
-            DescriptionStep = "";
-            DurationStep = DateTime.Now;
+            DescriptionStep = "";            
             CompleteFlag = false;
+        }
+
+        public Step(int number, string name, string description, bool complete)
+        {
+            NumberStep = number;
+            NameStep = name;
+            DescriptionStep = description;
+            CompleteFlag = complete;
         }
         public bool Decrypt()
         {
@@ -299,6 +302,15 @@ namespace MyBigNotebook
             Steps = new List<Step>();
             CompleteFlag = false;
         }
+        public Target(string name)
+        {
+            NameTarget = name;
+            DateStartRealise = DateTime.Now;
+            DateEndRealise = DateTime.Now;
+            DescriptionTarget = "";
+            Steps = new List<Step>();
+            CompleteFlag = false;
+        }
         public bool Decrypt()
         {
             try
@@ -355,6 +367,14 @@ namespace MyBigNotebook
             Cost = 0;
             CompleteFlag = false;
         }
+        public ShoppingList(string name)
+        {
+            NameItem = name;
+            Description = "";
+            Cost = 0;
+            CompleteFlag = false;
+        }
+
         public bool Decrypt()
         {
             try
@@ -407,6 +427,13 @@ namespace MyBigNotebook
             DateStart = DateTime.Now;
             ProjectSteps = new List<ProjectStep>();
         }
+        public Project(string name)
+        {
+            NameProject = name;
+            Description = "";
+            DateStart = DateTime.Now;
+            ProjectSteps = new List<ProjectStep>();
+        }
         public bool Decrypt()
         {
             try
@@ -441,6 +468,10 @@ namespace MyBigNotebook
     public class ProjectStep :ICrypt
     {
         /// <summary>
+        /// Номер шага
+        /// </summary>
+        int NumberStep;
+        /// <summary>
         /// наименование
         /// </summary>
         public string NameStep;
@@ -455,6 +486,7 @@ namespace MyBigNotebook
 
         public ProjectStep()
         {
+            NumberStep = 0;
             NameStep = "";
             Description = "";
             CombleteFlag = false;

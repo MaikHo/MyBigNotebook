@@ -12,12 +12,16 @@ namespace MyBigNotebook.Forms
 {
     public partial class FormPlans : Form
     {
+        private ShoppingList CurrentShopping = null;
+
         private ClassPlants plants;
         public FormPlans(ClassPlants classPlants)
         {
             InitializeComponent();
             plants = classPlants;
             LoadFuturePlanToForm();
+            LoadTargetsToForm();
+            LoadShoppingTree();
         }
 
         private void LoadFuturePlanToForm()
@@ -65,7 +69,7 @@ namespace MyBigNotebook.Forms
                 {
                     FuturePlan plan = plants.FuturePlans.Where(p => p.NamePlan == cell.Value.ToString()).First();
                     plants.FuturePlans.Remove(plan);
-                    LoadFuturePlanToForm();
+                    LoadFuturePlanToForm();                   
                 }
             }
             catch { }
@@ -116,6 +120,213 @@ namespace MyBigNotebook.Forms
             if (cell!= null)
             if (MessageBox.Show($"Удалить пунк плана #{dgvFuturePunkts.Rows[cell.RowIndex].Cells[0].Value.ToString()}?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 dgvFuturePunkts.Rows.RemoveAt(cell.RowIndex);
+        }
+
+        private void tsbTargetAdd_Click(object sender, EventArgs e)
+        {
+            tsbTargetAdd.Visible = false;
+            tsbTargetDelete.Visible = false;
+
+            tslTargetAdd.Visible = true;
+            tstbTargetName.Visible = true;
+            tsbTargetCanselAdd.Visible = true;
+        }
+
+        private void tsbTargetCanselAdd_Click(object sender, EventArgs e)
+        {
+            tsbTargetAdd.Visible = true;
+            tsbTargetDelete.Visible = true;
+
+            tslTargetAdd.Visible = false;
+            tstbTargetName.Visible = false;
+            tsbTargetCanselAdd.Visible = false;
+        }
+
+        private void LoadTargetsToForm()
+        {
+            dgvTargetList.Rows.Clear();
+            foreach (Target target in plants.Targets)
+                dgvTargetList.Rows.Add( new object[] {target.NameTarget});
+        }
+
+        private void tstbTargetName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData ==Keys.Enter)
+            {
+                plants.Targets.Add(new Target(tstbTargetName.Text));
+                LoadTargetsToForm();
+                tsbTargetCanselAdd_Click(sender, new EventArgs());
+            }
+        }
+
+        private void tsbTargetDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewCell cell = dgvTargetList.CurrentCell;
+                if (MessageBox.Show($"Вы точно хотите удалить цель {cell.Value.ToString()}?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Target target = plants.Targets.Where(p => p.NameTarget == cell.Value.ToString()).First();
+                    plants.Targets.Remove(target);
+                    LoadTargetsToForm();
+                }
+            }
+            catch { }
+        }
+
+        private void dgvTargetList_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            try
+            {
+                if (e.StateChanged == DataGridViewElementStates.Selected)
+                {
+                    Target target = plants.Targets.Where(t => t.NameTarget == e.Cell.Value.ToString()).First();
+                    if (e.Cell.Selected)
+                    {
+                        dtpTargetDateStart.Value = target.DateStartRealise;
+                        dtpTargetDateEnd.Value = target.DateEndRealise;
+                        rtbTargetDescription.Text = target.DescriptionTarget;
+                        checkTargetCompleteFlag.Checked = target.CompleteFlag;
+
+                        dgvTargetSteps.Rows.Clear();
+                        foreach (Step step in target.Steps)
+                            dgvTargetSteps.Rows.Add(new object[] { step.NumberStep, step.NameStep, step.DescriptionStep, step.CompleteFlag });
+
+                        dgvTargetSteps.Sort(dgvTargetSteps.Columns[0], ListSortDirection.Ascending);
+
+                    }
+                    else
+                    {
+                        target.DateStartRealise = dtpTargetDateStart.Value;
+                        target.DateEndRealise = dtpTargetDateEnd.Value;
+                        target.DescriptionTarget = rtbTargetDescription.Text;
+                        target.CompleteFlag = checkTargetCompleteFlag.Checked;
+
+                        target.Steps.Clear();
+                        try
+                        {
+                            foreach (DataGridViewRow row in dgvTargetSteps.Rows)
+                                target.Steps.Add(new Step(Convert.ToInt32(row.Cells[0].Value), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), Convert.ToBoolean(row.Cells[3].Value)  ));
+                        }
+                        catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void tsbTargetStepAdd_Click(object sender, EventArgs e)
+        {
+            dgvTargetSteps.Rows.Add();
+        }
+
+        private void tspTargetStepDelete_Click(object sender, EventArgs e)
+        {
+            dgvTargetSteps.Rows.Remove( dgvTargetSteps.Rows[dgvTargetSteps.CurrentCell.RowIndex] );
+        }
+
+
+        private void LoadShoppingTree()
+        {
+            tvShoppingList.Nodes.Clear();
+            foreach (ShoppingList shopping in plants.ShoppingLists)
+            {
+                if (shopping.CompleteFlag) 
+                    tvShoppingList.Nodes.Add(shopping.NameItem, shopping.NameItem, 0);
+                else tvShoppingList.Nodes.Add(shopping.NameItem, shopping.NameItem, 1);
+            }
+        }
+
+        private void tbShoppingCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8 && number != 44) 
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void tsbShopAdd_Click(object sender, EventArgs e)
+        {
+            tsbShopAdd.Visible = false;
+            tsbShopDelete.Visible = false;
+
+            tsbShopCanselAdd.Visible = true;
+            tslShopAdd.Visible = true;
+            tstbShopAdd.Visible = true;
+            tstbShopAdd.Text = "";
+        }
+
+        private void tsbShopCanselAdd_Click(object sender, EventArgs e)
+        {
+            tsbShopAdd.Visible = true;
+            tsbShopDelete.Visible = true;
+
+            tsbShopCanselAdd.Visible = false;
+            tslShopAdd.Visible = false;
+            tstbShopAdd.Visible = false;
+        }
+
+        private void tstbShopAdd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+            {
+                plants.ShoppingLists.Add(new ShoppingList(tstbShopAdd.Text));
+                LoadShoppingTree();
+                tsbShopCanselAdd_Click(sender, new EventArgs());
+            }
+        }
+
+        private void tsbShopDelete_Click(object sender, EventArgs e)
+        {
+            if (CurrentShopping != null)
+                if (MessageBox.Show($"Вы точно хотите удалить покупку {CurrentShopping.NameItem}?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    plants.ShoppingLists.Remove(CurrentShopping);
+                    LoadShoppingTree();
+                }
+        }
+
+        private void tvShoppingList_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            try
+            {
+                CurrentShopping = plants.ShoppingLists.Where(s => s.NameItem == e.Node.Name).First();
+                tbShoppingCost.Text = CurrentShopping.Cost.ToString();
+                checkShoppingFlag.Checked = CurrentShopping.CompleteFlag;
+                rtbShoppingDescription.Text = CurrentShopping.Description;
+            }
+            catch { }
+        }
+
+        private void tbShoppingCost_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrentShopping.Cost = Convert.ToDouble(tbShoppingCost.Text);
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void checkShoppingFlag_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrentShopping.CompleteFlag = checkShoppingFlag.Checked;
+            }
+            catch { }
+        }
+
+        private void rtbShoppingDescription_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrentShopping.Description = rtbShoppingDescription.Text;
+            }
+            catch { }
         }
     }
 }

@@ -105,35 +105,37 @@ namespace MyBigNotebook
         /// Чтение данных
         /// </summary>
         public void LoadData()
-        {           
-           //Отчего-то фишка как с сериализацией не прокатила(хотя в потоке все нормально)
-           //так что костыли - наше все
-            XmlSerializer formatter = new XmlSerializer(typeof(ClassData));
-            GoogleDriveClass driveClass = new GoogleDriveClass();
-            driveClass.Authorize();
-
-            MemoryStream stream = driveClass.FileRead(driveClass.GetFileId("Data.txt"));
-            FileStream file = new FileStream("TempData.xml", FileMode.OpenOrCreate);
-            stream.Seek(0, SeekOrigin.Begin);
-            stream.CopyTo(file);
-            file.Close();
-
-            using (FileStream fs = new FileStream("TempData.xml", FileMode.OpenOrCreate))
-            //using (XmlWriter xmlWriter = new XmlTextWriter(fs, Encoding.UTF8))
+        {
+            try
             {
-           
-            ClassData classData= (ClassData)formatter.Deserialize(fs);                
-                this.calendar = classData.calendar;
-                this.diary = classData.diary;
-                this.finansialAssistant = classData.finansialAssistant;
-                this.information = classData.information;
-                this.notes = classData.notes;
-                this.photo = classData.photo;
-                this.plants = classData.plants;
-                this.routineDay = classData.routineDay;            
-            }
-            File.Delete("TempData.xml");
+                //Отчего-то фишка как с сериализацией не прокатила(хотя в потоке все нормально)
+                //так что костыли - наше все
+                XmlSerializer formatter = new XmlSerializer(typeof(ClassData));
+                GoogleDriveClass driveClass = new GoogleDriveClass();
+                driveClass.Authorize();
 
+                MemoryStream stream = driveClass.FileRead(driveClass.GetFileId("Data.txt"));
+                FileStream file = new FileStream("TempData.xml", FileMode.OpenOrCreate);
+                stream.Seek(0, SeekOrigin.Begin);
+                stream.CopyTo(file);
+                file.Close();
+
+                using (FileStream fs = new FileStream("TempData.xml", FileMode.OpenOrCreate))
+                //using (XmlWriter xmlWriter = new XmlTextWriter(fs, Encoding.UTF8))
+                {
+
+                    ClassData classData = (ClassData)formatter.Deserialize(fs);
+                    this.calendar = classData.calendar;
+                    this.diary = classData.diary;
+                    this.finansialAssistant = classData.finansialAssistant;
+                    this.information = classData.information;
+                    this.notes = classData.notes;
+                    this.photo = classData.photo;
+                    this.plants = classData.plants;
+                    this.routineDay = classData.routineDay;
+                }
+                File.Delete("TempData.xml");
+            } catch { }
         }
 
         /// <summary>
