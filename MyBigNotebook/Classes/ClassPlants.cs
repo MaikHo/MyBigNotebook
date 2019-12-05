@@ -470,7 +470,7 @@ namespace MyBigNotebook
         /// <summary>
         /// Номер шага
         /// </summary>
-        int NumberStep;
+        public int NumberStep;
         /// <summary>
         /// наименование
         /// </summary>
@@ -489,7 +489,15 @@ namespace MyBigNotebook
             NumberStep = 0;
             NameStep = "";
             Description = "";
-            CombleteFlag = false;
+            CombleteFlag = false;            
+        }
+
+        public ProjectStep(int number, string name, string description, bool complete)
+        {
+            NumberStep = number;
+            NameStep = name;
+            Description = description;
+            CombleteFlag = complete;
         }
         public bool Decrypt()
         {

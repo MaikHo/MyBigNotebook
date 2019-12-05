@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlans));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlPlans = new System.Windows.Forms.TabControl();
             this.tabPageFuture = new System.Windows.Forms.TabPage();
             this.splitContainerFuture = new System.Windows.Forms.SplitContainer();
@@ -52,68 +53,73 @@
             this.tsbFutureDelPunkt = new System.Windows.Forms.ToolStripButton();
             this.gbFutureRealise = new System.Windows.Forms.GroupBox();
             this.dtpFutureRealiseDate = new System.Windows.Forms.DateTimePicker();
-            this.tabPageShopping = new System.Windows.Forms.TabPage();
-            this.tabPageProjects = new System.Windows.Forms.TabPage();
             this.tabPageTargets = new System.Windows.Forms.TabPage();
-            this.tsTargetList = new System.Windows.Forms.ToolStrip();
             this.splitContainerTarget = new System.Windows.Forms.SplitContainer();
             this.dgvTargetList = new System.Windows.Forms.DataGridView();
-            this.gbTargetDateStart = new System.Windows.Forms.GroupBox();
-            this.gbTargetDateEnd = new System.Windows.Forms.GroupBox();
-            this.dtpTargetDateStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpTargetDateEnd = new System.Windows.Forms.DateTimePicker();
-            this.gbTargetDescription = new System.Windows.Forms.GroupBox();
-            this.rtbTargetDescription = new System.Windows.Forms.RichTextBox();
-            this.pTargetComplete = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkTargetCompleteFlag = new System.Windows.Forms.CheckBox();
+            this.ColumnTargetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbTargetSteps = new System.Windows.Forms.GroupBox();
             this.dgvTargetSteps = new System.Windows.Forms.DataGridView();
+            this.ColumnTargetStepNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStepName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStepDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStepFlag = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tsTargetStep = new System.Windows.Forms.ToolStrip();
             this.tsbTargetStepAdd = new System.Windows.Forms.ToolStripButton();
             this.tspTargetStepDelete = new System.Windows.Forms.ToolStripButton();
+            this.pTargetComplete = new System.Windows.Forms.Panel();
+            this.checkTargetCompleteFlag = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gbTargetDescription = new System.Windows.Forms.GroupBox();
+            this.rtbTargetDescription = new System.Windows.Forms.RichTextBox();
+            this.gbTargetDateEnd = new System.Windows.Forms.GroupBox();
+            this.dtpTargetDateEnd = new System.Windows.Forms.DateTimePicker();
+            this.gbTargetDateStart = new System.Windows.Forms.GroupBox();
+            this.dtpTargetDateStart = new System.Windows.Forms.DateTimePicker();
+            this.tsTargetList = new System.Windows.Forms.ToolStrip();
             this.tsbTargetAdd = new System.Windows.Forms.ToolStripButton();
             this.tslTargetAdd = new System.Windows.Forms.ToolStripLabel();
             this.tstbTargetName = new System.Windows.Forms.ToolStripTextBox();
             this.tsbTargetCanselAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbTargetDelete = new System.Windows.Forms.ToolStripButton();
-            this.ColumnTargetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTargetStepNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStepName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStepDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStepFlag = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tsShoppingList = new System.Windows.Forms.ToolStrip();
+            this.tabPageShopping = new System.Windows.Forms.TabPage();
             this.splitContainerShop = new System.Windows.Forms.SplitContainer();
             this.tvShoppingList = new System.Windows.Forms.TreeView();
             this.imageListShopping = new System.Windows.Forms.ImageList(this.components);
-            this.gbShoppingCost = new System.Windows.Forms.GroupBox();
-            this.gbShoppingFlag = new System.Windows.Forms.GroupBox();
-            this.checkShoppingFlag = new System.Windows.Forms.CheckBox();
-            this.tbShoppingCost = new System.Windows.Forms.TextBox();
             this.gbShoppingDescription = new System.Windows.Forms.GroupBox();
             this.rtbShoppingDescription = new System.Windows.Forms.RichTextBox();
+            this.gbShoppingFlag = new System.Windows.Forms.GroupBox();
+            this.checkShoppingFlag = new System.Windows.Forms.CheckBox();
+            this.gbShoppingCost = new System.Windows.Forms.GroupBox();
+            this.tbShoppingCost = new System.Windows.Forms.TextBox();
+            this.tsShoppingList = new System.Windows.Forms.ToolStrip();
             this.tsbShopAdd = new System.Windows.Forms.ToolStripButton();
             this.tslShopAdd = new System.Windows.Forms.ToolStripLabel();
             this.tstbShopAdd = new System.Windows.Forms.ToolStripTextBox();
             this.tsbShopCanselAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbShopDelete = new System.Windows.Forms.ToolStripButton();
-            this.tsProjectList = new System.Windows.Forms.ToolStrip();
+            this.tabPageProjects = new System.Windows.Forms.TabPage();
             this.splitContainerProject = new System.Windows.Forms.SplitContainer();
+            this.dgvProgectsList = new System.Windows.Forms.DataGridView();
+            this.gbProjectSteps = new System.Windows.Forms.GroupBox();
+            this.dgvProgectSteps = new System.Windows.Forms.DataGridView();
+            this.tsProjectStep = new System.Windows.Forms.ToolStrip();
+            this.tsbProjectStepAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbProjectStepDelete = new System.Windows.Forms.ToolStripButton();
+            this.gbProgectDescription = new System.Windows.Forms.GroupBox();
+            this.rtbProjectDescription = new System.Windows.Forms.RichTextBox();
+            this.gbProgectDate = new System.Windows.Forms.GroupBox();
+            this.dtpProjectDate = new System.Windows.Forms.DateTimePicker();
+            this.tsProjectList = new System.Windows.Forms.ToolStrip();
             this.tsbProjectAdd = new System.Windows.Forms.ToolStripButton();
             this.tslProjectAdd = new System.Windows.Forms.ToolStripLabel();
             this.tstbProjectName = new System.Windows.Forms.ToolStripTextBox();
             this.tsbProjectCanselAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbProjectDelete = new System.Windows.Forms.ToolStripButton();
-            this.dgvProgectsList = new System.Windows.Forms.DataGridView();
-            this.gbProgectDate = new System.Windows.Forms.GroupBox();
-            this.dtpProjectDate = new System.Windows.Forms.DateTimePicker();
-            this.gbProgectDescription = new System.Windows.Forms.GroupBox();
-            this.rtbProjectDescription = new System.Windows.Forms.RichTextBox();
-            this.gbProjectSteps = new System.Windows.Forms.GroupBox();
-            this.tsProjectStep = new System.Windows.Forms.ToolStrip();
-            this.dgvProgectSteps = new System.Windows.Forms.DataGridView();
-            this.tsbProjectStepAdd = new System.Windows.Forms.ToolStripButton();
-            this.tsbProjectStepDelete = new System.Windows.Forms.ToolStripButton();
+            this.ColumnProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProjectStepNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProjectStepName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProjectStepDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProjectStepFlag = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControlPlans.SuspendLayout();
             this.tabPageFuture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerFuture)).BeginInit();
@@ -126,41 +132,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuturePunkts)).BeginInit();
             this.tsFuterePunkt.SuspendLayout();
             this.gbFutureRealise.SuspendLayout();
-            this.tabPageShopping.SuspendLayout();
-            this.tabPageProjects.SuspendLayout();
             this.tabPageTargets.SuspendLayout();
-            this.tsTargetList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerTarget)).BeginInit();
             this.splitContainerTarget.Panel1.SuspendLayout();
             this.splitContainerTarget.Panel2.SuspendLayout();
             this.splitContainerTarget.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTargetList)).BeginInit();
-            this.gbTargetDateStart.SuspendLayout();
-            this.gbTargetDateEnd.SuspendLayout();
-            this.gbTargetDescription.SuspendLayout();
-            this.pTargetComplete.SuspendLayout();
             this.gbTargetSteps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTargetSteps)).BeginInit();
             this.tsTargetStep.SuspendLayout();
-            this.tsShoppingList.SuspendLayout();
+            this.pTargetComplete.SuspendLayout();
+            this.gbTargetDescription.SuspendLayout();
+            this.gbTargetDateEnd.SuspendLayout();
+            this.gbTargetDateStart.SuspendLayout();
+            this.tsTargetList.SuspendLayout();
+            this.tabPageShopping.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerShop)).BeginInit();
             this.splitContainerShop.Panel1.SuspendLayout();
             this.splitContainerShop.Panel2.SuspendLayout();
             this.splitContainerShop.SuspendLayout();
-            this.gbShoppingCost.SuspendLayout();
-            this.gbShoppingFlag.SuspendLayout();
             this.gbShoppingDescription.SuspendLayout();
-            this.tsProjectList.SuspendLayout();
+            this.gbShoppingFlag.SuspendLayout();
+            this.gbShoppingCost.SuspendLayout();
+            this.tsShoppingList.SuspendLayout();
+            this.tabPageProjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerProject)).BeginInit();
             this.splitContainerProject.Panel1.SuspendLayout();
             this.splitContainerProject.Panel2.SuspendLayout();
             this.splitContainerProject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProgectsList)).BeginInit();
-            this.gbProgectDate.SuspendLayout();
-            this.gbProgectDescription.SuspendLayout();
             this.gbProjectSteps.SuspendLayout();
-            this.tsProjectStep.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProgectSteps)).BeginInit();
+            this.tsProjectStep.SuspendLayout();
+            this.gbProgectDescription.SuspendLayout();
+            this.gbProgectDate.SuspendLayout();
+            this.tsProjectList.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlPlans
@@ -312,9 +318,9 @@
             // ColumnFutureNumber
             // 
             this.ColumnFutureNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.ColumnFutureNumber.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle22.Format = "N0";
+            dataGridViewCellStyle22.NullValue = "0";
+            this.ColumnFutureNumber.DefaultCellStyle = dataGridViewCellStyle22;
             this.ColumnFutureNumber.HeaderText = "Номер";
             this.ColumnFutureNumber.MinimumWidth = 50;
             this.ColumnFutureNumber.Name = "ColumnFutureNumber";
@@ -384,30 +390,6 @@
             this.dtpFutureRealiseDate.Size = new System.Drawing.Size(200, 20);
             this.dtpFutureRealiseDate.TabIndex = 0;
             // 
-            // tabPageShopping
-            // 
-            this.tabPageShopping.Controls.Add(this.splitContainerShop);
-            this.tabPageShopping.Controls.Add(this.tsShoppingList);
-            this.tabPageShopping.Location = new System.Drawing.Point(4, 22);
-            this.tabPageShopping.Name = "tabPageShopping";
-            this.tabPageShopping.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageShopping.Size = new System.Drawing.Size(910, 544);
-            this.tabPageShopping.TabIndex = 2;
-            this.tabPageShopping.Text = "Список покупок";
-            this.tabPageShopping.UseVisualStyleBackColor = true;
-            // 
-            // tabPageProjects
-            // 
-            this.tabPageProjects.Controls.Add(this.splitContainerProject);
-            this.tabPageProjects.Controls.Add(this.tsProjectList);
-            this.tabPageProjects.Location = new System.Drawing.Point(4, 22);
-            this.tabPageProjects.Name = "tabPageProjects";
-            this.tabPageProjects.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProjects.Size = new System.Drawing.Size(910, 544);
-            this.tabPageProjects.TabIndex = 3;
-            this.tabPageProjects.Text = "Проекты";
-            this.tabPageProjects.UseVisualStyleBackColor = true;
-            // 
             // tabPageTargets
             // 
             this.tabPageTargets.Controls.Add(this.splitContainerTarget);
@@ -419,20 +401,6 @@
             this.tabPageTargets.TabIndex = 1;
             this.tabPageTargets.Text = "Цели";
             this.tabPageTargets.UseVisualStyleBackColor = true;
-            // 
-            // tsTargetList
-            // 
-            this.tsTargetList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbTargetAdd,
-            this.tslTargetAdd,
-            this.tstbTargetName,
-            this.tsbTargetCanselAdd,
-            this.tsbTargetDelete});
-            this.tsTargetList.Location = new System.Drawing.Point(3, 3);
-            this.tsTargetList.Name = "tsTargetList";
-            this.tsTargetList.Size = new System.Drawing.Size(904, 25);
-            this.tsTargetList.TabIndex = 0;
-            this.tsTargetList.Text = "toolStrip1";
             // 
             // splitContainerTarget
             // 
@@ -472,91 +440,12 @@
             this.dgvTargetList.TabIndex = 0;
             this.dgvTargetList.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvTargetList_CellStateChanged);
             // 
-            // gbTargetDateStart
+            // ColumnTargetName
             // 
-            this.gbTargetDateStart.Controls.Add(this.dtpTargetDateStart);
-            this.gbTargetDateStart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbTargetDateStart.Location = new System.Drawing.Point(0, 0);
-            this.gbTargetDateStart.Name = "gbTargetDateStart";
-            this.gbTargetDateStart.Size = new System.Drawing.Size(730, 45);
-            this.gbTargetDateStart.TabIndex = 0;
-            this.gbTargetDateStart.TabStop = false;
-            this.gbTargetDateStart.Text = "Дата начала реализации";
-            // 
-            // gbTargetDateEnd
-            // 
-            this.gbTargetDateEnd.Controls.Add(this.dtpTargetDateEnd);
-            this.gbTargetDateEnd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbTargetDateEnd.Location = new System.Drawing.Point(0, 45);
-            this.gbTargetDateEnd.Name = "gbTargetDateEnd";
-            this.gbTargetDateEnd.Size = new System.Drawing.Size(730, 45);
-            this.gbTargetDateEnd.TabIndex = 1;
-            this.gbTargetDateEnd.TabStop = false;
-            this.gbTargetDateEnd.Text = "Примерная дата завершения";
-            // 
-            // dtpTargetDateStart
-            // 
-            this.dtpTargetDateStart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpTargetDateStart.Location = new System.Drawing.Point(3, 16);
-            this.dtpTargetDateStart.Name = "dtpTargetDateStart";
-            this.dtpTargetDateStart.Size = new System.Drawing.Size(724, 20);
-            this.dtpTargetDateStart.TabIndex = 0;
-            // 
-            // dtpTargetDateEnd
-            // 
-            this.dtpTargetDateEnd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpTargetDateEnd.Location = new System.Drawing.Point(3, 16);
-            this.dtpTargetDateEnd.Name = "dtpTargetDateEnd";
-            this.dtpTargetDateEnd.Size = new System.Drawing.Size(724, 20);
-            this.dtpTargetDateEnd.TabIndex = 0;
-            // 
-            // gbTargetDescription
-            // 
-            this.gbTargetDescription.Controls.Add(this.rtbTargetDescription);
-            this.gbTargetDescription.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbTargetDescription.Location = new System.Drawing.Point(0, 90);
-            this.gbTargetDescription.Name = "gbTargetDescription";
-            this.gbTargetDescription.Size = new System.Drawing.Size(730, 91);
-            this.gbTargetDescription.TabIndex = 2;
-            this.gbTargetDescription.TabStop = false;
-            this.gbTargetDescription.Text = "Описание";
-            // 
-            // rtbTargetDescription
-            // 
-            this.rtbTargetDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbTargetDescription.Location = new System.Drawing.Point(3, 16);
-            this.rtbTargetDescription.Name = "rtbTargetDescription";
-            this.rtbTargetDescription.Size = new System.Drawing.Size(724, 72);
-            this.rtbTargetDescription.TabIndex = 0;
-            this.rtbTargetDescription.Text = "";
-            // 
-            // pTargetComplete
-            // 
-            this.pTargetComplete.Controls.Add(this.checkTargetCompleteFlag);
-            this.pTargetComplete.Controls.Add(this.label1);
-            this.pTargetComplete.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pTargetComplete.Location = new System.Drawing.Point(0, 476);
-            this.pTargetComplete.Name = "pTargetComplete";
-            this.pTargetComplete.Size = new System.Drawing.Size(730, 37);
-            this.pTargetComplete.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Отметка о завершении";
-            // 
-            // checkTargetCompleteFlag
-            // 
-            this.checkTargetCompleteFlag.AutoSize = true;
-            this.checkTargetCompleteFlag.Location = new System.Drawing.Point(143, 10);
-            this.checkTargetCompleteFlag.Name = "checkTargetCompleteFlag";
-            this.checkTargetCompleteFlag.Size = new System.Drawing.Size(15, 14);
-            this.checkTargetCompleteFlag.TabIndex = 1;
-            this.checkTargetCompleteFlag.UseVisualStyleBackColor = true;
+            this.ColumnTargetName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnTargetName.HeaderText = "Имя";
+            this.ColumnTargetName.Name = "ColumnTargetName";
+            this.ColumnTargetName.ReadOnly = true;
             // 
             // gbTargetSteps
             // 
@@ -586,6 +475,34 @@
             this.dgvTargetSteps.RowHeadersVisible = false;
             this.dgvTargetSteps.Size = new System.Drawing.Size(700, 276);
             this.dgvTargetSteps.TabIndex = 0;
+            // 
+            // ColumnTargetStepNumber
+            // 
+            this.ColumnTargetStepNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle23.Format = "N0";
+            dataGridViewCellStyle23.NullValue = null;
+            this.ColumnTargetStepNumber.DefaultCellStyle = dataGridViewCellStyle23;
+            this.ColumnTargetStepNumber.HeaderText = "Номер шага";
+            this.ColumnTargetStepNumber.MinimumWidth = 50;
+            this.ColumnTargetStepNumber.Name = "ColumnTargetStepNumber";
+            this.ColumnTargetStepNumber.Width = 87;
+            // 
+            // ColumnStepName
+            // 
+            this.ColumnStepName.HeaderText = "Название";
+            this.ColumnStepName.Name = "ColumnStepName";
+            // 
+            // ColumnStepDescription
+            // 
+            this.ColumnStepDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnStepDescription.HeaderText = "Описание";
+            this.ColumnStepDescription.MinimumWidth = 100;
+            this.ColumnStepDescription.Name = "ColumnStepDescription";
+            // 
+            // ColumnStepFlag
+            // 
+            this.ColumnStepFlag.HeaderText = "Отметка о завершении";
+            this.ColumnStepFlag.Name = "ColumnStepFlag";
             // 
             // tsTargetStep
             // 
@@ -618,6 +535,106 @@
             this.tspTargetStepDelete.Size = new System.Drawing.Size(21, 20);
             this.tspTargetStepDelete.Text = "Удалить шаг";
             this.tspTargetStepDelete.Click += new System.EventHandler(this.tspTargetStepDelete_Click);
+            // 
+            // pTargetComplete
+            // 
+            this.pTargetComplete.Controls.Add(this.checkTargetCompleteFlag);
+            this.pTargetComplete.Controls.Add(this.label1);
+            this.pTargetComplete.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pTargetComplete.Location = new System.Drawing.Point(0, 476);
+            this.pTargetComplete.Name = "pTargetComplete";
+            this.pTargetComplete.Size = new System.Drawing.Size(730, 37);
+            this.pTargetComplete.TabIndex = 3;
+            // 
+            // checkTargetCompleteFlag
+            // 
+            this.checkTargetCompleteFlag.AutoSize = true;
+            this.checkTargetCompleteFlag.Location = new System.Drawing.Point(143, 10);
+            this.checkTargetCompleteFlag.Name = "checkTargetCompleteFlag";
+            this.checkTargetCompleteFlag.Size = new System.Drawing.Size(15, 14);
+            this.checkTargetCompleteFlag.TabIndex = 1;
+            this.checkTargetCompleteFlag.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Отметка о завершении";
+            // 
+            // gbTargetDescription
+            // 
+            this.gbTargetDescription.Controls.Add(this.rtbTargetDescription);
+            this.gbTargetDescription.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbTargetDescription.Location = new System.Drawing.Point(0, 90);
+            this.gbTargetDescription.Name = "gbTargetDescription";
+            this.gbTargetDescription.Size = new System.Drawing.Size(730, 91);
+            this.gbTargetDescription.TabIndex = 2;
+            this.gbTargetDescription.TabStop = false;
+            this.gbTargetDescription.Text = "Описание";
+            // 
+            // rtbTargetDescription
+            // 
+            this.rtbTargetDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbTargetDescription.Location = new System.Drawing.Point(3, 16);
+            this.rtbTargetDescription.Name = "rtbTargetDescription";
+            this.rtbTargetDescription.Size = new System.Drawing.Size(724, 72);
+            this.rtbTargetDescription.TabIndex = 0;
+            this.rtbTargetDescription.Text = "";
+            // 
+            // gbTargetDateEnd
+            // 
+            this.gbTargetDateEnd.Controls.Add(this.dtpTargetDateEnd);
+            this.gbTargetDateEnd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbTargetDateEnd.Location = new System.Drawing.Point(0, 45);
+            this.gbTargetDateEnd.Name = "gbTargetDateEnd";
+            this.gbTargetDateEnd.Size = new System.Drawing.Size(730, 45);
+            this.gbTargetDateEnd.TabIndex = 1;
+            this.gbTargetDateEnd.TabStop = false;
+            this.gbTargetDateEnd.Text = "Примерная дата завершения";
+            // 
+            // dtpTargetDateEnd
+            // 
+            this.dtpTargetDateEnd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpTargetDateEnd.Location = new System.Drawing.Point(3, 16);
+            this.dtpTargetDateEnd.Name = "dtpTargetDateEnd";
+            this.dtpTargetDateEnd.Size = new System.Drawing.Size(724, 20);
+            this.dtpTargetDateEnd.TabIndex = 0;
+            // 
+            // gbTargetDateStart
+            // 
+            this.gbTargetDateStart.Controls.Add(this.dtpTargetDateStart);
+            this.gbTargetDateStart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbTargetDateStart.Location = new System.Drawing.Point(0, 0);
+            this.gbTargetDateStart.Name = "gbTargetDateStart";
+            this.gbTargetDateStart.Size = new System.Drawing.Size(730, 45);
+            this.gbTargetDateStart.TabIndex = 0;
+            this.gbTargetDateStart.TabStop = false;
+            this.gbTargetDateStart.Text = "Дата начала реализации";
+            // 
+            // dtpTargetDateStart
+            // 
+            this.dtpTargetDateStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpTargetDateStart.Location = new System.Drawing.Point(3, 16);
+            this.dtpTargetDateStart.Name = "dtpTargetDateStart";
+            this.dtpTargetDateStart.Size = new System.Drawing.Size(724, 20);
+            this.dtpTargetDateStart.TabIndex = 0;
+            // 
+            // tsTargetList
+            // 
+            this.tsTargetList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbTargetAdd,
+            this.tslTargetAdd,
+            this.tstbTargetName,
+            this.tsbTargetCanselAdd,
+            this.tsbTargetDelete});
+            this.tsTargetList.Location = new System.Drawing.Point(3, 3);
+            this.tsTargetList.Name = "tsTargetList";
+            this.tsTargetList.Size = new System.Drawing.Size(904, 25);
+            this.tsTargetList.TabIndex = 0;
+            this.tsTargetList.Text = "toolStrip1";
             // 
             // tsbTargetAdd
             // 
@@ -664,54 +681,17 @@
             this.tsbTargetDelete.Text = "Удалить";
             this.tsbTargetDelete.Click += new System.EventHandler(this.tsbTargetDelete_Click);
             // 
-            // ColumnTargetName
+            // tabPageShopping
             // 
-            this.ColumnTargetName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnTargetName.HeaderText = "Имя";
-            this.ColumnTargetName.Name = "ColumnTargetName";
-            this.ColumnTargetName.ReadOnly = true;
-            // 
-            // ColumnTargetStepNumber
-            // 
-            this.ColumnTargetStepNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ColumnTargetStepNumber.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColumnTargetStepNumber.HeaderText = "Номер шага";
-            this.ColumnTargetStepNumber.MinimumWidth = 50;
-            this.ColumnTargetStepNumber.Name = "ColumnTargetStepNumber";
-            this.ColumnTargetStepNumber.Width = 94;
-            // 
-            // ColumnStepName
-            // 
-            this.ColumnStepName.HeaderText = "Название";
-            this.ColumnStepName.Name = "ColumnStepName";
-            // 
-            // ColumnStepDescription
-            // 
-            this.ColumnStepDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnStepDescription.HeaderText = "Описание";
-            this.ColumnStepDescription.MinimumWidth = 100;
-            this.ColumnStepDescription.Name = "ColumnStepDescription";
-            // 
-            // ColumnStepFlag
-            // 
-            this.ColumnStepFlag.HeaderText = "Отметка о завершении";
-            this.ColumnStepFlag.Name = "ColumnStepFlag";
-            // 
-            // tsShoppingList
-            // 
-            this.tsShoppingList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbShopAdd,
-            this.tslShopAdd,
-            this.tstbShopAdd,
-            this.tsbShopCanselAdd,
-            this.tsbShopDelete});
-            this.tsShoppingList.Location = new System.Drawing.Point(3, 3);
-            this.tsShoppingList.Name = "tsShoppingList";
-            this.tsShoppingList.Size = new System.Drawing.Size(904, 25);
-            this.tsShoppingList.TabIndex = 0;
-            this.tsShoppingList.Text = "toolStrip2";
+            this.tabPageShopping.Controls.Add(this.splitContainerShop);
+            this.tabPageShopping.Controls.Add(this.tsShoppingList);
+            this.tabPageShopping.Location = new System.Drawing.Point(4, 22);
+            this.tabPageShopping.Name = "tabPageShopping";
+            this.tabPageShopping.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageShopping.Size = new System.Drawing.Size(910, 544);
+            this.tabPageShopping.TabIndex = 2;
+            this.tabPageShopping.Text = "Список покупок";
+            this.tabPageShopping.UseVisualStyleBackColor = true;
             // 
             // splitContainerShop
             // 
@@ -752,16 +732,26 @@
             this.imageListShopping.Images.SetKeyName(1, "baseline_label_black_36dp.png");
             this.imageListShopping.Images.SetKeyName(2, "baseline_hourglass_empty_black_36dp.png");
             // 
-            // gbShoppingCost
+            // gbShoppingDescription
             // 
-            this.gbShoppingCost.Controls.Add(this.tbShoppingCost);
-            this.gbShoppingCost.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbShoppingCost.Location = new System.Drawing.Point(0, 0);
-            this.gbShoppingCost.Name = "gbShoppingCost";
-            this.gbShoppingCost.Size = new System.Drawing.Size(730, 50);
-            this.gbShoppingCost.TabIndex = 0;
-            this.gbShoppingCost.TabStop = false;
-            this.gbShoppingCost.Text = "Цена";
+            this.gbShoppingDescription.Controls.Add(this.rtbShoppingDescription);
+            this.gbShoppingDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbShoppingDescription.Location = new System.Drawing.Point(0, 100);
+            this.gbShoppingDescription.Name = "gbShoppingDescription";
+            this.gbShoppingDescription.Size = new System.Drawing.Size(730, 413);
+            this.gbShoppingDescription.TabIndex = 2;
+            this.gbShoppingDescription.TabStop = false;
+            this.gbShoppingDescription.Text = "Описание";
+            // 
+            // rtbShoppingDescription
+            // 
+            this.rtbShoppingDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbShoppingDescription.Location = new System.Drawing.Point(3, 16);
+            this.rtbShoppingDescription.Name = "rtbShoppingDescription";
+            this.rtbShoppingDescription.Size = new System.Drawing.Size(724, 394);
+            this.rtbShoppingDescription.TabIndex = 0;
+            this.rtbShoppingDescription.Text = "";
+            this.rtbShoppingDescription.TextChanged += new System.EventHandler(this.rtbShoppingDescription_TextChanged);
             // 
             // gbShoppingFlag
             // 
@@ -785,6 +775,17 @@
             this.checkShoppingFlag.UseVisualStyleBackColor = true;
             this.checkShoppingFlag.CheckedChanged += new System.EventHandler(this.checkShoppingFlag_CheckedChanged);
             // 
+            // gbShoppingCost
+            // 
+            this.gbShoppingCost.Controls.Add(this.tbShoppingCost);
+            this.gbShoppingCost.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbShoppingCost.Location = new System.Drawing.Point(0, 0);
+            this.gbShoppingCost.Name = "gbShoppingCost";
+            this.gbShoppingCost.Size = new System.Drawing.Size(730, 50);
+            this.gbShoppingCost.TabIndex = 0;
+            this.gbShoppingCost.TabStop = false;
+            this.gbShoppingCost.Text = "Цена";
+            // 
             // tbShoppingCost
             // 
             this.tbShoppingCost.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -795,26 +796,19 @@
             this.tbShoppingCost.TextChanged += new System.EventHandler(this.tbShoppingCost_TextChanged);
             this.tbShoppingCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbShoppingCost_KeyPress);
             // 
-            // gbShoppingDescription
+            // tsShoppingList
             // 
-            this.gbShoppingDescription.Controls.Add(this.rtbShoppingDescription);
-            this.gbShoppingDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbShoppingDescription.Location = new System.Drawing.Point(0, 100);
-            this.gbShoppingDescription.Name = "gbShoppingDescription";
-            this.gbShoppingDescription.Size = new System.Drawing.Size(730, 413);
-            this.gbShoppingDescription.TabIndex = 2;
-            this.gbShoppingDescription.TabStop = false;
-            this.gbShoppingDescription.Text = "Описание";
-            // 
-            // rtbShoppingDescription
-            // 
-            this.rtbShoppingDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbShoppingDescription.Location = new System.Drawing.Point(3, 16);
-            this.rtbShoppingDescription.Name = "rtbShoppingDescription";
-            this.rtbShoppingDescription.Size = new System.Drawing.Size(724, 394);
-            this.rtbShoppingDescription.TabIndex = 0;
-            this.rtbShoppingDescription.Text = "";
-            this.rtbShoppingDescription.TextChanged += new System.EventHandler(this.rtbShoppingDescription_TextChanged);
+            this.tsShoppingList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbShopAdd,
+            this.tslShopAdd,
+            this.tstbShopAdd,
+            this.tsbShopCanselAdd,
+            this.tsbShopDelete});
+            this.tsShoppingList.Location = new System.Drawing.Point(3, 3);
+            this.tsShoppingList.Name = "tsShoppingList";
+            this.tsShoppingList.Size = new System.Drawing.Size(904, 25);
+            this.tsShoppingList.TabIndex = 0;
+            this.tsShoppingList.Text = "toolStrip2";
             // 
             // tsbShopAdd
             // 
@@ -861,18 +855,17 @@
             this.tsbShopDelete.Text = "Удалить";
             this.tsbShopDelete.Click += new System.EventHandler(this.tsbShopDelete_Click);
             // 
-            // tsProjectList
+            // tabPageProjects
             // 
-            this.tsProjectList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbProjectAdd,
-            this.tslProjectAdd,
-            this.tstbProjectName,
-            this.tsbProjectCanselAdd,
-            this.tsbProjectDelete});
-            this.tsProjectList.Location = new System.Drawing.Point(3, 3);
-            this.tsProjectList.Name = "tsProjectList";
-            this.tsProjectList.Size = new System.Drawing.Size(904, 25);
-            this.tsProjectList.TabIndex = 0;
+            this.tabPageProjects.Controls.Add(this.splitContainerProject);
+            this.tabPageProjects.Controls.Add(this.tsProjectList);
+            this.tabPageProjects.Location = new System.Drawing.Point(4, 22);
+            this.tabPageProjects.Name = "tabPageProjects";
+            this.tabPageProjects.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageProjects.Size = new System.Drawing.Size(910, 544);
+            this.tabPageProjects.TabIndex = 3;
+            this.tabPageProjects.Text = "Проекты";
+            this.tabPageProjects.UseVisualStyleBackColor = true;
             // 
             // splitContainerProject
             // 
@@ -893,52 +886,13 @@
             this.splitContainerProject.SplitterDistance = 170;
             this.splitContainerProject.TabIndex = 1;
             // 
-            // tsbProjectAdd
-            // 
-            this.tsbProjectAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbProjectAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
-            this.tsbProjectAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbProjectAdd.Name = "tsbProjectAdd";
-            this.tsbProjectAdd.Size = new System.Drawing.Size(23, 22);
-            this.tsbProjectAdd.Text = "Добавить";
-            // 
-            // tslProjectAdd
-            // 
-            this.tslProjectAdd.Name = "tslProjectAdd";
-            this.tslProjectAdd.Size = new System.Drawing.Size(62, 22);
-            this.tslProjectAdd.Text = "Название:";
-            this.tslProjectAdd.Visible = false;
-            // 
-            // tstbProjectName
-            // 
-            this.tstbProjectName.Name = "tstbProjectName";
-            this.tstbProjectName.Size = new System.Drawing.Size(100, 25);
-            this.tstbProjectName.Visible = false;
-            // 
-            // tsbProjectCanselAdd
-            // 
-            this.tsbProjectCanselAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbProjectCanselAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_clear_black_36dp;
-            this.tsbProjectCanselAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbProjectCanselAdd.Name = "tsbProjectCanselAdd";
-            this.tsbProjectCanselAdd.Size = new System.Drawing.Size(23, 22);
-            this.tsbProjectCanselAdd.Text = "Отменить добавление";
-            this.tsbProjectCanselAdd.Visible = false;
-            // 
-            // tsbProjectDelete
-            // 
-            this.tsbProjectDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbProjectDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
-            this.tsbProjectDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbProjectDelete.Name = "tsbProjectDelete";
-            this.tsbProjectDelete.Size = new System.Drawing.Size(23, 22);
-            this.tsbProjectDelete.Text = "Удалить";
-            // 
             // dgvProgectsList
             // 
             this.dgvProgectsList.AllowUserToAddRows = false;
             this.dgvProgectsList.AllowUserToDeleteRows = false;
             this.dgvProgectsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProgectsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnProjectName});
             this.dgvProgectsList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProgectsList.Location = new System.Drawing.Point(0, 0);
             this.dgvProgectsList.MultiSelect = false;
@@ -947,25 +901,68 @@
             this.dgvProgectsList.RowHeadersVisible = false;
             this.dgvProgectsList.Size = new System.Drawing.Size(170, 513);
             this.dgvProgectsList.TabIndex = 0;
+            this.dgvProgectsList.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvProgectsList_CellStateChanged);
             // 
-            // gbProgectDate
+            // gbProjectSteps
             // 
-            this.gbProgectDate.Controls.Add(this.dtpProjectDate);
-            this.gbProgectDate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbProgectDate.Location = new System.Drawing.Point(0, 0);
-            this.gbProgectDate.Name = "gbProgectDate";
-            this.gbProgectDate.Size = new System.Drawing.Size(730, 45);
-            this.gbProgectDate.TabIndex = 0;
-            this.gbProgectDate.TabStop = false;
-            this.gbProgectDate.Text = "Дата начала проекта";
+            this.gbProjectSteps.Controls.Add(this.dgvProgectSteps);
+            this.gbProjectSteps.Controls.Add(this.tsProjectStep);
+            this.gbProjectSteps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbProjectSteps.Location = new System.Drawing.Point(0, 163);
+            this.gbProjectSteps.Name = "gbProjectSteps";
+            this.gbProjectSteps.Size = new System.Drawing.Size(730, 350);
+            this.gbProjectSteps.TabIndex = 2;
+            this.gbProjectSteps.TabStop = false;
+            this.gbProjectSteps.Text = "Шаги реализации проекта";
             // 
-            // dtpProjectDate
+            // dgvProgectSteps
             // 
-            this.dtpProjectDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpProjectDate.Location = new System.Drawing.Point(3, 16);
-            this.dtpProjectDate.Name = "dtpProjectDate";
-            this.dtpProjectDate.Size = new System.Drawing.Size(724, 20);
-            this.dtpProjectDate.TabIndex = 0;
+            this.dgvProgectSteps.AllowUserToAddRows = false;
+            this.dgvProgectSteps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProgectSteps.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnProjectStepNumber,
+            this.ColumnProjectStepName,
+            this.ColumnProjectStepDescription,
+            this.ColumnProjectStepFlag});
+            this.dgvProgectSteps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProgectSteps.Location = new System.Drawing.Point(27, 16);
+            this.dgvProgectSteps.MultiSelect = false;
+            this.dgvProgectSteps.Name = "dgvProgectSteps";
+            this.dgvProgectSteps.RowHeadersVisible = false;
+            this.dgvProgectSteps.Size = new System.Drawing.Size(700, 331);
+            this.dgvProgectSteps.TabIndex = 1;
+            // 
+            // tsProjectStep
+            // 
+            this.tsProjectStep.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tsProjectStep.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbProjectStepAdd,
+            this.tsbProjectStepDelete});
+            this.tsProjectStep.Location = new System.Drawing.Point(3, 16);
+            this.tsProjectStep.Name = "tsProjectStep";
+            this.tsProjectStep.Size = new System.Drawing.Size(24, 331);
+            this.tsProjectStep.TabIndex = 0;
+            this.tsProjectStep.Text = "toolStrip1";
+            // 
+            // tsbProjectStepAdd
+            // 
+            this.tsbProjectStepAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbProjectStepAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
+            this.tsbProjectStepAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbProjectStepAdd.Name = "tsbProjectStepAdd";
+            this.tsbProjectStepAdd.Size = new System.Drawing.Size(29, 20);
+            this.tsbProjectStepAdd.Text = "Добавить шаг";
+            this.tsbProjectStepAdd.Click += new System.EventHandler(this.tsbProjectStepAdd_Click);
+            // 
+            // tsbProjectStepDelete
+            // 
+            this.tsbProjectStepDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbProjectStepDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
+            this.tsbProjectStepDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbProjectStepDelete.Name = "tsbProjectStepDelete";
+            this.tsbProjectStepDelete.Size = new System.Drawing.Size(29, 20);
+            this.tsbProjectStepDelete.Text = "Удалить шаг";
+            this.tsbProjectStepDelete.Click += new System.EventHandler(this.tsbProjectStepDelete_Click);
             // 
             // gbProgectDescription
             // 
@@ -987,58 +984,122 @@
             this.rtbProjectDescription.TabIndex = 0;
             this.rtbProjectDescription.Text = "";
             // 
-            // gbProjectSteps
+            // gbProgectDate
             // 
-            this.gbProjectSteps.Controls.Add(this.dgvProgectSteps);
-            this.gbProjectSteps.Controls.Add(this.tsProjectStep);
-            this.gbProjectSteps.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbProjectSteps.Location = new System.Drawing.Point(0, 163);
-            this.gbProjectSteps.Name = "gbProjectSteps";
-            this.gbProjectSteps.Size = new System.Drawing.Size(730, 350);
-            this.gbProjectSteps.TabIndex = 2;
-            this.gbProjectSteps.TabStop = false;
-            this.gbProjectSteps.Text = "Шаги реализации проекта";
+            this.gbProgectDate.Controls.Add(this.dtpProjectDate);
+            this.gbProgectDate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbProgectDate.Location = new System.Drawing.Point(0, 0);
+            this.gbProgectDate.Name = "gbProgectDate";
+            this.gbProgectDate.Size = new System.Drawing.Size(730, 45);
+            this.gbProgectDate.TabIndex = 0;
+            this.gbProgectDate.TabStop = false;
+            this.gbProgectDate.Text = "Дата начала проекта";
             // 
-            // tsProjectStep
+            // dtpProjectDate
             // 
-            this.tsProjectStep.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tsProjectStep.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbProjectStepAdd,
-            this.tsbProjectStepDelete});
-            this.tsProjectStep.Location = new System.Drawing.Point(3, 16);
-            this.tsProjectStep.Name = "tsProjectStep";
-            this.tsProjectStep.Size = new System.Drawing.Size(24, 331);
-            this.tsProjectStep.TabIndex = 0;
-            this.tsProjectStep.Text = "toolStrip1";
+            this.dtpProjectDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpProjectDate.Location = new System.Drawing.Point(3, 16);
+            this.dtpProjectDate.Name = "dtpProjectDate";
+            this.dtpProjectDate.Size = new System.Drawing.Size(724, 20);
+            this.dtpProjectDate.TabIndex = 0;
             // 
-            // dgvProgectSteps
+            // tsProjectList
             // 
-            this.dgvProgectSteps.AllowUserToAddRows = false;
-            this.dgvProgectSteps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProgectSteps.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProgectSteps.Location = new System.Drawing.Point(27, 16);
-            this.dgvProgectSteps.MultiSelect = false;
-            this.dgvProgectSteps.Name = "dgvProgectSteps";
-            this.dgvProgectSteps.Size = new System.Drawing.Size(700, 331);
-            this.dgvProgectSteps.TabIndex = 1;
+            this.tsProjectList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbProjectAdd,
+            this.tsbProjectDelete,
+            this.tslProjectAdd,
+            this.tstbProjectName,
+            this.tsbProjectCanselAdd});
+            this.tsProjectList.Location = new System.Drawing.Point(3, 3);
+            this.tsProjectList.Name = "tsProjectList";
+            this.tsProjectList.Size = new System.Drawing.Size(904, 25);
+            this.tsProjectList.TabIndex = 0;
             // 
-            // tsbProjectStepAdd
+            // tsbProjectAdd
             // 
-            this.tsbProjectStepAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbProjectStepAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
-            this.tsbProjectStepAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbProjectStepAdd.Name = "tsbProjectStepAdd";
-            this.tsbProjectStepAdd.Size = new System.Drawing.Size(21, 20);
-            this.tsbProjectStepAdd.Text = "Добавить шаг";
+            this.tsbProjectAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbProjectAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
+            this.tsbProjectAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbProjectAdd.Name = "tsbProjectAdd";
+            this.tsbProjectAdd.Size = new System.Drawing.Size(23, 22);
+            this.tsbProjectAdd.Text = "Добавить";
+            this.tsbProjectAdd.Click += new System.EventHandler(this.tsbProjectAdd_Click);
             // 
-            // tsbProjectStepDelete
+            // tslProjectAdd
             // 
-            this.tsbProjectStepDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbProjectStepDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
-            this.tsbProjectStepDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbProjectStepDelete.Name = "tsbProjectStepDelete";
-            this.tsbProjectStepDelete.Size = new System.Drawing.Size(21, 20);
-            this.tsbProjectStepDelete.Text = "Удалить шаг";
+            this.tslProjectAdd.Name = "tslProjectAdd";
+            this.tslProjectAdd.Size = new System.Drawing.Size(62, 22);
+            this.tslProjectAdd.Text = "Название:";
+            this.tslProjectAdd.Visible = false;
+            // 
+            // tstbProjectName
+            // 
+            this.tstbProjectName.Name = "tstbProjectName";
+            this.tstbProjectName.Size = new System.Drawing.Size(100, 25);
+            this.tstbProjectName.Visible = false;
+            this.tstbProjectName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbProjectName_KeyDown);
+            // 
+            // tsbProjectCanselAdd
+            // 
+            this.tsbProjectCanselAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbProjectCanselAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_clear_black_36dp;
+            this.tsbProjectCanselAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbProjectCanselAdd.Name = "tsbProjectCanselAdd";
+            this.tsbProjectCanselAdd.Size = new System.Drawing.Size(23, 22);
+            this.tsbProjectCanselAdd.Text = "Отменить добавление";
+            this.tsbProjectCanselAdd.Visible = false;
+            this.tsbProjectCanselAdd.Click += new System.EventHandler(this.tsbProjectCanselAdd_Click);
+            // 
+            // tsbProjectDelete
+            // 
+            this.tsbProjectDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbProjectDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
+            this.tsbProjectDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbProjectDelete.Name = "tsbProjectDelete";
+            this.tsbProjectDelete.Size = new System.Drawing.Size(23, 22);
+            this.tsbProjectDelete.Text = "Удалить";
+            this.tsbProjectDelete.Click += new System.EventHandler(this.tsbProjectDelete_Click);
+            // 
+            // ColumnProjectName
+            // 
+            this.ColumnProjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnProjectName.HeaderText = "Название проекта";
+            this.ColumnProjectName.MinimumWidth = 50;
+            this.ColumnProjectName.Name = "ColumnProjectName";
+            this.ColumnProjectName.ReadOnly = true;
+            // 
+            // ColumnProjectStepNumber
+            // 
+            this.ColumnProjectStepNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle24.Format = "N0";
+            dataGridViewCellStyle24.NullValue = "0";
+            this.ColumnProjectStepNumber.DefaultCellStyle = dataGridViewCellStyle24;
+            this.ColumnProjectStepNumber.HeaderText = "Номер шага";
+            this.ColumnProjectStepNumber.Name = "ColumnProjectStepNumber";
+            this.ColumnProjectStepNumber.Width = 94;
+            // 
+            // ColumnProjectStepName
+            // 
+            this.ColumnProjectStepName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnProjectStepName.HeaderText = "Название шага";
+            this.ColumnProjectStepName.MinimumWidth = 100;
+            this.ColumnProjectStepName.Name = "ColumnProjectStepName";
+            this.ColumnProjectStepName.Width = 101;
+            // 
+            // ColumnProjectStepDescription
+            // 
+            this.ColumnProjectStepDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnProjectStepDescription.HeaderText = "Описание";
+            this.ColumnProjectStepDescription.MinimumWidth = 105;
+            this.ColumnProjectStepDescription.Name = "ColumnProjectStepDescription";
+            // 
+            // ColumnProjectStepFlag
+            // 
+            this.ColumnProjectStepFlag.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnProjectStepFlag.HeaderText = "Отметка о выполнении";
+            this.ColumnProjectStepFlag.Name = "ColumnProjectStepFlag";
+            this.ColumnProjectStepFlag.Width = 118;
             // 
             // FormPlans
             // 
@@ -1065,54 +1126,54 @@
             this.tsFuterePunkt.ResumeLayout(false);
             this.tsFuterePunkt.PerformLayout();
             this.gbFutureRealise.ResumeLayout(false);
-            this.tabPageShopping.ResumeLayout(false);
-            this.tabPageShopping.PerformLayout();
-            this.tabPageProjects.ResumeLayout(false);
-            this.tabPageProjects.PerformLayout();
             this.tabPageTargets.ResumeLayout(false);
             this.tabPageTargets.PerformLayout();
-            this.tsTargetList.ResumeLayout(false);
-            this.tsTargetList.PerformLayout();
             this.splitContainerTarget.Panel1.ResumeLayout(false);
             this.splitContainerTarget.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerTarget)).EndInit();
             this.splitContainerTarget.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTargetList)).EndInit();
-            this.gbTargetDateStart.ResumeLayout(false);
-            this.gbTargetDateEnd.ResumeLayout(false);
-            this.gbTargetDescription.ResumeLayout(false);
-            this.pTargetComplete.ResumeLayout(false);
-            this.pTargetComplete.PerformLayout();
             this.gbTargetSteps.ResumeLayout(false);
             this.gbTargetSteps.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTargetSteps)).EndInit();
             this.tsTargetStep.ResumeLayout(false);
             this.tsTargetStep.PerformLayout();
-            this.tsShoppingList.ResumeLayout(false);
-            this.tsShoppingList.PerformLayout();
+            this.pTargetComplete.ResumeLayout(false);
+            this.pTargetComplete.PerformLayout();
+            this.gbTargetDescription.ResumeLayout(false);
+            this.gbTargetDateEnd.ResumeLayout(false);
+            this.gbTargetDateStart.ResumeLayout(false);
+            this.tsTargetList.ResumeLayout(false);
+            this.tsTargetList.PerformLayout();
+            this.tabPageShopping.ResumeLayout(false);
+            this.tabPageShopping.PerformLayout();
             this.splitContainerShop.Panel1.ResumeLayout(false);
             this.splitContainerShop.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerShop)).EndInit();
             this.splitContainerShop.ResumeLayout(false);
-            this.gbShoppingCost.ResumeLayout(false);
-            this.gbShoppingCost.PerformLayout();
+            this.gbShoppingDescription.ResumeLayout(false);
             this.gbShoppingFlag.ResumeLayout(false);
             this.gbShoppingFlag.PerformLayout();
-            this.gbShoppingDescription.ResumeLayout(false);
-            this.tsProjectList.ResumeLayout(false);
-            this.tsProjectList.PerformLayout();
+            this.gbShoppingCost.ResumeLayout(false);
+            this.gbShoppingCost.PerformLayout();
+            this.tsShoppingList.ResumeLayout(false);
+            this.tsShoppingList.PerformLayout();
+            this.tabPageProjects.ResumeLayout(false);
+            this.tabPageProjects.PerformLayout();
             this.splitContainerProject.Panel1.ResumeLayout(false);
             this.splitContainerProject.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerProject)).EndInit();
             this.splitContainerProject.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProgectsList)).EndInit();
-            this.gbProgectDate.ResumeLayout(false);
-            this.gbProgectDescription.ResumeLayout(false);
             this.gbProjectSteps.ResumeLayout(false);
             this.gbProjectSteps.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProgectSteps)).EndInit();
             this.tsProjectStep.ResumeLayout(false);
             this.tsProjectStep.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProgectSteps)).EndInit();
+            this.gbProgectDescription.ResumeLayout(false);
+            this.gbProgectDate.ResumeLayout(false);
+            this.tsProjectList.ResumeLayout(false);
+            this.tsProjectList.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1201,5 +1262,10 @@
         private System.Windows.Forms.DateTimePicker dtpProjectDate;
         private System.Windows.Forms.ToolStripButton tsbProjectStepAdd;
         private System.Windows.Forms.ToolStripButton tsbProjectStepDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProjectStepNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProjectStepName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProjectStepDescription;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnProjectStepFlag;
     }
 }

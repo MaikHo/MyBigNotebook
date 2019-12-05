@@ -501,6 +501,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="notebook.ico" />
+    <None Include="Resources\baseline_call_received_black_24dp.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

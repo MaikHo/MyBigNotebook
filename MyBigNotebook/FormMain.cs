@@ -76,5 +76,20 @@ namespace MyBigNotebook
             FormPlans form = new FormPlans(data.plants);
             form.Show();
         }
+
+        private void contextMenuStripNotify_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void toolStripButtonInTray_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void notifyIconMain_DoubleClick(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+        }
     }
 }

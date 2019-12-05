@@ -22,6 +22,7 @@ namespace MyBigNotebook.Forms
             LoadFuturePlanToForm();
             LoadTargetsToForm();
             LoadShoppingTree();
+            LoadProjectList();
         }
 
         private void LoadFuturePlanToForm()
@@ -325,6 +326,109 @@ namespace MyBigNotebook.Forms
             try
             {
                 CurrentShopping.Description = rtbShoppingDescription.Text;
+            }
+            catch { }
+        }
+
+        private void tsbProjectAdd_Click(object sender, EventArgs e)
+        {
+            tsbProjectAdd.Visible = false;
+            tsbProjectDelete.Visible = false;
+
+            tsbProjectCanselAdd.Visible = true;
+            tslProjectAdd.Visible = true;
+            tstbProjectName.Visible = true;
+
+            tstbProjectName.Focus();
+            tstbProjectName.Text = "";
+        }
+
+        private void tsbProjectCanselAdd_Click(object sender, EventArgs e)
+        {
+            tsbProjectAdd.Visible = true;
+            tsbProjectDelete.Visible = true;
+
+            tsbProjectCanselAdd.Visible = false;
+            tslProjectAdd.Visible = false;
+            tstbProjectName.Visible = false;
+        }
+
+
+        private void LoadProjectList()
+        {
+            dgvProgectsList.Rows.Clear();
+            foreach (Project project in plants.Projects)
+                dgvProgectsList.Rows.Add(new object[] {project.NameProject });
+        }
+
+        private void tstbProjectName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                plants.Projects.Add(new Project(tstbProjectName.Text));
+                LoadProjectList();
+                tsbProjectCanselAdd_Click(sender, new EventArgs());
+            }
+        }
+
+        private void tsbProjectDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewCell cell = dgvProgectsList.CurrentCell;
+                if (MessageBox.Show($"Вы точно хотите удалить проект {cell.Value.ToString()}?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Project project = plants.Projects.Where(p => p.NameProject == cell.Value.ToString()).First();
+                    plants.Projects.Remove(project);
+                    LoadProjectList();
+                }
+            }
+            catch { }
+        }
+
+        private void tsbProjectStepAdd_Click(object sender, EventArgs e)
+        {
+            dgvProgectSteps.Rows.Add(new object[] { dgvProgectSteps.Rows.Count+1, "","", false} );
+        }
+
+        private void tsbProjectStepDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvProgectSteps.CurrentCell !=  null)
+            {
+                dgvProgectSteps.Rows.RemoveAt(dgvProgectSteps.CurrentCell.RowIndex);
+            }
+        }
+
+        private void dgvProgectsList_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            try
+            {
+                switch (e.StateChanged)
+                {
+                    case DataGridViewElementStates.Selected:
+                        Project project = plants.Projects.Where(p => p.NameProject == e.Cell.Value.ToString()).First();
+                        if(e.Cell.Selected)
+                        {
+                            dtpProjectDate.Value = project.DateStart;
+                            rtbProjectDescription.Text = project.Description;
+                            dgvProgectSteps.Rows.Clear();
+
+                            foreach (ProjectStep step in project.ProjectSteps)
+                                dgvProgectSteps.Rows.Add(new object[] {step.NumberStep, step.NameStep, step.Description, step.CombleteFlag });
+                            dgvProgectSteps.Sort(dgvProgectSteps.Columns[0], ListSortDirection.Ascending);
+                        }
+                        else
+                        {
+                            project.DateStart = dtpProjectDate.Value;
+                            project.Description = rtbProjectDescription.Text;
+                            project.ProjectSteps.Clear();
+                            foreach (DataGridViewRow row in dgvProgectSteps.Rows)
+                                project.ProjectSteps.Add(new ProjectStep( Convert.ToInt32(row.Cells[0].Value), row.Cells[1].Value.ToString(),
+                                    row.Cells[2].Value.ToString(), Convert.ToBoolean(row.Cells[3].Value)));
+                        }
+
+                        break;
+                }
             }
             catch { }
         }

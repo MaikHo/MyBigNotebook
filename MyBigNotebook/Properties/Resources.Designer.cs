@@ -383,6 +383,16 @@ namespace MyBigNotebook.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_call_received_black_24dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_call_received_black_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baseline_camera_enhance_black_36dp {
             get {
                 object obj = ResourceManager.GetObject("baseline_camera_enhance_black_36dp", resourceCulture);
