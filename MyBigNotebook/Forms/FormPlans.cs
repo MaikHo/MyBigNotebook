@@ -432,5 +432,16 @@ namespace MyBigNotebook.Forms
             }
             catch { }
         }
+
+        private void FormPlans_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (DataGridViewCell cell in dgvFutureList.SelectedCells)
+                cell.Selected = false;
+            foreach (DataGridViewCell cell in dgvProgectsList.SelectedCells)
+                cell.Selected = false;
+            foreach (DataGridViewCell cell in dgvTargetList.SelectedCells)
+                cell.Selected = false;
+            
+        }
     }
 }

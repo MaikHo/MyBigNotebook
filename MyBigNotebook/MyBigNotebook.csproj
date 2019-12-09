@@ -144,6 +144,12 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\GoogleDriveClass.cs" />
+    <Compile Include="Forms\FormCryptKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCryptKey.Designer.cs">
+      <DependentUpon>FormCryptKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCryptKey.resx">
+      <DependentUpon>FormCryptKey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormInformation.resx">
       <DependentUpon>FormInformation.cs</DependentUpon>

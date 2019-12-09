@@ -17,6 +17,7 @@ namespace MyBigNotebook
         /// хранилище данных
         /// </summary>
         private ClassData data;
+
         public FormMain()
         {
             InitializeComponent();
@@ -90,6 +91,65 @@ namespace MyBigNotebook
         private void notifyIconMain_DoubleClick(object sender, EventArgs e)
         {
             this.Visible = !this.Visible;
+        }
+
+        private void tsCrypt_Click(object sender, EventArgs e)
+        {
+            FormCryptKey form = new FormCryptKey("");
+            if (!data.Crypted())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        ClassCrypt.SetKey(form.textBoxKey.Text);
+                        data.Encrypt();
+                        MessageBox.Show("Операция завершена");
+                    }
+                    catch(Exception ex) { MessageBox.Show(ex.Message); }
+                }
+            } else
+            {
+                MessageBox.Show("Шифрование уже выполнено!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tsDecrypt_Click(object sender, EventArgs e)
+        {
+            if (data.Crypted())
+            {
+                FormCryptKey form = new FormCryptKey("");
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        ClassCrypt.SetKey(form.textBoxKey.Text);
+                        data.Decrypt();
+                        MessageBox.Show("Операция завершена");
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
+                }
+                else
+                {
+                    MessageBox.Show("Шифрование не выполнено!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            
+        }
+
+        private void TsDeleteAll_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Удалить все данные без возможности восстановления?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (data.DeleteData())
+                    MessageBox.Show("Данные удалены");
+                else MessageBox.Show("Что-то пошло не так");
+            }
+        }
+
+        private void менюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Visible = true;
         }
     }
 }

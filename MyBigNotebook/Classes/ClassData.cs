@@ -46,6 +46,7 @@ namespace MyBigNotebook
         /// Распорядок дня
         /// </summary>
         public ClassRoutineDay routineDay;
+        public string test;
 
         public ClassData()
         {
@@ -57,6 +58,7 @@ namespace MyBigNotebook
             photo = new ClassPhoto();
             plants = new ClassPlants();
             routineDay = new ClassRoutineDay();
+            test = getTestString();
         }
 
         /// <summary>
@@ -75,6 +77,7 @@ namespace MyBigNotebook
                 photo.Decrypt();
                 plants.Decrypt();
                 routineDay.Decrypt();
+                test = ClassCrypt.Decrypt(test);
                 return true;
             }
             catch { return false; }
@@ -96,9 +99,28 @@ namespace MyBigNotebook
                 photo.Encrypt();
                 plants.Encrypt();
                 routineDay.Encrypt();
+                test = ClassCrypt.Encrypt(test);
                 return true;
             }
             catch { return false; }
+        }
+
+        /// <summary>
+        /// Проверка правильности введенного ключа шифрования
+        /// </summary>
+        /// <returns>Истина, если все правильно</returns>
+        public bool CryptKeyTest()
+        {
+            return ClassCrypt.Decrypt(test) == getTestString();
+        }
+
+        /// <summary>
+        /// ВЫполнено ли шифрование
+        /// </summary>
+        /// <returns>Истина, если данные зашифрованы</returns>
+        public bool Crypted()
+        {
+            return !(test == getTestString());
         }
 
         /// <summary>
@@ -157,6 +179,49 @@ namespace MyBigNotebook
             //}
         }
 
+        public bool DeleteData()
+        {
+            try
+            {
+                calendar.BirthDays.Clear();
+                calendar.MemorableDates.Clear();
+                calendar.Reminders.Clear();
+
+                diary.DiaryRecs.Clear();
+
+                finansialAssistant.CashSavings.Clear();
+                finansialAssistant.Debts.Clear();
+                finansialAssistant.Expensess.Clear();
+                finansialAssistant.Profits.Clear();
+
+                information.Dossiers.Clear();
+                information.HelpfullLinks.Clear();
+                information.HelpfullsInfo.Clear();
+
+                notes.ideas.Clear();
+                notes.passwords.Clear();
+                notes.records.Clear();
+
+                photo.Photographs.Clear();
+
+                plants.FuturePlans.Clear();
+                plants.ShoppingLists.Clear();
+                plants.Projects.Clear();
+                plants.Targets.Clear();
+
+                routineDay.Shedules.Clear();
+
+                test = getTestString();
+            }
+            catch { return false; }
+
+            return true;
+        }
+
+        private string getTestString()
+        {
+            return "It test String";
+        }
        
 
 

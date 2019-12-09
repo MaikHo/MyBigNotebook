@@ -489,7 +489,9 @@ namespace MyBigNotebook
             NumberStep = 0;
             NameStep = "";
             Description = "";
-            CombleteFlag = false;            
+            CombleteFlag = false;
+  
+                
         }
 
         public ProjectStep(int number, string name, string description, bool complete)

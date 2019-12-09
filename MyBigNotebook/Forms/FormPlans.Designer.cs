@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlans));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlPlans = new System.Windows.Forms.TabControl();
             this.tabPageFuture = new System.Windows.Forms.TabPage();
             this.splitContainerFuture = new System.Windows.Forms.SplitContainer();
@@ -100,8 +100,13 @@
             this.tabPageProjects = new System.Windows.Forms.TabPage();
             this.splitContainerProject = new System.Windows.Forms.SplitContainer();
             this.dgvProgectsList = new System.Windows.Forms.DataGridView();
+            this.ColumnProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbProjectSteps = new System.Windows.Forms.GroupBox();
             this.dgvProgectSteps = new System.Windows.Forms.DataGridView();
+            this.ColumnProjectStepNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProjectStepName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProjectStepDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProjectStepFlag = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tsProjectStep = new System.Windows.Forms.ToolStrip();
             this.tsbProjectStepAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbProjectStepDelete = new System.Windows.Forms.ToolStripButton();
@@ -111,15 +116,10 @@
             this.dtpProjectDate = new System.Windows.Forms.DateTimePicker();
             this.tsProjectList = new System.Windows.Forms.ToolStrip();
             this.tsbProjectAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbProjectDelete = new System.Windows.Forms.ToolStripButton();
             this.tslProjectAdd = new System.Windows.Forms.ToolStripLabel();
             this.tstbProjectName = new System.Windows.Forms.ToolStripTextBox();
             this.tsbProjectCanselAdd = new System.Windows.Forms.ToolStripButton();
-            this.tsbProjectDelete = new System.Windows.Forms.ToolStripButton();
-            this.ColumnProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnProjectStepNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnProjectStepName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnProjectStepDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnProjectStepFlag = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControlPlans.SuspendLayout();
             this.tabPageFuture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerFuture)).BeginInit();
@@ -318,9 +318,9 @@
             // ColumnFutureNumber
             // 
             this.ColumnFutureNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle22.Format = "N0";
-            dataGridViewCellStyle22.NullValue = "0";
-            this.ColumnFutureNumber.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.ColumnFutureNumber.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnFutureNumber.HeaderText = "Номер";
             this.ColumnFutureNumber.MinimumWidth = 50;
             this.ColumnFutureNumber.Name = "ColumnFutureNumber";
@@ -479,9 +479,9 @@
             // ColumnTargetStepNumber
             // 
             this.ColumnTargetStepNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle23.Format = "N0";
-            dataGridViewCellStyle23.NullValue = null;
-            this.ColumnTargetStepNumber.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ColumnTargetStepNumber.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnTargetStepNumber.HeaderText = "Номер шага";
             this.ColumnTargetStepNumber.MinimumWidth = 50;
             this.ColumnTargetStepNumber.Name = "ColumnTargetStepNumber";
@@ -903,6 +903,14 @@
             this.dgvProgectsList.TabIndex = 0;
             this.dgvProgectsList.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvProgectsList_CellStateChanged);
             // 
+            // ColumnProjectName
+            // 
+            this.ColumnProjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnProjectName.HeaderText = "Название проекта";
+            this.ColumnProjectName.MinimumWidth = 50;
+            this.ColumnProjectName.Name = "ColumnProjectName";
+            this.ColumnProjectName.ReadOnly = true;
+            // 
             // gbProjectSteps
             // 
             this.gbProjectSteps.Controls.Add(this.dgvProgectSteps);
@@ -932,6 +940,38 @@
             this.dgvProgectSteps.Size = new System.Drawing.Size(700, 331);
             this.dgvProgectSteps.TabIndex = 1;
             // 
+            // ColumnProjectStepNumber
+            // 
+            this.ColumnProjectStepNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.ColumnProjectStepNumber.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnProjectStepNumber.HeaderText = "Номер шага";
+            this.ColumnProjectStepNumber.Name = "ColumnProjectStepNumber";
+            this.ColumnProjectStepNumber.Width = 87;
+            // 
+            // ColumnProjectStepName
+            // 
+            this.ColumnProjectStepName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnProjectStepName.HeaderText = "Название шага";
+            this.ColumnProjectStepName.MinimumWidth = 100;
+            this.ColumnProjectStepName.Name = "ColumnProjectStepName";
+            this.ColumnProjectStepName.Width = 101;
+            // 
+            // ColumnProjectStepDescription
+            // 
+            this.ColumnProjectStepDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnProjectStepDescription.HeaderText = "Описание";
+            this.ColumnProjectStepDescription.MinimumWidth = 105;
+            this.ColumnProjectStepDescription.Name = "ColumnProjectStepDescription";
+            // 
+            // ColumnProjectStepFlag
+            // 
+            this.ColumnProjectStepFlag.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnProjectStepFlag.HeaderText = "Отметка о выполнении";
+            this.ColumnProjectStepFlag.Name = "ColumnProjectStepFlag";
+            this.ColumnProjectStepFlag.Width = 118;
+            // 
             // tsProjectStep
             // 
             this.tsProjectStep.Dock = System.Windows.Forms.DockStyle.Left;
@@ -950,7 +990,7 @@
             this.tsbProjectStepAdd.Image = global::MyBigNotebook.Properties.Resources.baseline_add_black_36dp;
             this.tsbProjectStepAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbProjectStepAdd.Name = "tsbProjectStepAdd";
-            this.tsbProjectStepAdd.Size = new System.Drawing.Size(29, 20);
+            this.tsbProjectStepAdd.Size = new System.Drawing.Size(21, 20);
             this.tsbProjectStepAdd.Text = "Добавить шаг";
             this.tsbProjectStepAdd.Click += new System.EventHandler(this.tsbProjectStepAdd_Click);
             // 
@@ -960,7 +1000,7 @@
             this.tsbProjectStepDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
             this.tsbProjectStepDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbProjectStepDelete.Name = "tsbProjectStepDelete";
-            this.tsbProjectStepDelete.Size = new System.Drawing.Size(29, 20);
+            this.tsbProjectStepDelete.Size = new System.Drawing.Size(21, 20);
             this.tsbProjectStepDelete.Text = "Удалить шаг";
             this.tsbProjectStepDelete.Click += new System.EventHandler(this.tsbProjectStepDelete_Click);
             // 
@@ -1026,6 +1066,16 @@
             this.tsbProjectAdd.Text = "Добавить";
             this.tsbProjectAdd.Click += new System.EventHandler(this.tsbProjectAdd_Click);
             // 
+            // tsbProjectDelete
+            // 
+            this.tsbProjectDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbProjectDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
+            this.tsbProjectDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbProjectDelete.Name = "tsbProjectDelete";
+            this.tsbProjectDelete.Size = new System.Drawing.Size(23, 22);
+            this.tsbProjectDelete.Text = "Удалить";
+            this.tsbProjectDelete.Click += new System.EventHandler(this.tsbProjectDelete_Click);
+            // 
             // tslProjectAdd
             // 
             this.tslProjectAdd.Name = "tslProjectAdd";
@@ -1051,56 +1101,6 @@
             this.tsbProjectCanselAdd.Visible = false;
             this.tsbProjectCanselAdd.Click += new System.EventHandler(this.tsbProjectCanselAdd_Click);
             // 
-            // tsbProjectDelete
-            // 
-            this.tsbProjectDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbProjectDelete.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_black_36dp;
-            this.tsbProjectDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbProjectDelete.Name = "tsbProjectDelete";
-            this.tsbProjectDelete.Size = new System.Drawing.Size(23, 22);
-            this.tsbProjectDelete.Text = "Удалить";
-            this.tsbProjectDelete.Click += new System.EventHandler(this.tsbProjectDelete_Click);
-            // 
-            // ColumnProjectName
-            // 
-            this.ColumnProjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnProjectName.HeaderText = "Название проекта";
-            this.ColumnProjectName.MinimumWidth = 50;
-            this.ColumnProjectName.Name = "ColumnProjectName";
-            this.ColumnProjectName.ReadOnly = true;
-            // 
-            // ColumnProjectStepNumber
-            // 
-            this.ColumnProjectStepNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle24.Format = "N0";
-            dataGridViewCellStyle24.NullValue = "0";
-            this.ColumnProjectStepNumber.DefaultCellStyle = dataGridViewCellStyle24;
-            this.ColumnProjectStepNumber.HeaderText = "Номер шага";
-            this.ColumnProjectStepNumber.Name = "ColumnProjectStepNumber";
-            this.ColumnProjectStepNumber.Width = 94;
-            // 
-            // ColumnProjectStepName
-            // 
-            this.ColumnProjectStepName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnProjectStepName.HeaderText = "Название шага";
-            this.ColumnProjectStepName.MinimumWidth = 100;
-            this.ColumnProjectStepName.Name = "ColumnProjectStepName";
-            this.ColumnProjectStepName.Width = 101;
-            // 
-            // ColumnProjectStepDescription
-            // 
-            this.ColumnProjectStepDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnProjectStepDescription.HeaderText = "Описание";
-            this.ColumnProjectStepDescription.MinimumWidth = 105;
-            this.ColumnProjectStepDescription.Name = "ColumnProjectStepDescription";
-            // 
-            // ColumnProjectStepFlag
-            // 
-            this.ColumnProjectStepFlag.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnProjectStepFlag.HeaderText = "Отметка о выполнении";
-            this.ColumnProjectStepFlag.Name = "ColumnProjectStepFlag";
-            this.ColumnProjectStepFlag.Width = 118;
-            // 
             // FormPlans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1110,6 +1110,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPlans";
             this.Text = "Планы";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPlans_FormClosing);
             this.tabControlPlans.ResumeLayout(false);
             this.tabPageFuture.ResumeLayout(false);
             this.splitContainerFuture.Panel1.ResumeLayout(false);

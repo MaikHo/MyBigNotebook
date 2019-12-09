@@ -65,6 +65,11 @@
             this.tabPageRecords = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dgvRecord = new System.Windows.Forms.DataGridView();
+            this.ColumnRecordName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbRecordsText = new System.Windows.Forms.GroupBox();
+            this.rtbRecordsText = new System.Windows.Forms.RichTextBox();
+            this.gbRecordKeys = new System.Windows.Forms.GroupBox();
+            this.tbRecordsKeys = new System.Windows.Forms.TextBox();
             this.toolStripRecords = new System.Windows.Forms.ToolStrip();
             this.tsbRecordAdd = new System.Windows.Forms.ToolStripButton();
             this.tslrecordAdd = new System.Windows.Forms.ToolStripLabel();
@@ -72,11 +77,6 @@
             this.tsbRecordCanselAdd = new System.Windows.Forms.ToolStripButton();
             this.tssRecordSep = new System.Windows.Forms.ToolStripSeparator();
             this.tsbRecordDelete = new System.Windows.Forms.ToolStripButton();
-            this.ColumnRecordName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gbRecordKeys = new System.Windows.Forms.GroupBox();
-            this.gbRecordsText = new System.Windows.Forms.GroupBox();
-            this.rtbRecordsText = new System.Windows.Forms.RichTextBox();
-            this.tbRecordsKeys = new System.Windows.Forms.TextBox();
             this.tabControlNotes.SuspendLayout();
             this.tabPagePassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -103,9 +103,9 @@
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
-            this.toolStripRecords.SuspendLayout();
-            this.gbRecordKeys.SuspendLayout();
             this.gbRecordsText.SuspendLayout();
+            this.gbRecordKeys.SuspendLayout();
+            this.toolStripRecords.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlNotes
@@ -506,6 +506,53 @@
             this.dgvRecord.TabIndex = 0;
             this.dgvRecord.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvRecord_CellStateChanged);
             // 
+            // ColumnRecordName
+            // 
+            this.ColumnRecordName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnRecordName.HeaderText = "Название";
+            this.ColumnRecordName.Name = "ColumnRecordName";
+            this.ColumnRecordName.ReadOnly = true;
+            // 
+            // gbRecordsText
+            // 
+            this.gbRecordsText.Controls.Add(this.rtbRecordsText);
+            this.gbRecordsText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbRecordsText.Location = new System.Drawing.Point(0, 0);
+            this.gbRecordsText.Name = "gbRecordsText";
+            this.gbRecordsText.Size = new System.Drawing.Size(452, 371);
+            this.gbRecordsText.TabIndex = 1;
+            this.gbRecordsText.TabStop = false;
+            this.gbRecordsText.Text = "Текст";
+            // 
+            // rtbRecordsText
+            // 
+            this.rtbRecordsText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbRecordsText.Location = new System.Drawing.Point(3, 16);
+            this.rtbRecordsText.Name = "rtbRecordsText";
+            this.rtbRecordsText.Size = new System.Drawing.Size(446, 352);
+            this.rtbRecordsText.TabIndex = 0;
+            this.rtbRecordsText.Text = "";
+            // 
+            // gbRecordKeys
+            // 
+            this.gbRecordKeys.Controls.Add(this.tbRecordsKeys);
+            this.gbRecordKeys.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gbRecordKeys.Location = new System.Drawing.Point(0, 371);
+            this.gbRecordKeys.Name = "gbRecordKeys";
+            this.gbRecordKeys.Size = new System.Drawing.Size(452, 100);
+            this.gbRecordKeys.TabIndex = 0;
+            this.gbRecordKeys.TabStop = false;
+            this.gbRecordKeys.Text = "Ключевые слова";
+            // 
+            // tbRecordsKeys
+            // 
+            this.tbRecordsKeys.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbRecordsKeys.Location = new System.Drawing.Point(3, 16);
+            this.tbRecordsKeys.Multiline = true;
+            this.tbRecordsKeys.Name = "tbRecordsKeys";
+            this.tbRecordsKeys.Size = new System.Drawing.Size(446, 81);
+            this.tbRecordsKeys.TabIndex = 0;
+            // 
             // toolStripRecords
             // 
             this.toolStripRecords.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -572,53 +619,6 @@
             this.tsbRecordDelete.Text = "Удалить";
             this.tsbRecordDelete.Click += new System.EventHandler(this.tsbRecordDelete_Click);
             // 
-            // ColumnRecordName
-            // 
-            this.ColumnRecordName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnRecordName.HeaderText = "Название";
-            this.ColumnRecordName.Name = "ColumnRecordName";
-            this.ColumnRecordName.ReadOnly = true;
-            // 
-            // gbRecordKeys
-            // 
-            this.gbRecordKeys.Controls.Add(this.tbRecordsKeys);
-            this.gbRecordKeys.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gbRecordKeys.Location = new System.Drawing.Point(0, 371);
-            this.gbRecordKeys.Name = "gbRecordKeys";
-            this.gbRecordKeys.Size = new System.Drawing.Size(452, 100);
-            this.gbRecordKeys.TabIndex = 0;
-            this.gbRecordKeys.TabStop = false;
-            this.gbRecordKeys.Text = "Ключевые слова";
-            // 
-            // gbRecordsText
-            // 
-            this.gbRecordsText.Controls.Add(this.rtbRecordsText);
-            this.gbRecordsText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbRecordsText.Location = new System.Drawing.Point(0, 0);
-            this.gbRecordsText.Name = "gbRecordsText";
-            this.gbRecordsText.Size = new System.Drawing.Size(452, 371);
-            this.gbRecordsText.TabIndex = 1;
-            this.gbRecordsText.TabStop = false;
-            this.gbRecordsText.Text = "Текст";
-            // 
-            // rtbRecordsText
-            // 
-            this.rtbRecordsText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbRecordsText.Location = new System.Drawing.Point(3, 16);
-            this.rtbRecordsText.Name = "rtbRecordsText";
-            this.rtbRecordsText.Size = new System.Drawing.Size(446, 352);
-            this.rtbRecordsText.TabIndex = 0;
-            this.rtbRecordsText.Text = "";
-            // 
-            // tbRecordsKeys
-            // 
-            this.tbRecordsKeys.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbRecordsKeys.Location = new System.Drawing.Point(3, 16);
-            this.tbRecordsKeys.Multiline = true;
-            this.tbRecordsKeys.Name = "tbRecordsKeys";
-            this.tbRecordsKeys.Size = new System.Drawing.Size(446, 81);
-            this.tbRecordsKeys.TabIndex = 0;
-            // 
             // FormNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -664,11 +664,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).EndInit();
-            this.toolStripRecords.ResumeLayout(false);
-            this.toolStripRecords.PerformLayout();
+            this.gbRecordsText.ResumeLayout(false);
             this.gbRecordKeys.ResumeLayout(false);
             this.gbRecordKeys.PerformLayout();
-            this.gbRecordsText.ResumeLayout(false);
+            this.toolStripRecords.ResumeLayout(false);
+            this.toolStripRecords.PerformLayout();
             this.ResumeLayout(false);
 
         }
