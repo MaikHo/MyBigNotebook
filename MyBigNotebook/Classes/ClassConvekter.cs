@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 
 namespace MyBigNotebook.Classes
 {
+    /// <summary>
+    /// Разнообразная конвертация
+    /// </summary>
     class ClassConvert
     {
+        /// <summary>
+        /// Конвертация изображения в base64
+        /// </summary>
+        /// <param name="FileName">Имя файла изображения</param>
+        /// <returns>Изображение в base64</returns>
        static public string ConvertImageToBase64(string FileName)
         {
             string base64 = null;
@@ -25,6 +31,11 @@ namespace MyBigNotebook.Classes
             return base64;
         }
 
+        /// <summary>
+        /// Конвертация изображения из bse64 в Image
+        /// </summary>
+        /// <param name="Base64String">строка-изображение в base64</param>
+        /// <returns>Image</returns>
         static public Image ConvertBase64ToImage(string Base64String)
         {
             Bitmap bm2;

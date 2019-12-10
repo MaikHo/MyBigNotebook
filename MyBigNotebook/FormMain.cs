@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyBigNotebook.Forms;
+using Microsoft.Win32;
 
 namespace MyBigNotebook
 {
@@ -18,6 +19,10 @@ namespace MyBigNotebook
         /// </summary>
         private ClassData data;
 
+        const string applicationName = "MyBigNotebook";
+        const string pathRegistryKeyStartup =
+                    "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+
         public FormMain()
         {
             InitializeComponent();
@@ -25,8 +30,8 @@ namespace MyBigNotebook
             data = new ClassData();           
             data.LoadData();
             notifyIconMain.Visible = true;
-           
-           
+            tsAutoRun.Checked = CheckAutoRun();
+            timerAutoSave.Enabled = true;
         }
 
         private void buttonCalendar_Click(object sender, EventArgs e)
@@ -150,6 +155,56 @@ namespace MyBigNotebook
         private void менюToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Visible = true;
+        }
+
+        private void tsAutoRun_Click(object sender, EventArgs e)
+        {
+           
+
+            using (RegistryKey registryKeyStartup =
+                        Registry.CurrentUser.OpenSubKey(pathRegistryKeyStartup, true))
+            {
+                if (!CheckAutoRun())
+                {
+                    registryKeyStartup.SetValue(
+                        applicationName,
+                        $@"{System.Reflection.Assembly.GetExecutingAssembly().Location}");
+                }
+                else
+                {
+                    registryKeyStartup.DeleteValue(applicationName, false);
+                }
+            }
+        }
+
+        private bool CheckAutoRun()
+        {
+            const string pathRegistryKeyStartup =
+                        "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+            using (RegistryKey registryKeyStartup = Registry.CurrentUser.OpenSubKey(pathRegistryKeyStartup, true))
+            {
+                if (registryKeyStartup.GetValue(applicationName) != null) return true;
+            }
+            return false;
+        }
+
+        private void FormMain_DoubleClick(object sender, EventArgs e)
+        {
+            Visible = false;
+        }
+
+        private void timerAutoSave_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                data.SaveData();
+            }
+            catch { }
+        }
+
+        private void toolStripMenuItemExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

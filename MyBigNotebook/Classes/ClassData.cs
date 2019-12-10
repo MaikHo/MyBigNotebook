@@ -179,6 +179,10 @@ namespace MyBigNotebook
             //}
         }
 
+        /// <summary>
+        /// Удаление данных
+        /// </summary>
+        /// <returns>Истина, если удачно</returns>
         public bool DeleteData()
         {
             try
@@ -218,6 +222,10 @@ namespace MyBigNotebook
             return true;
         }
 
+        /// <summary>
+        /// Получение тестовой строки
+        /// </summary>
+        /// <returns></returns>
         private string getTestString()
         {
             return "It test String";

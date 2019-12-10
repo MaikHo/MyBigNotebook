@@ -37,6 +37,8 @@
             this.buttonNotes = new System.Windows.Forms.Button();
             this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStripNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.календарьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.дневникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.финансовыйПомошникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,11 +53,13 @@
             this.toolStripDropDownButtonSetting = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsDecrypt = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCrypt = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsDeleteAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.TsDeleteAll = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsAutoRun = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerAutoSave = new System.Windows.Forms.Timer(this.components);
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripNotify.SuspendLayout();
             this.toolStripmain.SuspendLayout();
             this.SuspendLayout();
@@ -130,10 +134,24 @@
             this.информацияToolStripMenuItem,
             this.заметкиToolStripMenuItem,
             this.фотогалереяToolStripMenuItem,
-            this.планыToolStripMenuItem});
+            this.планыToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.toolStripMenuItemExit});
             this.contextMenuStripNotify.Name = "contextMenuStripNotify";
-            this.contextMenuStripNotify.Size = new System.Drawing.Size(210, 186);
+            this.contextMenuStripNotify.Size = new System.Drawing.Size(210, 236);
             this.contextMenuStripNotify.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripNotify_Opening);
+            // 
+            // менюToolStripMenuItem
+            // 
+            this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
+            this.менюToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.менюToolStripMenuItem.Text = "Главное меню";
+            this.менюToolStripMenuItem.Click += new System.EventHandler(this.менюToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(206, 6);
             // 
             // календарьToolStripMenuItem
             // 
@@ -234,7 +252,8 @@
             this.tsCrypt,
             this.toolStripSeparator2,
             this.TsDeleteAll,
-            this.toolStripSeparator3});
+            this.toolStripSeparator3,
+            this.tsAutoRun});
             this.toolStripDropDownButtonSetting.Image = global::MyBigNotebook.Properties.Resources.baseline_build_black_36dp;
             this.toolStripDropDownButtonSetting.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonSetting.Name = "toolStripDropDownButtonSetting";
@@ -245,7 +264,7 @@
             // 
             this.tsDecrypt.Image = global::MyBigNotebook.Properties.Resources.baseline_lock_open_black_36dp;
             this.tsDecrypt.Name = "tsDecrypt";
-            this.tsDecrypt.Size = new System.Drawing.Size(157, 22);
+            this.tsDecrypt.Size = new System.Drawing.Size(180, 22);
             this.tsDecrypt.Text = "Расшифровать";
             this.tsDecrypt.Click += new System.EventHandler(this.tsDecrypt_Click);
             // 
@@ -253,39 +272,52 @@
             // 
             this.tsCrypt.Image = global::MyBigNotebook.Properties.Resources.baseline_lock_black_36dp;
             this.tsCrypt.Name = "tsCrypt";
-            this.tsCrypt.Size = new System.Drawing.Size(157, 22);
+            this.tsCrypt.Size = new System.Drawing.Size(180, 22);
             this.tsCrypt.Text = "Зашифровать";
             this.tsCrypt.Click += new System.EventHandler(this.tsCrypt_Click);
-            // 
-            // TsDeleteAll
-            // 
-            this.TsDeleteAll.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_sweep_black_36dp;
-            this.TsDeleteAll.Name = "TsDeleteAll";
-            this.TsDeleteAll.Size = new System.Drawing.Size(157, 22);
-            this.TsDeleteAll.Text = "Сброс данных";
-            this.TsDeleteAll.Click += new System.EventHandler(this.TsDeleteAll_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(206, 6);
-            // 
-            // менюToolStripMenuItem
-            // 
-            this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
-            this.менюToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.менюToolStripMenuItem.Text = "Главное меню";
-            this.менюToolStripMenuItem.Click += new System.EventHandler(this.менюToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
+            // TsDeleteAll
+            // 
+            this.TsDeleteAll.Image = global::MyBigNotebook.Properties.Resources.baseline_delete_sweep_black_36dp;
+            this.TsDeleteAll.Name = "TsDeleteAll";
+            this.TsDeleteAll.Size = new System.Drawing.Size(180, 22);
+            this.TsDeleteAll.Text = "Сброс данных";
+            this.TsDeleteAll.Click += new System.EventHandler(this.TsDeleteAll_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            // 
+            // tsAutoRun
+            // 
+            this.tsAutoRun.CheckOnClick = true;
+            this.tsAutoRun.Name = "tsAutoRun";
+            this.tsAutoRun.Size = new System.Drawing.Size(180, 22);
+            this.tsAutoRun.Text = "Автозапуск";
+            this.tsAutoRun.Click += new System.EventHandler(this.tsAutoRun_Click);
+            // 
+            // timerAutoSave
+            // 
+            this.timerAutoSave.Interval = 900000;
+            this.timerAutoSave.Tick += new System.EventHandler(this.timerAutoSave_Tick);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(206, 6);
+            // 
+            // toolStripMenuItemExit
+            // 
+            this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
+            this.toolStripMenuItemExit.Size = new System.Drawing.Size(209, 22);
+            this.toolStripMenuItemExit.Text = "Выход";
+            this.toolStripMenuItemExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
             // 
             // FormMain
             // 
@@ -307,6 +339,7 @@
             this.Name = "FormMain";
             this.Text = "Главное меню";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+            this.DoubleClick += new System.EventHandler(this.FormMain_DoubleClick);
             this.contextMenuStripNotify.ResumeLayout(false);
             this.toolStripmain.ResumeLayout(false);
             this.toolStripmain.PerformLayout();
@@ -343,6 +376,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem tsAutoRun;
+        private System.Windows.Forms.Timer timerAutoSave;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemExit;
     }
 }
 
