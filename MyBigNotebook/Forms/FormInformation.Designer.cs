@@ -690,6 +690,7 @@
             this.buttonEditLink.TabIndex = 3;
             this.buttonEditLink.Text = "Редактировать";
             this.buttonEditLink.UseVisualStyleBackColor = true;
+            this.buttonEditLink.Visible = false;
             this.buttonEditLink.Click += new System.EventHandler(this.buttonEditLink_Click);
             // 
             // linkLabelmain
@@ -702,15 +703,18 @@
             this.linkLabelmain.TabIndex = 1;
             this.linkLabelmain.TabStop = true;
             this.linkLabelmain.Text = "default link";
+            this.linkLabelmain.Visible = false;
             this.linkLabelmain.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelmain_LinkClicked);
             // 
             // rtbLinkDescription
             // 
-            this.rtbLinkDescription.Location = new System.Drawing.Point(3, 83);
+            this.rtbLinkDescription.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rtbLinkDescription.Location = new System.Drawing.Point(0, 88);
             this.rtbLinkDescription.Name = "rtbLinkDescription";
-            this.rtbLinkDescription.Size = new System.Drawing.Size(573, 417);
+            this.rtbLinkDescription.Size = new System.Drawing.Size(733, 417);
             this.rtbLinkDescription.TabIndex = 0;
             this.rtbLinkDescription.Text = "";
+            this.rtbLinkDescription.Visible = false;
             // 
             // textBoxLink
             // 
@@ -945,7 +949,7 @@
             this.toolStripButtonInfoDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonInfoDelete.Name = "toolStripButtonInfoDelete";
             this.toolStripButtonInfoDelete.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonInfoDelete.Text = "toolStripButton1";
+            this.toolStripButtonInfoDelete.Text = "Удалить";
             this.toolStripButtonInfoDelete.Click += new System.EventHandler(this.toolStripButtonInfoDelete_Click);
             // 
             // FormInformation

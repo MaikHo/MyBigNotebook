@@ -169,6 +169,7 @@
             this.tbText.Size = new System.Drawing.Size(596, 389);
             this.tbText.TabIndex = 0;
             this.tbText.Text = "";
+            this.tbText.Visible = false;
             // 
             // FormDiary
             // 

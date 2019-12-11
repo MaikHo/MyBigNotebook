@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("MyBigNotebook")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright ©  2019 Dedulko Nikita Dmitrievich")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

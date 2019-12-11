@@ -21,6 +21,9 @@ namespace MyBigNotebook.Forms
             LoadPasswordsToForm();
             LoadIdeasToForm();
             LoadRecordsToForm();
+            setIdeaVisible(false);
+            setPassVisible(false);
+            setRecordsVisible(false);
         }
 
         private void tspPassAdd_Click(object sender, EventArgs e)
@@ -81,6 +84,7 @@ namespace MyBigNotebook.Forms
                 {
                     if (eventArg.Cell.Selected)
                     {
+                        setPassVisible(true);
                         Password password = Notes.passwords.Where(t => t.Name == eventArg.Cell.Value.ToString()).First();
                         tbPassLink.Text = password.Link;
                         tbPassPass.Text = password.Pass;
@@ -159,6 +163,7 @@ namespace MyBigNotebook.Forms
                 {
                     if (ev.Cell.Selected)
                     {
+                        setIdeaVisible(true);
                         Idea idea = Notes.ideas.Where(t => t.Name == ev.Cell.Value.ToString()).First();
                         rtbIdeaRext.Text = idea.Text;
                         tbIdeaKeys.Text =ClassConvert.getKeyString(idea.keyWords);
@@ -220,6 +225,7 @@ namespace MyBigNotebook.Forms
                     Record record = Notes.records.Where(t => t.Name == ev.Cell.Value.ToString()).First();
                     if (ev.Cell.Selected)
                     {
+                        setRecordsVisible(true);
                         tbRecordsKeys.Text = ClassConvert.getKeyString(record.keyWords);
                         rtbRecordsText.Text = record.Text;
                     }
@@ -255,6 +261,25 @@ namespace MyBigNotebook.Forms
                 }
             }
             catch { }
+        }
+
+        private void setPassVisible(bool visibled)
+        {
+            gbPassLink.Visible = visibled;
+            gbPassLogin.Visible = visibled;
+            gbPassPass.Visible = visibled;
+        }
+
+        private void setIdeaVisible(bool visibled)
+        {
+            gbIdeaKeys.Visible = visibled;
+            gbIdeaText.Visible = visibled;
+        }
+
+        private void setRecordsVisible(bool visibled)
+        {
+            gbRecordKeys.Visible = visibled;
+            gbRecordsText.Visible = visibled;
         }
     }
 }

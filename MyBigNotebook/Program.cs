@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace MyBigNotebook
 {
@@ -15,8 +16,15 @@ namespace MyBigNotebook
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            Application.SetCompatibleTextRenderingDefault(false);            
+
+            using (var mutex = new Mutex(false, "MyBigNotebookMutex"))
+            {
+                if (mutex.WaitOne(TimeSpan.FromSeconds(3))) // Подождать три секунды - вдруг предыдущий экземпляр еще закрывается
+                    Application.Run(new FormMain());
+                else
+                    MessageBox.Show("Одна копия приложения уже запущена", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
     }
 }

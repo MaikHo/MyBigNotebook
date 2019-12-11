@@ -66,6 +66,7 @@ namespace MyBigNotebook.Forms
         {
             if (e.StateChanged == DataGridViewElementStates.Selected)
             {
+                tbText.Visible = true;
                if(e.Cell.Selected)
                 {
                     foreach (DiaryRec rec in diary.DiaryRecs)

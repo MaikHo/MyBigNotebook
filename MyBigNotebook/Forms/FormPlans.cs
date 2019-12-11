@@ -19,10 +19,17 @@ namespace MyBigNotebook.Forms
         {
             InitializeComponent();
             plants = classPlants;
+            setFutureVisible(false);
+            setProjectVisible(false);
+            setShoppingVisible(false);
+            setTargetVisible(false);
+
             LoadFuturePlanToForm();
             LoadTargetsToForm();
             LoadShoppingTree();
             LoadProjectList();
+
+            
         }
 
         private void LoadFuturePlanToForm()
@@ -84,7 +91,8 @@ namespace MyBigNotebook.Forms
                 {
                     FuturePlan plan = plants.FuturePlans.Where(p => p.NamePlan == e.Cell.Value.ToString()).First();
                     if (e.Cell.Selected)
-                    {                       
+                    {
+                        setFutureVisible(true);
                         dtpFutureRealiseDate.Value = plan.DateRealise;
                         dgvFuturePunkts.Rows.Clear();
 
@@ -184,6 +192,7 @@ namespace MyBigNotebook.Forms
                     Target target = plants.Targets.Where(t => t.NameTarget == e.Cell.Value.ToString()).First();
                     if (e.Cell.Selected)
                     {
+                        setTargetVisible(true);
                         dtpTargetDateStart.Value = target.DateStartRealise;
                         dtpTargetDateEnd.Value = target.DateEndRealise;
                         rtbTargetDescription.Text = target.DescriptionTarget;
@@ -299,6 +308,7 @@ namespace MyBigNotebook.Forms
                 tbShoppingCost.Text = CurrentShopping.Cost.ToString();
                 checkShoppingFlag.Checked = CurrentShopping.CompleteFlag;
                 rtbShoppingDescription.Text = CurrentShopping.Description;
+                setShoppingVisible(true);
             }
             catch { }
         }
@@ -409,6 +419,7 @@ namespace MyBigNotebook.Forms
                         Project project = plants.Projects.Where(p => p.NameProject == e.Cell.Value.ToString()).First();
                         if(e.Cell.Selected)
                         {
+                            setProjectVisible(true);
                             dtpProjectDate.Value = project.DateStart;
                             rtbProjectDescription.Text = project.Description;
                             dgvProgectSteps.Rows.Clear();
@@ -442,6 +453,35 @@ namespace MyBigNotebook.Forms
             foreach (DataGridViewCell cell in dgvTargetList.SelectedCells)
                 cell.Selected = false;
             
+        }
+
+        private void setFutureVisible(bool visibled)
+        {
+            gbFuturePunkts.Visible = visibled;
+            gbFutureRealise.Visible = visibled;
+        }
+
+        private void setTargetVisible(bool visibled)
+        {
+            gbTargetDateEnd.Visible = visibled;
+            gbTargetDateStart.Visible = visibled;
+            gbTargetDescription.Visible = visibled;
+            gbTargetSteps.Visible = visibled;
+            pTargetComplete.Visible = visibled;
+        }
+
+        private void setShoppingVisible(bool visibled)
+        {
+            gbShoppingCost.Visible = visibled;
+            gbShoppingDescription.Visible = visibled;
+            gbShoppingFlag.Visible = visibled;
+        }
+
+        private void setProjectVisible(bool visibled)
+        {
+            gbProgectDate.Visible = visibled;
+            gbProgectDescription.Visible = visibled;
+            gbProjectSteps.Visible = visibled;
         }
     }
 }

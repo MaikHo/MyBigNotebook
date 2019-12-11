@@ -36,10 +36,14 @@ namespace MyBigNotebook
 
         private void buttonCalendar_Click(object sender, EventArgs e)
         {
-            FormCalendar calendar = new FormCalendar(data.calendar);
-            calendar.Show();
-            
-        }
+            if (!data.Crypted())
+            {
+                FormCalendar calendar = new FormCalendar(data.calendar);
+                calendar.Show();
+            }
+            else MessageBox.Show("Данные зашифрованы и их просмотр недоступен", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -48,39 +52,63 @@ namespace MyBigNotebook
 
         private void buttonDiary_Click(object sender, EventArgs e)
         {
-            FormDiary form = new FormDiary(data.diary);
-            form.Show();
+            if (!data.Crypted())
+            {
+                FormDiary form = new FormDiary(data.diary);
+                form.Show();
+            }
+            else MessageBox.Show("Данные зашифрованы и их просмотр недоступен", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
         private void buttonFinansial_Click(object sender, EventArgs e)
         {
-            FormFinansialAssistant form = new FormFinansialAssistant(data.finansialAssistant);
-            form.Show();
+            if (!data.Crypted())
+            {
+                FormFinansialAssistant form = new FormFinansialAssistant(data.finansialAssistant);
+                form.Show();
+            }
+            else MessageBox.Show("Данные зашифрованы и их просмотр недоступен", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void buttonInformation_Click(object sender, EventArgs e)
         {
-            FormInformation form = new FormInformation(data.information);
-            form.Show();
+            if (!data.Crypted())
+            {
+                FormInformation form = new FormInformation(data.information);
+                form.Show();
+            }
+            else MessageBox.Show("Данные зашифрованы и их просмотр недоступен", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void buttonNotes_Click(object sender, EventArgs e)
         {
-            FormNotes form = new FormNotes(data.notes);
-            form.Show();
+            if (!data.Crypted())
+            {
+                FormNotes form = new FormNotes(data.notes);
+                form.Show();
+            }
+            else MessageBox.Show("Данные зашифрованы и их просмотр недоступен", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void buttonPhoto_Click(object sender, EventArgs e)
         {
-            FormPhotos form = new FormPhotos(data.photo);
-            form.Show();
+            if (!data.Crypted())
+            {
+                FormPhotos form = new FormPhotos(data.photo);
+                form.Show();
+            }
+            else MessageBox.Show("Данные зашифрованы и их просмотр недоступен", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void buttonPlants_Click(object sender, EventArgs e)
         {
-            FormPlans form = new FormPlans(data.plants);
-            form.Show();
+            if (!data.Crypted())
+            {
+                FormPlans form = new FormPlans(data.plants);
+                form.Show();
+            }
+            else MessageBox.Show("Данные зашифрованы и их просмотр недоступен", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void contextMenuStripNotify_Opening(object sender, CancelEventArgs e)
@@ -129,15 +157,19 @@ namespace MyBigNotebook
                     try
                     {
                         ClassCrypt.SetKey(form.textBoxKey.Text);
-                        data.Decrypt();
-                        MessageBox.Show("Операция завершена");
+                        if (data.CryptKeyTest())
+                        {
+                            data.Decrypt();
+                            MessageBox.Show("Операция завершена");
+                        }
+                        else MessageBox.Show("Неверный ключ!");
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
                 }
                 else
                 {
-                    MessageBox.Show("Шифрование не выполнено!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Дешифрование не выполнено, так как данные не зашифрованы", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             
         }
@@ -158,8 +190,7 @@ namespace MyBigNotebook
         }
 
         private void tsAutoRun_Click(object sender, EventArgs e)
-        {
-           
+        {           
 
             using (RegistryKey registryKeyStartup =
                         Registry.CurrentUser.OpenSubKey(pathRegistryKeyStartup, true))

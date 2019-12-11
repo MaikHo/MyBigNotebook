@@ -24,6 +24,8 @@ namespace MyBigNotebook.Forms
             LoadDossierListToForm();
             LoadHelpfullLinksToForm();
             LoadHelpfullInformationToForm();
+            setDossierVisible(false);
+            setInfoVisible(false);
         }
 
         private void LoadDossierListToForm()
@@ -39,6 +41,7 @@ namespace MyBigNotebook.Forms
             {
                 if (e.Cell.Selected)
                 {
+                    setDossierVisible(true);
                     foreach (Dossier rec in classInformation.Dossiers)
                         if (rec.idDossier.ToString() == dgvDossierList.Rows[e.Cell.RowIndex].Cells[0].Value.ToString())
                         {
@@ -238,6 +241,7 @@ namespace MyBigNotebook.Forms
             {
                 if(e.Cell.Selected)
                 {
+                    setLinksVisible(true);
                     foreach (HelpfullLink link in classInformation.HelpfullLinks)
                         if (link.Name == e.Cell.Value.ToString())
                         {
@@ -360,7 +364,8 @@ namespace MyBigNotebook.Forms
         {
             if (eCell.StateChanged == DataGridViewElementStates.Selected)
                 if(eCell.Cell.Selected)
-                {                   
+                {
+                    setInfoVisible(true);
                     HelpfullInformation information = classInformation.HelpfullsInfo.Where(t => t.Name == eCell.Cell.Value.ToString()).First();
                     rtbInfo.Text = information.Text;
                     tbInfoKeys.Text = "";
@@ -400,5 +405,49 @@ namespace MyBigNotebook.Forms
             FormViewPhoto formView = new FormViewPhoto(pictureBoxDossierPhoto.Image);
             formView.Show();
         }
+        private void setLinksVisible(bool visibled)
+        {
+            linkLabelmain.Visible = visibled;
+            buttonEditLink.Visible = visibled;
+            rtbLinkDescription.Visible = visibled;
+        }
+        private void setDossierVisible(bool visibled)
+        {
+            label1.Visible = visibled;
+            label2.Visible = visibled;
+            label3.Visible = visibled;
+            label4.Visible = visibled;
+            label5.Visible = visibled;
+            label6.Visible = visibled;
+            label11.Visible = visibled;
+            label8.Visible = visibled;
+            label9.Visible = visibled;
+            label10.Visible = visibled;
+            label12.Visible = visibled;
+            label13.Visible = visibled;
+
+            toolStripContainerDossierPhoto.Visible = visibled;
+            groupBox1.Visible = visibled;
+
+            tbName.Visible = visibled;
+            tbLastName.Visible = visibled;
+            tbSurName.Visible = visibled;
+            dtpBirthDay.Visible = visibled;
+            tbInterests.Visible = visibled;
+            tbDescription.Visible = visibled;
+            tbAdditionalInformation.Visible = visibled;
+            tbFamilyStatus.Visible = visibled;
+            tbEduLevel.Visible = visibled;
+            tbSpec.Visible = visibled;
+            tbWorkPlace.Visible = visibled;
+            tbWorkPost.Visible = visibled;
+        }
+
+        private void setInfoVisible(bool visibled)
+        {
+            groupBox2.Visible = visibled;
+            groupBoxInfoKeyWorld.Visible = visibled;
+        }
+
     }
 }

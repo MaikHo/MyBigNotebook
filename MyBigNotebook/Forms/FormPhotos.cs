@@ -20,6 +20,7 @@ namespace MyBigNotebook.Forms
             InitializeComponent();
             Photos = photo;
             LoadPhotoToForm();
+            setVisible(false);
         }
 
         private IEnumerable<string> getCategories()
@@ -83,6 +84,7 @@ namespace MyBigNotebook.Forms
         {
             if(e.Node.Level ==1)
             {
+                setVisible(true);
                 currentPhotograph = Photos.Photographs.Where(p => p.Name == e.Node.Name && p.Category == e.Node.Parent.Name).First();
 
                 pictureBoxPhoto.Image = ClassConvert.ConvertBase64ToImage(currentPhotograph.Photo);
@@ -110,5 +112,13 @@ namespace MyBigNotebook.Forms
             FormViewPhoto form = new FormViewPhoto(pictureBoxPhoto.Image);
             form.Show();
         }
+
+        private void setVisible(bool visibled)
+        {
+            pictureBoxPhoto.Visible = visibled;
+            gbDescription.Visible = visibled;
+            groupBox1.Visible = visibled;
+        }
+
     }
 }
