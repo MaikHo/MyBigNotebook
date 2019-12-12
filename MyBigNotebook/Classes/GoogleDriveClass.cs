@@ -10,6 +10,7 @@ using Google.Apis.Drive.v3;
 using Google.Apis.Drive.v3.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using System.Configuration;
 
 
 
@@ -31,18 +32,19 @@ namespace MyBigNotebook
         /// <returns></returns>
         public bool Authorize()
         {
+          
             using (System.IO.FileStream stream =
-                     new System.IO.FileStream("Client.json", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+                     new System.IO.FileStream(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"/Client.json", System.IO.FileMode.Open, System.IO.FileAccess.Read))
             {
                 try
                 {
                     string credPath = System.Environment.CurrentDirectory.ToString();
                     credPath = System.IO.Path.Combine(credPath, "Google");
-
+                    
                     credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
                         GoogleClientSecrets.Load(stream).Secrets,
                         GoogleDriveClass.Scopes,
-                        "dedulkonikita@gmail.com", CancellationToken.None,
+                        ConfigurationManager.AppSettings.Get("GoogleUser"), CancellationToken.None,
                         new FileDataStore(credPath, true)).Result;
 
                 }

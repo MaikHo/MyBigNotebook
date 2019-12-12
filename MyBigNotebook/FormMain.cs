@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyBigNotebook.Forms;
 using Microsoft.Win32;
+using System.Configuration;
 
 namespace MyBigNotebook
 {
@@ -31,7 +32,8 @@ namespace MyBigNotebook
             data.LoadData();
             notifyIconMain.Visible = true;
             tsAutoRun.Checked = CheckAutoRun();
-            timerAutoSave.Enabled = true;
+            SetSetting();
+
         }
 
         private void buttonCalendar_Click(object sender, EventArgs e)
@@ -236,6 +238,21 @@ namespace MyBigNotebook
         private void toolStripMenuItemExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void toolStripMenuItemSetting_Click(object sender, EventArgs e)
+        {
+            FormSetting form = new FormSetting();
+            if( form.ShowDialog()==DialogResult.OK)
+            {
+                SetSetting();
+            }
+        }
+
+        private void SetSetting()
+        {
+            timerAutoSave.Enabled = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("AutoSave"));
+            timerAutoSave.Interval = Convert.ToInt32(ConfigurationManager.AppSettings.Get("TimeAutoSave"))*60*1000;
         }
     }
 }

@@ -46,6 +46,8 @@
             this.заметкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фотогалереяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.планыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonPhoto = new System.Windows.Forms.Button();
             this.buttonPlants = new System.Windows.Forms.Button();
             this.toolStripmain = new System.Windows.Forms.ToolStrip();
@@ -58,8 +60,8 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsAutoRun = new System.Windows.Forms.ToolStripMenuItem();
             this.timerAutoSave = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItemSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripNotify.SuspendLayout();
             this.toolStripmain.SuspendLayout();
             this.SuspendLayout();
@@ -138,7 +140,7 @@
             this.toolStripSeparator4,
             this.toolStripMenuItemExit});
             this.contextMenuStripNotify.Name = "contextMenuStripNotify";
-            this.contextMenuStripNotify.Size = new System.Drawing.Size(210, 236);
+            this.contextMenuStripNotify.Size = new System.Drawing.Size(210, 214);
             this.contextMenuStripNotify.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripNotify_Opening);
             // 
             // менюToolStripMenuItem
@@ -202,6 +204,18 @@
             this.планыToolStripMenuItem.Text = "Планы";
             this.планыToolStripMenuItem.Click += new System.EventHandler(this.buttonPlants_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(206, 6);
+            // 
+            // toolStripMenuItemExit
+            // 
+            this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
+            this.toolStripMenuItemExit.Size = new System.Drawing.Size(209, 22);
+            this.toolStripMenuItemExit.Text = "Выход";
+            this.toolStripMenuItemExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
+            // 
             // buttonPhoto
             // 
             this.buttonPhoto.Location = new System.Drawing.Point(26, 161);
@@ -253,7 +267,9 @@
             this.toolStripSeparator2,
             this.TsDeleteAll,
             this.toolStripSeparator3,
-            this.tsAutoRun});
+            this.tsAutoRun,
+            this.toolStripSeparator5,
+            this.toolStripMenuItemSetting});
             this.toolStripDropDownButtonSetting.Image = global::MyBigNotebook.Properties.Resources.baseline_build_black_36dp;
             this.toolStripDropDownButtonSetting.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonSetting.Name = "toolStripDropDownButtonSetting";
@@ -307,17 +323,18 @@
             this.timerAutoSave.Interval = 900000;
             this.timerAutoSave.Tick += new System.EventHandler(this.timerAutoSave_Tick);
             // 
-            // toolStripSeparator4
+            // toolStripSeparator5
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(206, 6);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
             // 
-            // toolStripMenuItemExit
+            // toolStripMenuItemSetting
             // 
-            this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
-            this.toolStripMenuItemExit.Size = new System.Drawing.Size(209, 22);
-            this.toolStripMenuItemExit.Text = "Выход";
-            this.toolStripMenuItemExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
+            this.toolStripMenuItemSetting.Image = global::MyBigNotebook.Properties.Resources.baseline_build_black_36dp;
+            this.toolStripMenuItemSetting.Name = "toolStripMenuItemSetting";
+            this.toolStripMenuItemSetting.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemSetting.Text = "Прочие настройки";
+            this.toolStripMenuItemSetting.Click += new System.EventHandler(this.toolStripMenuItemSetting_Click);
             // 
             // FormMain
             // 
@@ -380,6 +397,8 @@
         private System.Windows.Forms.Timer timerAutoSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemExit;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSetting;
     }
 }
 

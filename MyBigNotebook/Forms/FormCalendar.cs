@@ -113,5 +113,23 @@ namespace MyBigNotebook
                 LoadToCalendar();
             }
         }
+
+        private void удалитьДеньРожденияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateTime date = monthCalendarMain.SelectionStart;
+            Calendar.BirthDays.RemoveAll(p => DayAndMonthQuality(p.Date, date));
+        }
+
+        private void удалитьПамяьнуюДатуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateTime date = monthCalendarMain.SelectionStart;
+            Calendar.MemorableDates.RemoveAll(p => DayAndMonthQuality(p.Date, date));
+        }
+
+        private void удалитьНапоминанияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateTime date = monthCalendarMain.SelectionStart;
+            Calendar.Reminders.RemoveAll(p => DayAndMonthQuality(p.Time, date));
+        }
     }
 }

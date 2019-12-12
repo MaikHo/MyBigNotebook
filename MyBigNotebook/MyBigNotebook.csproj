@@ -189,6 +189,12 @@
     <Compile Include="Forms\FormPlans.Designer.cs">
       <DependentUpon>FormPlans.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSetting.Designer.cs">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormViewPhoto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPlans.resx">
       <DependentUpon>FormPlans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSetting.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormViewPhoto.resx">
       <DependentUpon>FormViewPhoto.cs</DependentUpon>
