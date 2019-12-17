@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
@@ -37,69 +33,74 @@ namespace MyBigNotebook.Forms
 
         private void dgvDossierList_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            if (e.StateChanged == DataGridViewElementStates.Selected)
+            try
             {
-                if (e.Cell.Selected)
+                if (e.StateChanged == DataGridViewElementStates.Selected)
                 {
-                    setDossierVisible(true);
-                    foreach (Dossier rec in classInformation.Dossiers)
-                        if (rec.idDossier.ToString() == dgvDossierList.Rows[e.Cell.RowIndex].Cells[0].Value.ToString())
-                        {
-                            tbName.Text = rec.Name;
-                            tbLastName.Text = rec.LastName;
-                            tbSurName.Text = rec.SurName;
-                            dtpBirthDay.Value = rec.BirthDay;
-                            tbInterests.Text = rec.Interests;
-                            tbDescription.Text = rec.Description;
-                            tbAdditionalInformation.Text = rec.AdditionalInformation;
-                            tbFamilyStatus.Text = rec.FamilyStatus;
-                            tbEduLevel.Text = rec.EducationLevel;
-                            tbSpec.Text = rec.EducatonLocationAndSpec;
-                            tbWorkPlace.Text = rec.WorkPlace;
-                            tbWorkPost.Text = rec.WorkPosition;
-
-                            if(rec.Photos.Count>0)
-                            {
-                                pictureBoxDossierPhoto.Image = MyBigNotebook.Classes.ClassConvert.ConvertBase64ToImage(rec.Photos[0]);
-                                idDossierPhoto = 0;
-                            }
-                            dgvDossierContakts.Rows.Clear();
-                            foreach (Kontact kontact in rec.Kontacts)
-                            {
-                                dgvDossierContakts.Rows.Add(new object[] { kontact.System, kontact.Number });
-                            }
-                            NowDossier = rec;
-
-                        }
-                }
-                else
-                {
-                    try
+                    if (e.Cell.Selected)
                     {
+                        setDossierVisible(true);
                         foreach (Dossier rec in classInformation.Dossiers)
                             if (rec.idDossier.ToString() == dgvDossierList.Rows[e.Cell.RowIndex].Cells[0].Value.ToString())
                             {
-                                rec.Name = tbName.Text;
-                                rec.LastName = tbLastName.Text;
-                                rec.SurName = tbSurName.Text;
-                                rec.BirthDay = dtpBirthDay.Value;
-                                rec.Interests = tbInterests.Text;
-                                rec.Description = tbDescription.Text;
-                                rec.AdditionalInformation = tbAdditionalInformation.Text;
-                                rec.FamilyStatus = tbFamilyStatus.Text;
-                                rec.EducationLevel = tbEduLevel.Text;
-                                rec.EducatonLocationAndSpec = tbSpec.Text;
-                                rec.WorkPlace = tbWorkPlace.Text;
-                                rec.WorkPosition = tbWorkPost.Text;
+                                tbName.Text = rec.Name;
+                                tbLastName.Text = rec.LastName;
+                                tbSurName.Text = rec.SurName;
+                                dtpBirthDay.Value = rec.BirthDay;
+                                tbInterests.Text = rec.Interests;
+                                tbDescription.Text = rec.Description;
+                                tbAdditionalInformation.Text = rec.AdditionalInformation;
+                                tbFamilyStatus.Text = rec.FamilyStatus;
+                                tbEduLevel.Text = rec.EducationLevel;
+                                tbSpec.Text = rec.EducatonLocationAndSpec;
+                                tbWorkPlace.Text = rec.WorkPlace;
+                                tbWorkPost.Text = rec.WorkPosition;
 
-                                rec.Kontacts.Clear();
-                                foreach (DataGridViewRow row in dgvDossierContakts.Rows)
-                                    rec.Kontacts.Add(new Kontact(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString()));
+                                if (rec.Photos.Count > 0)
+                                {
+                                    pictureBoxDossierPhoto.Image = MyBigNotebook.Classes.ClassConvert.ConvertBase64ToImage(rec.Photos[0]);
+                                    idDossierPhoto = 0;
+                                }
+                                else pictureBoxDossierPhoto.Image = null;
+                                dgvDossierContakts.Rows.Clear();
+                                foreach (Kontact kontact in rec.Kontacts)
+                                {
+                                    dgvDossierContakts.Rows.Add(new object[] { kontact.System, kontact.Number });
+                                }
+                                NowDossier = rec;
+
                             }
                     }
-                    catch { }
+                    else
+                    {
+                        try
+                        {
+                            foreach (Dossier rec in classInformation.Dossiers)
+                                if (rec.idDossier.ToString() == dgvDossierList.Rows[e.Cell.RowIndex].Cells[0].Value.ToString())
+                                {
+                                    rec.Name = tbName.Text;
+                                    rec.LastName = tbLastName.Text;
+                                    rec.SurName = tbSurName.Text;
+                                    rec.BirthDay = dtpBirthDay.Value;
+                                    rec.Interests = tbInterests.Text;
+                                    rec.Description = tbDescription.Text;
+                                    rec.AdditionalInformation = tbAdditionalInformation.Text;
+                                    rec.FamilyStatus = tbFamilyStatus.Text;
+                                    rec.EducationLevel = tbEduLevel.Text;
+                                    rec.EducatonLocationAndSpec = tbSpec.Text;
+                                    rec.WorkPlace = tbWorkPlace.Text;
+                                    rec.WorkPosition = tbWorkPost.Text;
+
+                                    rec.Kontacts.Clear();
+                                    foreach (DataGridViewRow row in dgvDossierContakts.Rows)
+                                        rec.Kontacts.Add(new Kontact(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString()));
+                                }
+                        }
+                        catch { }
+                    }
                 }
             }
+            catch { }
         }
 
         private void contextMenuStripDossierContakts_Opening(object sender, CancelEventArgs e)
@@ -123,17 +124,24 @@ namespace MyBigNotebook.Forms
 
         private void toolStripButtonLeft_Click(object sender, EventArgs e)
         {
-            if (idDossierPhoto > 0) idDossierPhoto--;
+            try
+            {
+                if (idDossierPhoto > 0) idDossierPhoto--;
 
-            pictureBoxDossierPhoto.Image = MyBigNotebook.Classes.ClassConvert.ConvertBase64ToImage(NowDossier.Photos[idDossierPhoto]);
+                pictureBoxDossierPhoto.Image = MyBigNotebook.Classes.ClassConvert.ConvertBase64ToImage(NowDossier.Photos[idDossierPhoto]);
+            }
+            catch { }
            
         }
 
         private void toolStripButtonRingt_Click(object sender, EventArgs e)
         {
-            if (idDossierPhoto < NowDossier.Photos.Count-1) idDossierPhoto++;
-
-            pictureBoxDossierPhoto.Image = MyBigNotebook.Classes.ClassConvert.ConvertBase64ToImage(NowDossier.Photos[idDossierPhoto]);
+            try
+            {
+                if (idDossierPhoto < NowDossier.Photos.Count - 1) idDossierPhoto++;
+                pictureBoxDossierPhoto.Image = MyBigNotebook.Classes.ClassConvert.ConvertBase64ToImage(NowDossier.Photos[idDossierPhoto]);
+            }
+            catch { }
         }
 
         private void FormInformation_FormClosing(object sender, FormClosingEventArgs e)
@@ -150,13 +158,17 @@ namespace MyBigNotebook.Forms
         {
             if( MessageBox.Show("Удалить выбранное фото?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                NowDossier.Photos.Remove(NowDossier.Photos[idDossierPhoto]);
-
-                if (NowDossier.Photos.Count >  0)
+                try
                 {
-                    idDossierPhoto = 0;
-                    pictureBoxDossierPhoto.Image = MyBigNotebook.Classes.ClassConvert.ConvertBase64ToImage(NowDossier.Photos[idDossierPhoto]);
+                    NowDossier.Photos.Remove(NowDossier.Photos[idDossierPhoto]);
+
+                    if (NowDossier.Photos.Count > 0)
+                    {
+                        idDossierPhoto = 0;
+                        pictureBoxDossierPhoto.Image = MyBigNotebook.Classes.ClassConvert.ConvertBase64ToImage(NowDossier.Photos[idDossierPhoto]);
+                    }
                 }
+                catch { }
 
             }
         }
@@ -237,36 +249,40 @@ namespace MyBigNotebook.Forms
 
         private void dgvLinks_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            if (e.StateChanged == DataGridViewElementStates.Selected)
+            try
             {
-                if(e.Cell.Selected)
+                if (e.StateChanged == DataGridViewElementStates.Selected)
                 {
-                    setLinksVisible(true);
-                    foreach (HelpfullLink link in classInformation.HelpfullLinks)
-                        if (link.Name == e.Cell.Value.ToString())
-                        {
-                            linkLabelmain.Text = link.Link;
-                            rtbLinkDescription.Text = link.Description;
-                        }
-                }
-                else
-                {
-                    try
+                    if (e.Cell.Selected)
                     {
-                        if (!linkLabelmain.Visible)
-                        {
-                            linkLabelmain.Text = textBoxLink.Text;
-                            linkLabelmain.Visible = true;
-                            textBoxLink.Visible = false;
-                        }
-                        HelpfullLink link = classInformation.HelpfullLinks.Where(t => t.Name == e.Cell.Value.ToString()).First();
-                        link.Link = linkLabelmain.Text;
-                        link.Description = rtbLinkDescription.Text;
+                        setLinksVisible(true);
+                        foreach (HelpfullLink link in classInformation.HelpfullLinks)
+                            if (link.Name == e.Cell.Value.ToString())
+                            {
+                                linkLabelmain.Text = link.Link;
+                                rtbLinkDescription.Text = link.Description;
+                            }
                     }
-                    catch { }
-                }
+                    else
+                    {
+                        try
+                        {
+                            if (!linkLabelmain.Visible)
+                            {
+                                linkLabelmain.Text = textBoxLink.Text;
+                                linkLabelmain.Visible = true;
+                                textBoxLink.Visible = false;
+                            }
+                            HelpfullLink link = classInformation.HelpfullLinks.Where(t => t.Name == e.Cell.Value.ToString()).First();
+                            link.Link = linkLabelmain.Text;
+                            link.Description = rtbLinkDescription.Text;
+                        }
+                        catch { }
+                    }
 
+                }
             }
+            catch { }
         }
 
         private void toolStripButtonLinkDelete_Click(object sender, EventArgs e)
@@ -362,33 +378,37 @@ namespace MyBigNotebook.Forms
 
         private void dgvInfoList_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs eCell)
         {
-            if (eCell.StateChanged == DataGridViewElementStates.Selected)
-                if(eCell.Cell.Selected)
-                {
-                    setInfoVisible(true);
-                    HelpfullInformation information = classInformation.HelpfullsInfo.Where(t => t.Name == eCell.Cell.Value.ToString()).First();
-                    rtbInfo.Text = information.Text;
-                    tbInfoKeys.Text = "";
-                    foreach (string s in information.keyWords)
-                        tbInfoKeys.Text += s + ", ";
-                }
-                else
-                {
-                    try
+            try
+            {
+                if (eCell.StateChanged == DataGridViewElementStates.Selected)
+                    if (eCell.Cell.Selected)
                     {
+                        setInfoVisible(true);
                         HelpfullInformation information = classInformation.HelpfullsInfo.Where(t => t.Name == eCell.Cell.Value.ToString()).First();
-                        information.Text = rtbInfo.Text;
-                        information.keyWords.Clear();
-                        string[] str = tbInfoKeys.Text.Split(new char[] { ',', '\n' });
-                        foreach (string s in str)
-                            information.keyWords.Add(s.Trim());
-                        int count = information.keyWords.Where(e => e == "").Count();
-                        for (int i = 0; i < count; i++)
-                            information.keyWords.Remove("");
+                        rtbInfo.Text = information.Text;
+                        tbInfoKeys.Text = "";
+                        foreach (string s in information.keyWords)
+                            tbInfoKeys.Text += s + ", ";
                     }
-                    catch { }
+                    else
+                    {
+                        try
+                        {
+                            HelpfullInformation information = classInformation.HelpfullsInfo.Where(t => t.Name == eCell.Cell.Value.ToString()).First();
+                            information.Text = rtbInfo.Text;
+                            information.keyWords.Clear();
+                            string[] str = tbInfoKeys.Text.Split(new char[] { ',', '\n' });
+                            foreach (string s in str)
+                                information.keyWords.Add(s.Trim());
+                            int count = information.keyWords.Where(e => e == "").Count();
+                            for (int i = 0; i < count; i++)
+                                information.keyWords.Remove("");
+                        }
+                        catch { }
 
-                }
+                    }
+            }
+            catch { }
         }
 
         private void toolStripButtonInfoAddClose_Click(object sender, EventArgs e)

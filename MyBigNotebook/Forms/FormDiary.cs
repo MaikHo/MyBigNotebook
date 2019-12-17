@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyBigNotebook.Forms
@@ -64,22 +57,26 @@ namespace MyBigNotebook.Forms
 
         private void dgvDate_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            if (e.StateChanged == DataGridViewElementStates.Selected)
+            try
             {
-                tbText.Visible = true;
-               if(e.Cell.Selected)
+                if (e.StateChanged == DataGridViewElementStates.Selected)
                 {
-                    foreach (DiaryRec rec in diary.DiaryRecs)
-                        if (rec.Date.ToLongDateString() == e.Cell.Value.ToString())
-                            tbText.Text = rec.Text;
-                }
-               else
-                {
-                    foreach (DiaryRec rec in diary.DiaryRecs)
-                        if (rec.Date.ToLongDateString() == e.Cell.Value.ToString())
-                             rec.Text=tbText.Text;
+                    tbText.Visible = true;
+                    if (e.Cell.Selected)
+                    {
+                        foreach (DiaryRec rec in diary.DiaryRecs)
+                            if (rec.Date.ToLongDateString() == e.Cell.Value.ToString())
+                                tbText.Text = rec.Text;
+                    }
+                    else
+                    {
+                        foreach (DiaryRec rec in diary.DiaryRecs)
+                            if (rec.Date.ToLongDateString() == e.Cell.Value.ToString())
+                                rec.Text = tbText.Text;
+                    }
                 }
             }
+            catch { }
             
         }
 

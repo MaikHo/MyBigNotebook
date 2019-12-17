@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyBigNotebook.Forms;
 using Microsoft.Win32;
@@ -32,6 +26,12 @@ namespace MyBigNotebook
             data.LoadData();
             notifyIconMain.Visible = true;
             tsAutoRun.Checked = CheckAutoRun();
+            if(ConfigurationManager.AppSettings.Get("CountStart") == "0")
+            {
+                FormSetting form = new FormSetting(true);
+                form.ShowDialog();
+            }
+
             SetSetting();
 
         }
@@ -166,7 +166,7 @@ namespace MyBigNotebook
                         }
                         else MessageBox.Show("Неверный ключ!");
                     }
-                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                    catch (Exception ex) { MessageBox.Show($"Неверный ключ!{Environment.NewLine}{ex.Message}", "Ошибка дешифровки", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
                 }
                 else

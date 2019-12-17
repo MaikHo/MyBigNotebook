@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyBigNotebook.Forms
@@ -283,17 +279,17 @@ namespace MyBigNotebook.Forms
             dgvReport.Rows.Clear();
 
             double SummExpenses = 0;
-            var expensess = from i in finansialAssistant.Expensess where i.Date<=dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value select i;            
+            var expensess = from i in finansialAssistant.Expensess where i.Date.Date<=dateTimePickerReportPo.Value.Date && i.Date.Date >= dateTimePickerReportS.Value.Date select i;            
             foreach (Expenses expenses in expensess)
                 SummExpenses += expenses.Summ;
 
             double SummProfit=0;
-            var profits = from i in finansialAssistant.Profits where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value select i;
+            var profits = from i in finansialAssistant.Profits where i.Date.Date <= dateTimePickerReportPo.Value.Date && i.Date.Date >= dateTimePickerReportS.Value.Date select i;
             foreach (Profit profit in profits)
                 SummProfit += profit.Summ;
 
             double SummCashSaving = 0;
-            var cash = from i in finansialAssistant.CashSavings where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value select i;
+            var cash = from i in finansialAssistant.CashSavings where i.Date.Date <= dateTimePickerReportPo.Value.Date && i.Date.Date >= dateTimePickerReportS.Value.Date select i;
             foreach (CashSaving cashSaving in cash)
                 SummCashSaving += cashSaving.Summ;
 
@@ -306,8 +302,8 @@ namespace MyBigNotebook.Forms
         private void buttonReportProfit_Click(object sender, EventArgs e)
         {
             dgvReport.Rows.Clear();
-            var profits = from i in finansialAssistant.Profits where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value select i;
-            var Categories = from i in finansialAssistant.Profits where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value group i by i.Category;
+            var profits = from i in finansialAssistant.Profits where i.Date.Date <= dateTimePickerReportPo.Value.Date && i.Date.Date >= dateTimePickerReportS.Value.Date select i;
+            var Categories = from i in finansialAssistant.Profits where i.Date.Date <= dateTimePickerReportPo.Value.Date && i.Date.Date >= dateTimePickerReportS.Value.Date group i by i.Category;
             Dictionary<string, double> vs = new Dictionary<string,double>();
 
             foreach (var category in Categories)
@@ -330,8 +326,8 @@ namespace MyBigNotebook.Forms
         private void buttonReportExpepses_Click(object sender, EventArgs e)
         {
             dgvReport.Rows.Clear();
-            var expensess = from i in finansialAssistant.Expensess where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value select i;
-            var Categories = from i in finansialAssistant.Expensess where i.Date <= dateTimePickerReportPo.Value && i.Date >= dateTimePickerReportS.Value group i by i.Category;
+            var expensess = from i in finansialAssistant.Expensess where i.Date.Date <= dateTimePickerReportPo.Value.Date && i.Date.Date >= dateTimePickerReportS.Value.Date select i;
+            var Categories = from i in finansialAssistant.Expensess where i.Date.Date <= dateTimePickerReportPo.Value.Date && i.Date.Date >= dateTimePickerReportS.Value.Date group i by i.Category;
             Dictionary<string, double> vs = new Dictionary<string, double>();
 
             foreach (var category in Categories)

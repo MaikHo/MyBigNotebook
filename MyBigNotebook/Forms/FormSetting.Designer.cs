@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSetting));
             this.dgUser = new System.Windows.Forms.GroupBox();
-            this.gbAutoSave = new System.Windows.Forms.GroupBox();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.textBoxGoogleUser = new System.Windows.Forms.TextBox();
-            this.checkBoxAutoSave = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.gbAutoSave = new System.Windows.Forms.GroupBox();
             this.numericUpDownsaveTime = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxAutoSave = new System.Windows.Forms.CheckBox();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.dgUser.SuspendLayout();
             this.gbAutoSave.SuspendLayout();
-            this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownsaveTime)).BeginInit();
+            this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgUser
@@ -55,6 +55,13 @@
             this.dgUser.TabStop = false;
             this.dgUser.Text = "Имя пользователя Google";
             // 
+            // textBoxGoogleUser
+            // 
+            this.textBoxGoogleUser.Location = new System.Drawing.Point(13, 20);
+            this.textBoxGoogleUser.Name = "textBoxGoogleUser";
+            this.textBoxGoogleUser.Size = new System.Drawing.Size(223, 20);
+            this.textBoxGoogleUser.TabIndex = 0;
+            // 
             // gbAutoSave
             // 
             this.gbAutoSave.Controls.Add(this.numericUpDownsaveTime);
@@ -67,63 +74,6 @@
             this.gbAutoSave.TabIndex = 1;
             this.gbAutoSave.TabStop = false;
             this.gbAutoSave.Text = "Автосохранение";
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelMenu.Controls.Add(this.buttonClose);
-            this.panelMenu.Controls.Add(this.buttonSave);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMenu.Location = new System.Drawing.Point(0, 149);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(248, 62);
-            this.panelMenu.TabIndex = 2;
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(12, 4);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(223, 23);
-            this.buttonSave.TabIndex = 0;
-            this.buttonSave.Text = "Сохранить";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // buttonClose
-            // 
-            this.buttonClose.Location = new System.Drawing.Point(12, 33);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(223, 23);
-            this.buttonClose.TabIndex = 1;
-            this.buttonClose.Text = "Отмена";
-            this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
-            // textBoxGoogleUser
-            // 
-            this.textBoxGoogleUser.Location = new System.Drawing.Point(13, 20);
-            this.textBoxGoogleUser.Name = "textBoxGoogleUser";
-            this.textBoxGoogleUser.Size = new System.Drawing.Size(223, 20);
-            this.textBoxGoogleUser.TabIndex = 0;
-            // 
-            // checkBoxAutoSave
-            // 
-            this.checkBoxAutoSave.AutoSize = true;
-            this.checkBoxAutoSave.Location = new System.Drawing.Point(7, 20);
-            this.checkBoxAutoSave.Name = "checkBoxAutoSave";
-            this.checkBoxAutoSave.Size = new System.Drawing.Size(97, 17);
-            this.checkBoxAutoSave.TabIndex = 0;
-            this.checkBoxAutoSave.Text = "Автосохрание";
-            this.checkBoxAutoSave.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Период автосохранения, мин";
             // 
             // numericUpDownsaveTime
             // 
@@ -147,6 +97,56 @@
             0,
             0});
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Период автосохранения, мин";
+            // 
+            // checkBoxAutoSave
+            // 
+            this.checkBoxAutoSave.AutoSize = true;
+            this.checkBoxAutoSave.Location = new System.Drawing.Point(7, 20);
+            this.checkBoxAutoSave.Name = "checkBoxAutoSave";
+            this.checkBoxAutoSave.Size = new System.Drawing.Size(97, 17);
+            this.checkBoxAutoSave.TabIndex = 0;
+            this.checkBoxAutoSave.Text = "Автосохрание";
+            this.checkBoxAutoSave.UseVisualStyleBackColor = true;
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMenu.Controls.Add(this.buttonClose);
+            this.panelMenu.Controls.Add(this.buttonSave);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelMenu.Location = new System.Drawing.Point(0, 149);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(248, 62);
+            this.panelMenu.TabIndex = 2;
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.Location = new System.Drawing.Point(12, 33);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(223, 23);
+            this.buttonClose.TabIndex = 1;
+            this.buttonClose.Text = "Отмена";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(12, 4);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(223, 23);
+            this.buttonSave.TabIndex = 0;
+            this.buttonSave.Text = "Сохранить";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
             // FormSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,12 +162,13 @@
             this.MinimizeBox = false;
             this.Name = "FormSetting";
             this.Text = "Настройки";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSetting_FormClosing);
             this.dgUser.ResumeLayout(false);
             this.dgUser.PerformLayout();
             this.gbAutoSave.ResumeLayout(false);
             this.gbAutoSave.PerformLayout();
-            this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownsaveTime)).EndInit();
+            this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

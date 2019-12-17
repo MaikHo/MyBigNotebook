@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyBigNotebook.Forms
@@ -327,6 +323,12 @@ namespace MyBigNotebook.Forms
             try
             {
                 CurrentShopping.CompleteFlag = checkShoppingFlag.Checked;
+                TreeNode[] nodes = tvShoppingList.Nodes.Find(CurrentShopping.NameItem, true);
+
+                foreach (TreeNode node in nodes)
+                    if (CurrentShopping.CompleteFlag)
+                        node.ImageIndex = 0;
+                    else node.ImageIndex = 1;
             }
             catch { }
         }

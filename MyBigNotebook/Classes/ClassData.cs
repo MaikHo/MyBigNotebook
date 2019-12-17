@@ -155,6 +155,7 @@ namespace MyBigNotebook
                     this.photo = classData.photo;
                     this.plants = classData.plants;
                     this.routineDay = classData.routineDay;
+                    this.test = classData.test;
                 }
                 File.Delete("TempData.xml");
             } catch { }
