@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlans));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlPlans = new System.Windows.Forms.TabControl();
             this.tabPageFuture = new System.Windows.Forms.TabPage();
             this.splitContainerFuture = new System.Windows.Forms.SplitContainer();
@@ -318,9 +318,9 @@
             // ColumnFutureNumber
             // 
             this.ColumnFutureNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.ColumnFutureNumber.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.ColumnFutureNumber.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnFutureNumber.HeaderText = "Номер";
             this.ColumnFutureNumber.MinimumWidth = 50;
             this.ColumnFutureNumber.Name = "ColumnFutureNumber";
@@ -479,9 +479,9 @@
             // ColumnTargetStepNumber
             // 
             this.ColumnTargetStepNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
-            this.ColumnTargetStepNumber.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ColumnTargetStepNumber.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnTargetStepNumber.HeaderText = "Номер шага";
             this.ColumnTargetStepNumber.MinimumWidth = 50;
             this.ColumnTargetStepNumber.Name = "ColumnTargetStepNumber";
@@ -943,9 +943,9 @@
             // ColumnProjectStepNumber
             // 
             this.ColumnProjectStepNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.ColumnProjectStepNumber.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.ColumnProjectStepNumber.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnProjectStepNumber.HeaderText = "Номер шага";
             this.ColumnProjectStepNumber.Name = "ColumnProjectStepNumber";
             this.ColumnProjectStepNumber.Width = 87;
